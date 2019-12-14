@@ -1,0 +1,8 @@
+*.log
+*.pot
+*.pyc
+*.py[cod]
+__pycache__/
+.vscode
+env.py
+db.sqlite3
