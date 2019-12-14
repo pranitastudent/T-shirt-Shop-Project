@@ -1,4 +1,7 @@
+[![Build Status](https://travis-ci.org/pranitastudent/Milestone_5_project.svg?branch=master)](https://travis-ci.org/pranitastudent/Milestone_5_project)
+
 # Full Stack Frameworks with Django Milestone Project- Ecommerce store - Milestone 5 Project 
+
 ## Project Entrails
 
 <p> An eccomerce site will be built which will sell t-shirts for men, women and children. The user should be able to filter the t-shirts using the options: men, women and children. In order to buy the t-shirts the user will have to register with a username and password and login. The registration and username will be
