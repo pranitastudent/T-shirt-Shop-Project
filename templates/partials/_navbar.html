@@ -23,7 +23,7 @@
                 {% else %}
             <li class="nav-item mr-3">
                 {% endif %}
-                <a class="nav-link" href="#">Register</a>
+                <a class="nav-link" href="{% url 'register' %}">Register</a>
             </li>
 
             {% if 'login' == request.path %}
@@ -31,7 +31,7 @@
                 {% else %}
             <li class="nav-item mr-3">
                 {% endif %}
-                <a class="nav-link" href="#">Login</a>
+                <a class="nav-link" href="{% url 'login' %}">Login</a>
             </li>
 
             {% if 'feedback' == request.path %}
