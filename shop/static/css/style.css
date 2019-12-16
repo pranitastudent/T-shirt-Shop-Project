@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css?family=Manjari&display=swap');
+
+body {
+    font-family: 'Manjari', sans-serif;
+}
+
+
+/* CSS Variables */
+
+:root {
+    --light-color: #f3f3f3;
+    --dark-color: #333;
+    --primary-color:#00b33c;
+    --secondary-color: #0066ff;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar */
+
+.navbar {
+    background: #808080;
+    opacity: 0.9;
+    text-transform: uppercase;
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: #fff;
+}
+
+/* Social Media Icons */
+
+.fab {
+   margin-right:0.5em; 
+   color: var(--dark-color);
+}
+
+ .social a :hover {
+    color: var(--secondary-color);
+}
+
+/* Showcase */
+
+#showcase {
+    position:relative;
+    background: url("../img/showcase_1.jpg") no-repeat center center/cover ;
+    min-height:600px;
+       
+}
+
+ #showcase .primary-overlay {
+    background:rgba(153,153,153,0.5);
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    width:100%;
+    height: 100%;
+    
+
+}
+
+/* Carousel */
+
+#carousel {
+    background: var(--light-color);
+}
+
+.carousel-indicators {
+    bottom: 190px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Media Queries */
+
+@media (max-width: 768px) {
+    #top-bar {
+        text-align:center;
+    }
+
+   .social  {
+        text-align: center!important;
+
+    }
+
+    .main-text {
+        margin-top:32px;
+        padding-top: 32px;
+        font-size: 4.5em;
+    }
+    .carousel-indicators {
+        bottom:194px;
+    }
+}
