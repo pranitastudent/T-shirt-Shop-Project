@@ -1,7 +1,9 @@
 
-// Year
+// Year-  Code Taken from Brad Traversy's Course Python Django to Dev (Nov 2018)
 const date = new Date();
 document.querySelector('.year').innerHTML = date.getFullYear();
+
+// End of Code taken
 
 // Map
 
