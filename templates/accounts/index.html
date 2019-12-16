@@ -27,58 +27,88 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 col-xs-12">
-				<h3 class="display-3  mt-1 pt-1 text-center"> Top T-shirts</h3>
+				<h3 class="display-4  mt-1 pt-1 text-center"> Top T-shirts</h3>
 				<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 					<ol class="carousel-indicators">
-					  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-					  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-					  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+						<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+						<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+						<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
 					</ol>
 					<div class="carousel-inner">
-					  <div class="carousel-item active">
-						<div class="card">
-							<img class="card-img-top" src="{% static 'img/shoecase1.jpg'%}" alt="First slide">
-							<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-								<span class="sr-only">Previous</span>
-							  </a>
-							  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-								<span class="carousel-control-next-icon" aria-hidden="true"></span>
-								<span class="sr-only">Next</span>
-							  </a>
-							<div class="card-body text-center">
-								<h4 class="card-title">Card Title</h4>
-								<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, quas.</p>
-								<a class="btn btn-success btn-success" href="#">Shop Now</a>
+						<div class="carousel-item active">
+							<div class="card">
+								<img class="card-img-top" src="{% static 'img/shoecase1.jpg'%}" width="500" height="600"
+									alt="First slide">
+
+								<div class="card-body text-center">
+									<h4 class="card-title">January 2020 Best Selling!</h4>
+
+									<a class="btn btn-outline-success  btn-lg" href="#">Shop Now</a>
+								</div>
 							</div>
 						</div>
-					  </div>
-					  <div class="carousel-item">
-						<div class="card">
-							<img class="card-img-top" src="{% static 'img/shoecase1.jpg'%}" alt="Second slide">
-							<div class="card-body text-center">
-								<h4 class="card-title">Card Title</h4>
-								<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, quas.</p>
-								<a class="btn btn-success btn-success" href="#">Shop Now</a>
+						<div class="carousel-item">
+							<div class="card">
+								<img class="card-img-top" width="500" height="600" src="{% static 'img/shoecase1.jpg'%}"
+									alt="Second slide">
+								<div class="card-body text-center">
+									<h4 class="card-title">January 2020 Best Selling!</h4>
+									<a class="btn btn-outline-success btn-lg" href="#">Shop Now</a>
+								</div>
 							</div>
 						</div>
-					  </div>
-					  <div class="carousel-item">
-						<div class="card">
-							<img class="card-img-top" src="{% static 'img/shoecase1.jpg'%}" alt="Third slide">
-							<div class="card-body text-center">
-								<h4 class="card-title">Card Title</h4>
-								<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, quas.</p>
-								<a class="btn btn-success btn-success" href="#">Shop Now</a>
+						<div class="carousel-item">
+							<div class="card">
+								<img class="card-img-top" src="{% static 'img/shoecase1.jpg'%}" width="500" height="600"
+									alt="Third slide">
+								<div class="card-body text-center">
+									<h4 class="card-title">January 2020 Best Selling!</h4>
+									<a class="btn btn-outline-success btn-lg" href="#">Shop Now</a>
+								</div>
 							</div>
 						</div>
-					  </div>
 					</div>
-					
-				  </div>
+					<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
+
+				</div>
 			</div>
 		</div>
 	</div>
 </section>
+
+<!-- Shopping Opening Times  -->
+
+<section id="shop">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-xs-6">
+				<h1 class= pt-2>Shop Opening Times</h1><hr>
+				<ul>
+					<li class= "days pb-2">Monday&nbsp; 9am-5pm </li>
+					<li class= "days pb-2">Tuesday&nbsp; 9am-5pm </li>
+					<li class= "days pb-2">Wednesday&nbsp; 9am-5pm </li>
+					<li class= "days pb-2">Thursday&nbsp; 9am-5pm </li>
+					<li class= "days pb-2">Friday&nbsp; 9am-5pm </li>
+					<li class= "days pb-2">Saturday&nbsp; 9am-5pm </li>
+					<li class= "days pb-2">Sunday&nbsp;11am-4pm </li>
+				</ul>
+				
+			</div>
+			<div class="col-md-6 col-xs-6 py-3">
+				<div class="map"></div>
+							 
+		   </div>
+		</div>
+	</div>
+</section>
+
+
 
 {% endblock %}
