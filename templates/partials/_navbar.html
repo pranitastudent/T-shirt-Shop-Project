@@ -3,6 +3,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark  sticky-top">
 
     <a class="navbar-brand" href="{% url 'index' %}"><img src="{% static 'img/logo.png'%}" alt="logo"><h6 class="d-inline align-middle">&nbsp;Pranita's T-shirt Shop</h6></a>
+    <span class="username">User:{{user.username}}</span>   
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup">
          <span class="navbar-toggler-icon"></span>
     </button>
@@ -23,7 +24,7 @@
                 {% else %}
             <li class="nav-item mr-3">
                 {% endif %}
-                <a class="nav-link" href="{% url 'register' %}">Register</a>
+                <a class="nav-link" href="{% url 'register' %}"><i class="fas fa-user-plus"></i>&nbsp;Register</a>
             </li>
 
             {% if 'login' == request.path %}
@@ -34,7 +35,7 @@
                 <a class="nav-link" href="{% url 'login' %}">Login</a>
             </li>
 
-            {% if 'feedback' == request.path %}
+           {% if 'feedback' == request.path %}
             <li class="nav-item active mr-3">
                 {% else %}
             <li class="nav-item mr-3">

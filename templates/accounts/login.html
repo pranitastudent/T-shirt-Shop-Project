@@ -1,1 +1,30 @@
-<h1>Login</h1>
+{% extends 'base.html' %}
+{% load bootstrap_tags %}
+{% load static %}
+
+{% block content %}
+
+
+<section id="register">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <div class="card my-4">
+                    <div class="card-heading bg-dark text-white">
+                        <h4 class= "text-center p-3">Login</h4>
+                    </div>
+                    <div class="card-body">
+                        <form method="POST" class="main-form">
+                            {% csrf_token %} {{ login_form | as_bootstrap }}
+                            <button type="button submit" class="btn btn-outline-primary login">Login</button>                                                       
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+{% endblock %}
