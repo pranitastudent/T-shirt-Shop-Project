@@ -18,6 +18,9 @@
                         <form method="POST" class="main-form">
                             {% csrf_token %} {{ login_form | as_bootstrap }}
                             <button type="button submit" class="btn btn-outline-primary login">Login</button>                                                       
+                            <br>
+                            <br>
+                            <p class="password">If you have forgotten your password please<a href="{% url 'password_reset' %}"> Reset Password</a></p>
                         </form>
                     </div>
                 </div>
