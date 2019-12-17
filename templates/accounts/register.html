@@ -4,6 +4,19 @@
 {% load static%}
 
 {% block content %}
+<!-- Breadcrumb -->
+
+<section id="bcrumb">
+    <div class="container-fluid px-0">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="{% url 'index' %}"><i class="fas fa-home"></i>&nbsp;Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Register</li>
+            </ol>
+          </nav>
+    </div>
+</section>
+
 <section id="register">
     <div class="container">
         <div class="row">
@@ -16,7 +29,7 @@
                         <form method="POST">
                             {% csrf_token %}
                             {{ registration_form | as_bootstrap }}
-                            <input tupe ="submit" value="Register" class="btn btn-primary">
+                            <input type ="submit" value="Register" class="btn btn-primary">
                             </form>
                         <br>
                         <p class= "password">Already Registered? Click <a href="{% url 'login' %}">here.</a></p>

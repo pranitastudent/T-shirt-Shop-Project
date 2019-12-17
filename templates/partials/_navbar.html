@@ -22,12 +22,16 @@
 
                     
             {% if user.is_authenticated %}
-            <li class="nav-item mr-3">
-               
-                <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+            {% if 'logout' == request.path %}
+            <li class="nav-item active mr-3">
+                {% else %}
+                <li class="nav-item mr-3">
+                    {% endif %}               
+                <a class="nav-link" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i>&nbsp;Logout</a>
             </li> 
-
+            
             {% else %}
+
             {% if 'register' == request.path %}
             <li class="nav-item active mr-3">
                 {% else %}
@@ -41,12 +45,11 @@
                 {% else %}
             <li class="nav-item mr-3">
                 {% endif %}
-                <a class="nav-link" href="{% url 'login' %}">Login</a>
+                <a class="nav-link" href="{% url 'login' %}"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;Login</a>
             </li>
-
             {% endif %}
 
-           {% if 'feedback' == request.path %}
+             {% if 'feedback' == request.path %}
             <li class="nav-item active mr-3">
                 {% else %}
             <li class="nav-item mr-3">
@@ -67,7 +70,8 @@
 {% if messages %}
 <div class = "container-fluid">
     <div class="row">
-        <div class="col-md 12 col-xs-12 text-center alert alert-success mb-0">
+        <div class="col-md 12 col-xs-12 text-center alert alert-success alert-dismissible mb-0" role="alert">
+        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button>    
     {% for message in messages %}
     {{ message }}
     {% endfor %}
