@@ -3,22 +3,31 @@
 <nav class="navbar navbar-expand-lg navbar-dark  sticky-top">
 
     <a class="navbar-brand" href="{% url 'index' %}"><img src="{% static 'img/logo.png'%}" alt="logo"><h6 class="d-inline align-middle">&nbsp;Pranita's T-shirt Shop</h6></a>
-    <span class="username">User:{{user.username}}</span>   
+    <span class="username">User:&nbsp;{{user.username}}</span>   
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup">
          <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
          <ul class="navbar-nav ml-auto">
 
-<!-- Code adapated from Brad Traversy - Python Django to Dev Course (Nov 2018) -->
+<!-- (Active link code only!) Code adapated from Brad Traversy - Python Django to Dev Course (Nov 2018) -->
+            
             {% if '/' == request.path %}
             <li class="nav-item active mr-3">
                 {% else %}
             <li class="nav-item mr-3">
                 {% endif %}
                 <a class="nav-link" href="{% url 'index' %}">Home</a>
-            </li>
+            </li>     
 
+                    
+            {% if user.is_authenticated %}
+            <li class="nav-item mr-3">
+               
+                <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+            </li> 
+
+            {% else %}
             {% if 'register' == request.path %}
             <li class="nav-item active mr-3">
                 {% else %}
@@ -34,6 +43,8 @@
                 {% endif %}
                 <a class="nav-link" href="{% url 'login' %}">Login</a>
             </li>
+
+            {% endif %}
 
            {% if 'feedback' == request.path %}
             <li class="nav-item active mr-3">
@@ -53,5 +64,16 @@
            </ul>
      </div>
 </nav>
+{% if messages %}
+<div class = "container-fluid">
+    <div class="row">
+        <div class="col-md 12 col-xs-12 text-center alert alert-success mb-0">
+    {% for message in messages %}
+    {{ message }}
+    {% endfor %}
+</div>
+</div>
+</div>
+{% endif %}
 
 <!-- End of Adapted Code -->

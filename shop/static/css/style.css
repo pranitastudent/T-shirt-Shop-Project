@@ -34,6 +34,12 @@ body {
     color: #fff;
 }
 
+/* Alert */
+
+.alert {
+    margin-bottom:0!important;
+}
+
 /* Social Media Icons */
 
 .fab {
@@ -107,6 +113,13 @@ body {
     width: 500px;
 }
 
+/* Footer */
+
+#main-footer {
+    bottom:0;
+    top:0;
+     
+}
 
 
 
