@@ -2,7 +2,9 @@
 
 body {
     font-family: 'Manjari', sans-serif;
-    overflow-x: hidden;
+    
+ 
+   
     
 }
 
@@ -21,6 +23,8 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
+
 }
 
 /* Navbar */
@@ -98,9 +102,38 @@ body {
 }
 
 .carousel-indicators {
-    bottom: 190px;
+    bottom: 130px;
 }
 
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    border-radius: 100px;
+    background-color: #333;
+    
+  }
+
+  .carousel-control-prev {
+    
+    left: 132px!important;
+}
+
+.carousel-control-next {
+    
+    right: 142px!important;
+}
+
+  .card {
+      max-height:100%;
+      max-width:70%;
+      margin: auto;
+  }
+
+/* Username  */
+
+.username {
+    color: var(--secondary-color);
+    font-weight:400;
+}
 /* Lists */
 
 .days {
@@ -112,11 +145,29 @@ body {
 .map {
     height: 300px;
     width: 500px;
+    margin-bottom: 100px;
+}
+
+/* Buttons */
+
+.login-btn {
+   
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  width:10%
+  
+  
 }
 
 /* Footer */
 
-
+#main-footer {
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+}
 
 
 
@@ -136,7 +187,7 @@ body {
 
 /* Media Queries */
 
-@media (max-width: 768px) {
+@media (max-width: 766px) {
     #top-bar {
         text-align:center;
     }
@@ -159,5 +210,17 @@ body {
     }
     .carousel-indicators {
         bottom:194px;
+    }
+
+    .carousel-control-next {
+        right: 43px!important;
+    }
+
+    .carousel-control-previous {
+        right: 43px!important;
+    }
+
+    .login-btn {
+        width:50%;
     }
 }

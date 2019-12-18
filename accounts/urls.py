@@ -2,7 +2,7 @@ from django.urls import path
 from django.urls import path, reverse_lazy
 from django.contrib.auth import views as auth_views
 from accounts.views import login, register, logout
-from django.contrib.auth.views import PasswordResetForm, PasswordResetDoneView,PasswordResetView,PasswordResetConfirmView,PasswordResetCompleteView
+from django.contrib.auth.views import PasswordResetView
 from django.conf.urls import url
 
 urlpatterns = [

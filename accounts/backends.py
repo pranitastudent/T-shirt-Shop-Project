@@ -1,6 +1,5 @@
 from django.contrib.auth.models import User
 
-# Code taken from Code Institute lectures on email authentication
 
 class EmailAuth:
     """Authenticate a user by an exact match on the email and password"""
