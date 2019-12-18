@@ -14,61 +14,58 @@
          <ul class="navbar-nav ml-auto">
 
 <!-- (Active link code only!) Code adapated from Brad Traversy - Python Django to Dev Course (Nov 2018) -->
-            
-            {% if '/' == request.path %}
-            <li class="nav-item active mr-3">
-                {% else %}
-            <li class="nav-item mr-3">
-                {% endif %}
-                <a class="nav-link" href="{% url 'index' %}">Home</a>
-            </li>     
-
-                    
-            {% if user.is_authenticated %}
-            {% if 'logout' == request.path %}
-            <li class="nav-item active mr-3">
-                {% else %}
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <ul class="navbar-nav">
+                {% if '/' == request.path %}
+                <li class="nav-item active mr-3">
+                    {% else %}
                 <li class="nav-item mr-3">
-                    {% endif %}               
-                <a class="nav-link" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i>&nbsp;Logout</a>
-            </li> 
-            
-            {% else %}
+                    {% endif %}
+                    <a class="nav-link" href="{% url 'index' %}">Home</a>
+                </li>
+                  {% if user.is_authenticated %}
+                  {% if 'logout' in request.path %}
+                <li class="nav-item active mr-3">
+                    {% else %}
+                <li class="nav-item mr-3">
+                    {% endif %}
+                    <a class="nav-link" href="#">Logout</a>
+                </li>
+                 {% else%}
 
-            {% if 'register' == request.path %}
-            <li class="nav-item active mr-3">
-                {% else %}
-            <li class="nav-item mr-3">
-                {% endif %}
-                <a class="nav-link" href="{% url 'register' %}"><i class="fas fa-user-plus"></i>&nbsp;Register</a>
-            </li>
+                {% if 'register' in request.path %}
+                <li class="nav-item active mr-3">
+                    {% else %}
+                <li class="nav-item mr-3">
+                    {% endif %}
+                    <a class="nav-link" href="{% url 'register'%}">Register</a>
+                </li>
 
-            {% if 'login' == request.path %}
-            <li class="nav-item active mr-3">
-                {% else %}
-            <li class="nav-item mr-3">
-                {% endif %}
-                <a class="nav-link" href="{% url 'login' %}"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;Login</a>
-            </li>
-            {% endif %}
 
-             {% if 'feedback' == request.path %}
-            <li class="nav-item active mr-3">
-                {% else %}
-            <li class="nav-item mr-3">
+                {% if 'login' in request.path %}
+                <li class="nav-item active mr-3">
+                    {% else %}
+                <li class="nav-item mr-3">
+                    {% endif %}
+                    <a class="nav-link" href="{% url 'login'%}">Login</a>
+                </li>
                 {% endif %}
-                <a class="nav-link" href="#">Feedback</a>
-            </li>
 
-            {% if 'contact' == request.path %}
-            <li class="nav-item active mr-3">
-                {% else %}
-            <li class="nav-item mr-3">
-                {% endif %}
-                <a class="nav-link" href="#">Contact</a>
-            </li>          
-           </ul>
-     </div>
+                
+                {% if 'feedback' in request.path %}
+                <li class="nav-item active mr-3">
+                    {% else %}
+                <li class="nav-item mr-3">
+                    {% endif %}
+                    <a class="nav-link" href="#">Feedback</a>
+                </li>
+
+                
+              
+
+             </ul>
+        </div>
+    </div>
 </nav>
 {% if messages %}
 <div class = "container-fluid">
