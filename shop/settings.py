@@ -53,6 +53,17 @@ INSTALLED_APPS = [
     'ckeditor',
 ]
 
+DJRICHTEXTFIELD_CONFIG = {
+    'js': ['//tinymce.cachefly.net/4.1/tinymce.min.js'],
+    'init_template': 'djrichtextfield/init/tinymce.js',
+    'settings': {
+        'menubar': False,
+        'plugins': 'link image',
+        'toolbar': 'bold italic | link image | removeformat',
+        'width': 700
+    }
+}
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -154,3 +165,5 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'accounts.backends.EmailAuth'
 ]
+
+CKEDITOR_BASEPATH = "/'static'/ckeditor/ckeditor/"

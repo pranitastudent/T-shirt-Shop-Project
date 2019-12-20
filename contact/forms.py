@@ -1,4 +1,6 @@
 from django import forms
+from ckeditor.fields import RichTextFormField
+
 
 # Contact Form- Code adapted from (Django-2.2 Part-7 Django Contact Form with SMTP Email Backed Tutorial | By Creative web) 
 
@@ -11,9 +13,8 @@ class ContactForm(forms.Form):
         "placeholder":"Email Address",
         "rows":1,
     }))
-    content = forms.CharField(required = True, widget=forms.Textarea(attrs={
-        "rows":5,
-        "placeholder":" Message",
-    }))
+    
+    content = RichTextFormField()
+   
     
     

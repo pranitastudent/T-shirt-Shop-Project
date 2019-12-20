@@ -4,10 +4,9 @@ body {
     min-height:100%; 
     position:relative; 
     padding-bottom:80px;
-    font-family: 'Manjari', sans-serif;  
-  
-    
-}
+    font-family: 'Manjari', sans-serif;   
+    }
+
 html {
      height: 100%;
      }
