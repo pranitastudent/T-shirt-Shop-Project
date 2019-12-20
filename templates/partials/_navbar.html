@@ -60,6 +60,15 @@
                     <a class="nav-link" href="#">Feedback</a>
                 </li>
 
+                 
+                {% if 'contact' in request.path %}
+                <li class="nav-item active mr-3">
+                    {% else %}
+                <li class="nav-item mr-3">
+                    {% endif %}
+                    <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                </li>
+
                 
               
 

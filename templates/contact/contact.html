@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load bootstrap_tags %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-xs-12 mx-auto">
+            <h1 class = "text-center contact-heading"><strong>Contact Us</strong></h1>
+            <form method="post">
+                {% csrf_token %}
+                {{ form| as_bootstrap }}
+                <br>
+                <button type= "submit" class= "btn btn-contact">Submit</button>
+            </form>
+        </div>
+     </div>
+</div>
+
+{% endblock %}
