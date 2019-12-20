@@ -21,23 +21,22 @@ def contact(request):
             context = {
                 'contact_name' : contact_name,
                 'contact_email' : contact_email,
-                'contact_content' : contact_content,
+                'contact_content': contact_content,
             }
             
             content = template.render(context)
         
-        email = EmailMessage(
+            email = EmailMessage(
             "New contact form email",
             content,
             "Pranita's T-shirt Shop" + '',
             ['pranitacoder12@gmail.com'],
             headers = { 'Reply To': contact_email }
             
-        )
+            )
             
-        email.send()
+            email.send()
         messages.success(request, "You email has been successfully sent!")
-            
-      
-    return render(request, 'contact/contact.html', {'contactform':Contact_Form })   
+                  
+    return render(request, 'contact/contact.html', {'contact_form':Contact_Form })   
 
