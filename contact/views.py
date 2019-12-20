@@ -37,9 +37,10 @@ def contact(request):
             email.send()
             messages.success(request, "You email has been successfully sent!") 
         
-            return render (request, 'index')
+            return render (request, 'home/index.html')
         else:
-            messages.error(request, "Error")      
+            messages.error(request, "Error")
+            print(form.errors)      
 
     return render(request, 'contact/contact.html', {'contact_form':Contact_Form })
 
