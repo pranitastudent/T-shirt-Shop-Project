@@ -114,21 +114,12 @@ html {
     
   }
 
-  .carousel-control-prev {
-    
-    left: 132px!important;
-}
-
-.carousel-control-next {
-    
-    right: 142px!important;
-}
-
-  .card {
+.card {
       max-height:100%;
       max-width:70%;
       margin: auto;
   }
+
 
 /* Username  */
 
@@ -204,16 +195,10 @@ html {
         font-size: 4.5em;
     }
     .carousel-indicators {
-        bottom:194px;
+        bottom:164px;
     }
 
-    .carousel-control-next {
-        right: 43px!important;
-    }
-
-    .carousel-control-previous {
-        right: 43px!important;
-    }
+   
 
     .login-btn {
         width:50%;

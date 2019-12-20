@@ -39,7 +39,7 @@ def contact(request):
         
             return render (request, 'home/index.html')
         else:
-            messages.error(request, "Error")
+            messages.error(request, "Please check your email is correct")
             print(form.errors)      
 
     return render(request, 'contact/contact.html', {'contact_form':Contact_Form })
