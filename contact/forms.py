@@ -11,7 +11,7 @@ class ContactForm(forms.Form):
         "placeholder":"Email Address",
         "rows":1,
     }))
-    message = forms.CharField(required = True, widget=forms.Textarea(attrs={
+    content = forms.CharField(required = True, widget=forms.Textarea(attrs={
         "rows":5,
         "placeholder":" Message",
     }))

@@ -1,13 +1,9 @@
   
-Contact Name:
+Contact Name: 
 {{ contact_name }}
-
-
 
 Email:
 {{ contact_email }}
 
-
-Contact Name:
-
+Content:
 {{ contact_content }}
