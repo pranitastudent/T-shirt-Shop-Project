@@ -1,7 +1,9 @@
 from django.shortcuts import render, render_to_response 
+from django.contrib import  messages
 from django.core.mail import EmailMessage
 from django.template.loader import get_template
 from .forms import ContactForm
+
 
 # Contact Form- Code adapted from (Django-2.2 Part-7 Django Contact Form with SMTP Email Backed Tutorial | By Creative web) 
 
@@ -34,8 +36,9 @@ def contact(request):
         )
             
         email.send()
+        messages.success(request, "Your email has been successfully sent and we will reply as soon as possible!")
             
-        return render_to_response('success.html')
-    return render(request, 'contact.html', {'form':Contact_Form })   
+        
+    return render(request, 'contact/contact.html', {'form':Contact_Form })   
     
 
