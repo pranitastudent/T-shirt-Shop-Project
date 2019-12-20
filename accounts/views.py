@@ -22,7 +22,7 @@ def login(request):
         login_form = UserLoginForm(request.POST)
 
         if login_form.is_valid():
-            user = auth.authenticate(username=request.POST['username'],
+            user = auth.authenticate(request.POST['username_or_email'],
                                     password=request.POST['password'])
             
             if user:
