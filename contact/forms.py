@@ -4,16 +4,16 @@ from django import forms
 
 class ContactForm(forms.Form):
     contact_name = forms.CharField(required=True, widget=forms.Textarea(attrs={
-        "placeholder":" Please enter your name",
+        "placeholder":" Full name",
         "rows":1,
     }))
     contact_email = forms.EmailField(required=True, widget=forms.Textarea(attrs={
-        "placeholder":"Please enter your email address",
+        "placeholder":"Email Address",
         "rows":1,
     }))
     message = forms.CharField(required = True, widget=forms.Textarea(attrs={
         "rows":5,
-        "placeholder":"Please enter your message",
+        "placeholder":" Message",
     }))
     
     

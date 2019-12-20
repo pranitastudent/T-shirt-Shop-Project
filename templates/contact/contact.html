@@ -4,26 +4,26 @@
 {% block content %}
 
 <section id="contact">
-
-<div class="container">
-    <div class="row">
-        <div class="col-sm-6 col-xs-12 mx-auto">
-            <div class="card-heading bg-dark text-white">
-                <h4 class= "text-center p-3">Contact</h4>
-            </div>
-
-            <div class="card-body">
-            <form method="POST">
-                {% csrf_token %}
-                {{ contact_form| as_bootstrap }}
-                <br>
-                <button type= "submit" class= "btn btn-success">Submit</button>
-            </form>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <div class="card my-4">
+                    <div class="card-heading bg-dark text-white">
+                        <h4 class= "text-center p-3">Contact</h4>
+                    </div>
+                    <div class="card-body">
+                        <form method="POST">
+                            {% csrf_token %}
+                            {{ contact_form| as_bootstrap }}
+                            <br>
+                            <button type= "submit" class= "btn btn-success">Submit</button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
-     </div>
-</div>
-
+    </div>
 </section>
+
 
 {% endblock %}

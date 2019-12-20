@@ -17,7 +17,7 @@ def contact(request):
             contact_email = request.POST.get('contact_email')
             contact_content = request.POST.get('content')
 
-            template = get_template('contact_form.txt')
+            template = get_template('contact/contact_form.txt')
             context = {
                 'contact_name' : contact_name,
                 'contact_email' : contact_email,
@@ -36,9 +36,8 @@ def contact(request):
         )
             
         email.send()
-        messages.success(request, "Your email has been successfully sent and we will reply as soon as possible!")
+        messages.success(request, "You email has been successfully sent!")
             
-        
-    return render(request, 'contact/contact.html', {'form':Contact_Form })   
-    
+      
+    return render(request, 'contact/contact.html', {'contactform':Contact_Form })   
 

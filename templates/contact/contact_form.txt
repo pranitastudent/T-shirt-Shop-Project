@@ -2,13 +2,12 @@
 Contact Name:
 {{ contact_name }}
 
-<br>
+
 
 Email:
 {{ contact_email }}
 
-<br>
 
-Content:
+Contact Name:
 
-{{ contact_message }}
+{{ contact_content }}
