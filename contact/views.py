@@ -36,8 +36,10 @@ def contact(request):
 
             email.send()
             messages.success(request, "You email has been successfully sent!") 
+        if form.is_valid():
+            return render (request, 'index')
         else:
-            print ("form is invalid")       
+            messages.error(request, "Error")      
 
     return render(request, 'contact/contact.html', {'contact_form':Contact_Form })
 
