@@ -11,10 +11,11 @@ class ContactForm(forms.Form):
     }))
     contact_email = forms.EmailField(required=True, widget=forms.Textarea(attrs={
         "placeholder":"Email Address",
-        "rows":1,
-    }))
+        'rows': 1, 
+        }))
     
-    content = RichTextFormField()
+    content = RichTextFormField(required=True, widget=forms.Textarea(attrs = {'cols': 10, 
+        'rows': 20}))
    
     
     

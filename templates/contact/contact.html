@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 {% load bootstrap_tags %}
 
 {% block content %}
@@ -21,16 +22,18 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 mx-auto">
-                <div class="card my-4">
+                <div class="card form-body my-4">
                     <div class="card-heading bg-dark text-white">
                         <h4 class= "text-center p-3">Contact</h4>
                     </div>
                     <div class="card-body">
                         <form method="POST">
                             {% csrf_token %}
-                            {{ form.media }}
+                           <div class="editor">
                             {{ contact_form| as_bootstrap }}
+                            {{ form.media }}
                             <br>
+                        </div>
                             <button type= "submit" class= "btn btn-success">Submit</button>
                         </form>
                     </div>

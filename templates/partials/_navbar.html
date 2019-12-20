@@ -21,7 +21,7 @@
                     {% else %}
                 <li class="nav-item mr-3">
                     {% endif %}
-                    <a class="nav-link" href="{% url 'index' %}">Home</a>
+                    <a class="nav-link" href="{% url 'index' %}"><i class="fas fa-home"></i>&nbsp;Home</a>
                 </li>
                   {% if user.is_authenticated %}
                   {% if 'logout' in request.path %}
@@ -29,7 +29,7 @@
                     {% else %}
                 <li class="nav-item mr-3">
                     {% endif %}
-                    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                    <a class="nav-link" href="{% url 'logout' %}"> <i class="fas fa-sign-out-alt"></i>&nbsp;Logout</a>
                 </li>
                  {% else%}
 
@@ -38,7 +38,7 @@
                     {% else %}
                 <li class="nav-item mr-3">
                     {% endif %}
-                    <a class="nav-link" href="{% url 'register'%}">Register</a>
+                    <a class="nav-link" href="{% url 'register'%}"><i class="fas fa-user-plus"></i>&nbsp;Register</a>
                 </li>
 
 
@@ -47,7 +47,7 @@
                     {% else %}
                 <li class="nav-item mr-3">
                     {% endif %}
-                    <a class="nav-link" href="{% url 'login'%}">Login</a>
+                    <a class="nav-link" href="{% url 'login'%}"><i class="fas fa-sign-in-alt"></i>&nbsp;Login</a>
                 </li>
                 {% endif %}
 
@@ -67,6 +67,14 @@
                 <li class="nav-item mr-3">
                     {% endif %}
                     <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                </li>
+
+                {% if 'cart' in request.path %}
+                <li class="nav-item active mr-3">
+                    {% else %}
+                <li class="nav-item mr-3">
+                    {% endif %}
+                    <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i>&nbsp;Cart</a>
                 </li>
 
                 

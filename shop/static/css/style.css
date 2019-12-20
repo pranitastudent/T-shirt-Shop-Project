@@ -120,7 +120,11 @@ html {
       margin: auto;
   }
 
-
+  /*  Card styles */
+.form-body {
+    width:100%;
+}
+ 
 /* Username  */
 
 .username {
