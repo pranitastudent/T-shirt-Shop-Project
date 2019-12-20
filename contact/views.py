@@ -36,7 +36,7 @@ def contact(request):
 
             email.send()
             messages.success(request, "You email has been successfully sent!") 
-        if form.is_valid():
+        
             return render (request, 'index')
         else:
             messages.error(request, "Error")      
