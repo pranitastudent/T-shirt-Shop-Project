@@ -125,6 +125,19 @@ html {
     width:100%;
 }
  
+.carousel-inner {
+    text-align:center;
+}
+
+.card-1 { 
+    float: left;
+ }
+.card-2 { 
+    display: inline;
+ }
+.card-3 { 
+    float: right;
+ }
 /* Username  */
 
 .username {

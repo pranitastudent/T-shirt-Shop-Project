@@ -44,13 +44,15 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_forms_bootstrap',
+    'ckeditor',
+    
     # My own custom apps
     'home',
     'accounts',
     'feedback',
     'products',
     'contact',
-    'ckeditor',
+    
 ]
 
 DJRICHTEXTFIELD_CONFIG = {
@@ -167,3 +169,10 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 CKEDITOR_BASEPATH = "/'static'/ckeditor/ckeditor/"
+
+CKEDITOR_CONFIGS = {
+    'awesome_ckeditor': {
+        'height': 300,
+        'width': 750,
+    },
+}

@@ -14,7 +14,7 @@ class ContactForm(forms.Form):
         'rows': 1, 
         }))
     
-    content = RichTextFormField(required=True, widget=forms.Textarea(attrs = {'cols': 10, 
+    content = RichTextFormField(config_name='awesome_ckeditor', required=True, widget=forms.Textarea(attrs = {'cols': 10, 
         'rows': 20}))
    
     
