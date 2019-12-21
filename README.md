@@ -45,4 +45,6 @@ brief indicates to build an eccomerce site. CI tested through travis integration
 
 ## Credits
 
+https://getbootstrap.com/docs/4.4/examples/album/
+
 ## Acknowledgements

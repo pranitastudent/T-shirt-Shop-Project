@@ -1,35 +1,39 @@
 {% extends 'base.html'%}
 {% load static %}
 {% block content%}
-<section>
+
     <!-- search fields -->
-</section>
-
-{% for product in products %}
-
-<section id="products py-3">
-    <div class="container">
-        <div class="row d-flex justify-content-start">
-         <div class="col-md-4 col-xs-12 my-4 align-items-center justify-content-center ">
-            <div class="card">
-                <img class="card-img-top"src="{{product.image.url}}"  alt="Card image">
-                <div class="card-body">
-                  <h4 class="card-title">{{ product.product_name}}</h4>
-                  <p class="card-text">Price: <i class="fas fa-pound-sign"></i> {{ product.price }}</p>
-                  <p class="card-text"> Gender: {{ product.category }}</p>
-                  <div class="input-group">
-                      <input class="add-checkout text-center" name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Qty">
-                       <span class="input-btn">
-                           <button class = "btn btn-dark rounded-0 btn-sm" type="submit">Add to Cart</button>
-                       </span>
-                    </div>
-                </div>
+    <section>
+        <h1 class="text-center">SEARCH</h1>
+    </section>
+   <!-- search fields -->
+   <!-- Please not the template for products below is taken from https://getbootstrap.com/docs/4.4/examples/album/ - Bootstrap 4 album example -->
+  
+   <div class="album py-5 bg-light">
+      <div class="container">
+  
+        <div class="row">
+            {% for product in products %}
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+              <img class="prd card-img-top" src="{{ product.image.url }}"  alt="">
+              <div class="card-body">
+                <h3 class="card-text">{{ product.product_name}}</h3>
+                <p class="card-text"><strong><i class="fas fa-pound-sign"></i>&nbsp;{{ product.price }}</strong></p>
+                <p class="card-text">Category: {{ product.category}}</p>
+                <div class="input-group">
+                    <input class="add-checkout text-center" name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Qty">
+                     <span class="input-btn">
+                         <button class = "btn btn-dark rounded-0 btn-sm" type="submit">Add to Cart</button>
+                     </span>
+                  </div>
               </div>
-         </div>
-        </div>
-    </div>
-</section>
-{% endfor %}
+            </div>
+          </div>
+    
+          {% endfor %}
+          
+
 
 
 

@@ -37,9 +37,7 @@ html {
 .navbar {
     background: #808080;
     opacity: 0.9;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    
+       
 }
 
 
@@ -133,22 +131,11 @@ html {
     text-align:center;
 }
 
-.card-1 { 
-    float: left;
- }
-.card-2 { 
-    display: inline;
- }
-.card-3 { 
-    float: right;
- }
+
 
 /* Products */
-.main {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-}
+
+
 
 /* Username  */
 
@@ -187,7 +174,7 @@ html {
 #main-footer { 
     position: absolute; 
     left: 0 ; right: 0; bottom: 0; 
-    height:80px;
+    height:90px;
 }
 
 
@@ -201,6 +188,20 @@ html {
 
 
 /* Media Queries */
+
+@media (min-width: 700px) {
+    .prd  {
+        width: 100%;
+        height: 30vh;
+        object-fit: cover;
+    }
+}
+
+@media(min-width:768px) {
+    .map {
+        width:351px;
+    }
+}
 
 @media (max-width: 766px) {
     #top-bar {
