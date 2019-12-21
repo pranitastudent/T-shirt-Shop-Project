@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_forms_bootstrap',
     'ckeditor',
-    'ckeditor_uploader',
+   
    
     
     # My own custom apps
@@ -175,19 +175,16 @@ AUTHENTICATION_BACKENDS = [
 
 # CKEDITOR CONFIGS
 
+CKEDITOR_BASEPATH = "/'static'/ckeditor/ckeditor/"
 
-CKEDITOR_RESTRICT_BY_USER=True
-CKEDITOR_UPLOAD_PREFIX = "http://media.lawrence.com/media/ckuploads/"
-
-MEDIA_URL = "image_upload/"
-MEDIA_ROOT = os.path.join(BASE_DIR, "image_upload")
-
-CKEDITOR_UPLOAD_PATH = "ckeditor"
 CKEDITOR_IMAGE_BACKEND = "pillow"
-CKEDITOR_UPLOAD_SLUGIFY_FILENAME = False
+CKEDITOR_UPLOAD_SLUGIFY_FILENAME = True
+CKEDITOR_UPLOAD_PATH = "image_upload/"
 
 CKEDITOR_CONFIGS = {
     'awesome_ckeditor': {
+        'height': 300,
+        'width': 750,
         'toolbar':'Custom',
         'height': 'auto',
         'width': 'auto',
@@ -195,9 +192,10 @@ CKEDITOR_CONFIGS = {
             ['Styles', 'Format', 'Bold', 'Italic', 'Underline', 'Strike', 'SpellChecker', 'Undo', 'Redo'],
             ['Table', 'HorizontalRule'],
             ['TextColor', 'BGColor'],
-            ['Smiley', 'SpecialChar', 'Image',],
+            ['Smiley', 'SpecialChar', 'Image'],
         ]
     },
-}
+} 
+
 
 

@@ -1,0 +1,32 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content%}
+<section>
+    <!-- search fields -->
+</section>
+
+<section id="products py-3">
+    <div class="container">
+        <div class="row">
+         <div class="col-md-4 col-xs-12 my-4">
+            <div class="card">
+                <img class="card-img-top"src="{% static 'img/slideimage1.jpg'%}" alt="Card image">
+                <div class="card-body">
+                  <h4 class="card-title">Product Name</h4>
+                  <p class="card-text">Price: £9.99</p>
+                  <div class="input-group">
+                      <input class="add-checkout text-center" name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Qty">
+                       <span class="input-btn">
+                           <button class = "btn btn-dark rounded-0 btn-sm" type="submit">Add to Cart</button>
+                       </span>
+                    </div>
+                </div>
+              </div>
+         </div>
+        </div>
+    </div>
+</section>
+
+
+
+{% endblock %}
