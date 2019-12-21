@@ -1,5 +1,5 @@
 from django import forms
-from ckeditor.fields import RichTextFormField
+from ckeditor_uploader import RichTextUploadingField
 
 
 # Contact Form- Code adapted from (Django-2.2 Part-7 Django Contact Form with SMTP Email Backed Tutorial | By Creative web) 
@@ -14,7 +14,7 @@ class ContactForm(forms.Form):
         'rows': 1, 
         }))
     
-    content = RichTextFormField(config_name='awesome_ckeditor', required=True, widget=forms.Textarea(attrs = {'cols': 10, 
+    content = RichTextUploadingField(required=True, widget=forms.Textarea(attrs = {'cols': 10, 
         'rows': 20}))
    
     

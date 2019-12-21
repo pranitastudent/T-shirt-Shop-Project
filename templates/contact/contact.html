@@ -29,8 +29,7 @@
                     <div class="card-body">
                         <form method="POST">
                             {% csrf_token %}
-                           {{ contact_form| as_bootstrap }}
-                                                              
+                           {{ contact_form| as_bootstrap }}                                                              
                             <button type= "submit" class= "btn btn-success">Submit</button>
                         </form>
                     </div>

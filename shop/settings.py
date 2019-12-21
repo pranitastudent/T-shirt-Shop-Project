@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_forms_bootstrap',
     'ckeditor',
-   
+    'ckeditor_uploader',
    
     
     # My own custom apps
@@ -152,6 +152,9 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'shop/static')
 ]
 
+MEDIA_URL = "image_upload/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "image_upload")
+
 MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
@@ -172,7 +175,16 @@ AUTHENTICATION_BACKENDS = [
 
 # CKEDITOR CONFIGS
 
-CKEDITOR_BASEPATH = "/'static'/ckeditor/ckeditor/"
+
+CKEDITOR_RESTRICT_BY_USER=True
+CKEDITOR_UPLOAD_PREFIX = "http://media.lawrence.com/media/ckuploads/"
+
+MEDIA_URL = "image_upload/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "image_upload")
+
+CKEDITOR_UPLOAD_PATH = "ckeditor"
+CKEDITOR_IMAGE_BACKEND = "pillow"
+CKEDITOR_UPLOAD_SLUGIFY_FILENAME = False
 
 CKEDITOR_CONFIGS = {
     'awesome_ckeditor': {
@@ -183,7 +195,7 @@ CKEDITOR_CONFIGS = {
             ['Styles', 'Format', 'Bold', 'Italic', 'Underline', 'Strike', 'SpellChecker', 'Undo', 'Redo'],
             ['Table', 'HorizontalRule'],
             ['TextColor', 'BGColor'],
-            ['Smiley', 'SpecialChar'],
+            ['Smiley', 'SpecialChar', 'Image',],
         ]
     },
 }
