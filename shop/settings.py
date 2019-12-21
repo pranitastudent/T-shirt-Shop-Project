@@ -152,8 +152,10 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'shop/static')
 ]
 
-MEDIA_URL = "image_upload/"
-MEDIA_ROOT = os.path.join(BASE_DIR, "image_upload")
+#  Media Folder Settings
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 
 MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
 
