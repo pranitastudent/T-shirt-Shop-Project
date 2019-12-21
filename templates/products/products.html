@@ -5,6 +5,8 @@
     <!-- search fields -->
 </section>
 
+{% for products in products %}
+
 <section id="products py-3">
     <div class="container">
         <div class="row">
@@ -12,8 +14,9 @@
             <div class="card">
                 <img class="card-img-top"src="{% static 'img/slideimage1.jpg'%}" alt="Card image">
                 <div class="card-body">
-                  <h4 class="card-title">Product Name</h4>
-                  <p class="card-text">Price: £9.99</p>
+                  <h4 class="card-title">{{ product.product_name}}</h4>
+                  <p class="card-text">Price: <i class="fas fa-pound-sign"></i> {{ product.price }}</p>
+                  <p class="card-text"> Gender: {{ product.category }}</p>
                   <div class="input-group">
                       <input class="add-checkout text-center" name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Qty">
                        <span class="input-btn">
@@ -26,6 +29,7 @@
         </div>
     </div>
 </section>
+{% endfor %}
 
 
 
