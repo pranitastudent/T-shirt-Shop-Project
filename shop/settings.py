@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_forms_bootstrap',
     'ckeditor',
+   
+   
     
     # My own custom apps
     'home',
@@ -168,11 +170,22 @@ AUTHENTICATION_BACKENDS = [
     'accounts.backends.EmailAuth'
 ]
 
+# CKEDITOR CONFIGS
+
 CKEDITOR_BASEPATH = "/'static'/ckeditor/ckeditor/"
 
 CKEDITOR_CONFIGS = {
     'awesome_ckeditor': {
-        'height': 300,
-        'width': 750,
+        'toolbar':'Custom',
+        'height': 'auto',
+        'width': 'auto',
+        'toolbar_Custom': [
+            ['Styles', 'Format', 'Bold', 'Italic', 'Underline', 'Strike', 'SpellChecker', 'Undo', 'Redo'],
+            ['Table', 'HorizontalRule'],
+            ['TextColor', 'BGColor'],
+            ['Smiley', 'SpecialChar'],
+        ]
     },
 }
+
+
