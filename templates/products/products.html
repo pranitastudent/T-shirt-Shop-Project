@@ -4,7 +4,7 @@
 
     <!-- search fields -->
     <section>
-        <h1 class="text-center">SEARCH</h1>
+        <form action=""></form>
     </section>
    <!-- search fields -->
    <!-- Please not the template for products below is taken from https://getbootstrap.com/docs/4.4/examples/album/ - Bootstrap 4 album example -->
@@ -16,7 +16,7 @@
             {% for product in products %}
           <div class="col-md-4">
             <div class="card mb-4 shadow-sm">
-              <img class="prd card-img-top" src="{{ product.image.url }}"  alt="">
+              <img class="prd card-img-top img-fluid" src="{{ product.image.url }}"  alt="" data-lightbox="image-1">
               <div class="card-body">
                 <h3 class="card-text">{{ product.product_name}}</h3>
                 <p class="card-text"><strong><i class="fas fa-pound-sign"></i>&nbsp;{{ product.price }}</strong></p>
@@ -29,9 +29,35 @@
                   </div>
               </div>
             </div>
-          </div>
+           
+          </div>        
     
           {% endfor %}
+
+          
+          <!-- Pagination template taken from Bootstrap 4 -->
+        
+          <nav aria-label="Page navigation example text-center">
+            <ul class="pagination text-center">
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                  <span class="sr-only">Previous</span>
+                </a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+
+          <!-- End of Pagination -->
           
 
 
