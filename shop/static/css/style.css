@@ -4,7 +4,8 @@ body {
     min-height:100%; 
     position:relative; 
     padding-bottom:80px;
-    font-family: 'Manjari', sans-serif;  
+    font-family: 'Manjari', sans-serif; 
+    
    
     }
 
@@ -37,6 +38,9 @@ html {
 .navbar {
     background: #808080;
     opacity: 0.9;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
        
 }
 
@@ -131,12 +135,18 @@ html {
     text-align:center;
 }
 
+/* Pagination */
 
+.pagination > li > a
+{
+    background-color: white;
+    color: var(--secondary-color);
+}
 
-/* Products */
-
-
-
+.page-item.active .page-link {
+    background-color: var(--dark-color);
+    border-color: var(--dark-color);
+}
 /* Username  */
 
 .username {
@@ -234,3 +244,4 @@ html {
         width:50%;
     }
 }
+
