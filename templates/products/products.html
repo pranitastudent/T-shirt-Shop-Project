@@ -3,17 +3,17 @@
 {% load humanize %}
 {% block content%}
 
-    <!-- search fields -->
+    <!-- Search Fields -->
     <section id ="search">
       <div class="container">
         <div class="row text-center">
           <div class="col-md-12 mx-auto">
-            <form action="">
+            <form action="{% url 'search' %}" method="GET">
               <div class="form-row">
                 <div class="input-group col-md-6 mx-auto mt-3">
-                  <input type="text" class="form-control" placeholder="Search (Women's, black)" value="Search">
+                  <input type="text" name="q" class="form-control" placeholder="Search (Women's, black)" value="Search">
                   <span class="input-group-btn">
-                       <button class="btn btn-dark ml-1" type="button">Search</button>
+                   <button class="btn btn-dark ml-1" type="button">Search</button>
                   </span>
                </div>
               </div>

@@ -12,6 +12,7 @@ urlpatterns = [
     path('products/', include('products.urls')),
     path('admin/', admin.site.urls),
     path('djrichtextfield/', include('djrichtextfield.urls')),
+    path('search/', include('search.urls')),
   
 
   ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
