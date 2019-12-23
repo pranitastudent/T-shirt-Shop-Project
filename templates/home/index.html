@@ -23,68 +23,52 @@
 	</div>
 </section>
 
-<!-- Carousel -->
-<section id="carousel" class="py-5">
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-12 col-xs-12 mx-auto">
-				<h3 class="display-4  mt-1 pt-1 text-center"> Top T-shirts</h3>
-				<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-					<ol class="carousel-indicators">
-						<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-						<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-						<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-					</ol>
-					<div class="carousel-inner">
-						<div class="carousel-item active col-sm-12 ">
-							<div class="card">
-								<img class="card-img-top" src="{% static 'img/slideimage1.jpg'%}" 
-									alt="First slide">
-
-								<div class="card-body text-center">
-									<h4 class="card-title">January 2020 Best Selling!</h4>
-
-									<a class="btn btn-outline-success btn-lg" href="{% url 'products' %}">Shop Now</a>
-								</div>
-							</div>
-						</div>
-						
-						<div class="carousel-item">
-							<div class="card" >
-								<img class="card-img-top"  src="{% static 'img/slideimage2.jpg'%}"
-									alt="Second slide">
-								<div class="card-body text-center">
-									<h4 class="card-title">January 2020 Best Selling!</h4>
-									<a class="btn btn-outline-success btn-lg" href="{% url 'products' %}">Shop Now</a>
-								</div>
-							</div>
-						</div>
-						<div class="carousel-item">
-							<div class="card">
-								<img class="card-img-top" src="{% static 'img/slideimage3.jpg'%}" 
-									alt="Third slide">
-								<div class="card-body text-center">
-									<h4 class="card-title">January 2020 Best Selling!</h4>
-									<a class="btn btn-outline-success btn-lg" href="{% url 'products' %}">Shop Now</a>
-								</div>
-							</div>
-						</div>
-												
-					</div>
-					<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-						<span class="sr-only">Previous</span>
-					</a>
-					<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-						<span class="carousel-control-next-icon" aria-hidden="true"></span>
-						<span class="sr-only">Next</span>
-					</a>
-
-				</div>
+<!-- slides -->
+<section id="products" class="py-5">
+    <div class="container border">
+      <h2 class="text-center my-3"><strong>Top T-shirts</strong></h2>
+      <div class="row">
+            <div class="col-md-6 col-lg-4 mb-4">
+              <div class="card">
+                <img class="card-img-top" src="{% static 'img/slideimage1.jpg' %}" alt="">
+                <div class="card-body">
+                  <div class="listing-heading text-center">
+                    <h4 class="text-dark">January Special!</h4>
+                    <p>
+                    </div>              
+                  
+                </div>
+              </div>
 			</div>
+			<div class="col-md-6 col-lg-4 mb-4">
+				<div class="card">
+				<img class="card-img-top" src="{% static 'img/slideimage2.jpg' %}" alt="">
+				  <div class="card-body">
+					<div class="listing-heading text-center">
+					  <h4 class="text-dark">January Special!</h4>
+					  <p>
+					  </div>			
+				
+				  </div>
+				</div>
+			  </div>
+			  <div class="col-md-6 col-lg-4 mb-4">
+				<div class="card">
+				  <img class="card-img-top" src="{% static 'img/slideimage3.jpg' %}" alt="">
+				  <div class="card-body">
+					<div class="listing-heading text-center">
+					  <h4 class="text-dark">January Special!</h4>
+					  <p>
+					  </div>				
+					
+				  </div>
+				</div>
+			  </div>
 		</div>
-	</div>
-</section>
+		<a href="{% url 'products' %}" class="btn btn-success text-center btn-block w-50 mx-auto mb-3">Shop Now</a>
+    </div>
+  </section>
+	  
 <!-- Shopping Opening Times  -->
 
 <section id="shop">
