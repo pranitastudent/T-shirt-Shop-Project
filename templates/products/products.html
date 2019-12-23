@@ -1,10 +1,27 @@
 {% extends 'base.html'%}
 {% load static %}
+{% load humanize %}
 {% block content%}
 
     <!-- search fields -->
-    <section>
-        <h1>search</h1>
+    <section id ="search">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-md-12 mx-auto">
+            <form action="">
+              <div class="form-row">
+                <div class="input-group col-md-6 mx-auto mt-3">
+                  <input type="text" class="form-control" placeholder="Search (Women's, black)" value="Search">
+                  <span class="input-group-btn">
+                       <button class="btn btn-dark ml-1" type="button">Search</button>
+                  </span>
+               </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+       
     </section>
    <!-- search fields -->
    <!-- Please not the template for products below is taken from https://getbootstrap.com/docs/4.4/examples/album/ - Bootstrap 4 album example -->
