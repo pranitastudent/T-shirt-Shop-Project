@@ -2,7 +2,7 @@
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark  sticky-top">
 
-    <a class="navbar-brand" href="{% url 'index' %}"><img src="{% static 'img/logo.png'%}" alt="logo"><h6 class="d-inline align-middle">&nbsp;Pranita's T-shirt Shop</h6></a>
+    <a class="navbar-brand" href="{% url 'index' %}"><img src="{% static 'img/logo.png'%}" alt="logo"><h6 class="d-inline align-middle">&nbsp;PRANITA'S T-SHIRT</h6></a>
               
     {% if user.is_authenticated %}
     <span class="username"><strong>User:&nbsp;{{user.username}}</strong></span>   
@@ -15,13 +15,13 @@
 
 <!-- (Active link code only!) Code adapated from Brad Traversy - Python Django to Dev Course (Nov 2018) -->
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav mx-auto">
                 {% if '/' == request.path %}
                 <li class="nav-item active mr-3">
                     {% else %}
                 <li class="nav-item mr-3">
                     {% endif %}
-                    <a class="nav-link" href="{% url 'index' %}"><i class="fas fa-home"></i>&nbsp;Home</a>
+                    <a class="nav-link" href="{% url 'index' %}"><i class="fas fa-home"></i>&nbsp;HOME</a>
                 </li>
                   {% if user.is_authenticated %}
                   {% if 'logout' in request.path %}
@@ -29,7 +29,7 @@
                     {% else %}
                 <li class="nav-item mr-3">
                     {% endif %}
-                    <a class="nav-link" href="{% url 'logout' %}"> <i class="fas fa-sign-out-alt"></i>&nbsp;Logout</a>
+                    <a class="nav-link" href="{% url 'logout' %}"> <i class="fas fa-sign-out-alt"></i>&nbsp;LOGOUT</a>
                 </li>
                  {% else%}
 
@@ -38,7 +38,7 @@
                     {% else %}
                 <li class="nav-item mr-3">
                     {% endif %}
-                    <a class="nav-link" href="{% url 'register'%}"><i class="fas fa-user-plus"></i>&nbsp;Register</a>
+                    <a class="nav-link" href="{% url 'register'%}"><i class="fas fa-user-plus"></i>&nbsp;REGISTER</a>
                 </li>
 
 
@@ -47,7 +47,7 @@
                     {% else %}
                 <li class="nav-item mr-3">
                     {% endif %}
-                    <a class="nav-link" href="{% url 'login'%}"><i class="fas fa-sign-in-alt"></i>&nbsp;Login</a>
+                    <a class="nav-link" href="{% url 'login'%}"><i class="fas fa-sign-in-alt"></i>&nbsp;LOGIN</a>
                 </li>
                 {% endif %}
 
@@ -57,7 +57,7 @@
                     {% else %}
                 <li class="nav-item mr-3">
                     {% endif %}
-                    <a class="nav-link" href="#">Feedback</a>
+                    <a class="nav-link" href="#">FEEDBACK</a>
                 </li>
 
                 {% if 'products' in request.path %}
@@ -65,7 +65,7 @@
                     {% else %}
                 <li class="nav-item mr-3">
                     {% endif %}
-                    <a class="nav-link" href="{% url 'products' %}"><i class="fas fa-store"></i>&nbsp;Products</a>
+                    <a class="nav-link" href="{% url 'products' %}"><i class="fas fa-store"></i>&nbsp;PRODUCTS</a>
                 </li>
 
                  
@@ -74,7 +74,7 @@
                     {% else %}
                 <li class="nav-item mr-3">
                     {% endif %}
-                    <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                    <a class="nav-link" href="{% url 'contact' %}">CONTACT</a>
                 </li>
 
                 {% if 'cart' in request.path %}
@@ -82,10 +82,8 @@
                     {% else %}
                 <li class="nav-item mr-3">
                     {% endif %}
-                    <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i>&nbsp;Cart</a>
-                </li>
-
-                
+                    <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i>&nbsp;CART</a>
+                </li>              
               
 
              </ul>
