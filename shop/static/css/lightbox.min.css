@@ -170,6 +170,9 @@ html.lb-disable-scrolling {
   -moz-transition: opacity 0.2s;
   -o-transition: opacity 0.2s;
   transition: opacity 0.2s;
+  position: absolute;
+  top: -50px;
+  margin-left: 500px;
 }
 .lb-data .lb-close:hover {
   cursor: pointer;
