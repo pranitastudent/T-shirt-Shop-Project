@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_forms_bootstrap',
     'ckeditor',
-    'django.contrib.humanize',   
+    'django.contrib.humanize',
+    'django_filters',   
     
     # My own custom apps
     'home',

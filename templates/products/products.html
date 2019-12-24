@@ -4,7 +4,7 @@
 {% block content%}
 
 
-<!-- Search Fields- Input text adapted from Code Institute Ecommerce Mini Project lectures -->
+<!-- Product Search Fields- Input text adapted from Code Institute Ecommerce Mini Project lectures -->
 <section id ="search">
   <div class="container">
     <div class="row text-center">
@@ -12,17 +12,25 @@
         <form action="{% url 'search' %}" method="GET">
           <div class="form-row">
             <div class="input-group col-md-6 mx-auto mt-3">
-              <input type="text" name="q" class="form-control" placeholder="Search Product Name">
-              <span class="input-group-btn">
-              <button class="btn btn-dark ml-1" type="button">Search</button>
+              <span class="input-group-append">
+                <div class="input-group-text bg-transparent">
+                  <i class="fa fa-search"></i>
+                </div>
               </span>
-           </div>
+              <input type="text" name="q" class="form-control" placeholder="Search Product">
+              <span class="input-group-btn text-left">
+              <button class="btn btn-dark ml-1" type="submit">Search</button>
+              </span>
+           </div>       
           </div>
           </form>
         </div>
       </div>
     </div>    
   </section>
+
+  <!-- End of Search Code -->
+
  
    
 <!-- Please note the template for products below is taken from https://getbootstrap.com/docs/4.4/examples/album/ - Bootstrap 4 album example -->
