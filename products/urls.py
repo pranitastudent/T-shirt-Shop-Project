@@ -6,6 +6,6 @@ from . import views
 urlpatterns = [
     path('products/', all_products, name='products'), 
     path('search', views.do_search, name = 'search'),
-    path('search', views.do_catsearch, name = 'search'),
+   
       
 ]

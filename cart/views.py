@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse
 
+# Code adapted from Code Institute
 
 # View everything in cart
 
