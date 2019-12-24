@@ -82,7 +82,9 @@
                     {% else %}
                 <li class="nav-item ">
                     {% endif %}
-                    <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i>&nbsp;CART</a>
+                    <a class="nav-link" href="{% url 'view_cart' %}"><i class="fas fa-shopping-cart"></i>&nbsp;CART {% if product_count > 0 %}
+                        <label class="badge badge-warning">{{ product_count }}</label>
+                    {% endif %}</a>
                 </li>              
               
 

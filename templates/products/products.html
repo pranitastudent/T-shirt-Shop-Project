@@ -41,14 +41,14 @@
             {% for product in products %}
           <div class="col-md-4">
             <div class="card mb-4 shadow-sm">
-            <span class="badge badge-danger"><strong><i class="fas fa-pound-sign"></i>&nbsp;{{ product.price }}</strong></span></h1>
+            <span class="badge badge-danger p-1"><strong><i class="fas fa-pound-sign"></i>&nbsp;{{ product.price }}</strong></span></h1>
              <a href ="{{ product.image.url }}" data-lightbox="{{ product.image.url }}"><img class="prd card-img-top img-fluid" src="{{ product.image.url }}"></a>
               
              <div class="card-body">
                 <h3 class="card-text">{{ product.product_name}}</h3>
                 <p class="card-text">Category: {{ product.category}}</p>
                 <p class="card-text">Product added: {{ product.product_date | timesince }}</p>
-                <form action="POST" action="{% url 'add_to_cart' product.id %}">
+                <form method="post" action="{% url 'add_to_cart' product.id %}">
                   {% csrf_token %}
                 <div class="input-group addition">
                     <input class="add-checkout text-center" name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Qty">
