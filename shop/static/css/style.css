@@ -95,6 +95,10 @@ html {
     font-size: 1.25em;
 }
 
+.badge {
+    height: 3vh;
+    font-size:1.0em;
+}
 
 .rule {
    margin:auto;

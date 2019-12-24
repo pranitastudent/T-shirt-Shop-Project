@@ -17,7 +17,7 @@
                   <i class="fa fa-search"></i>
                 </div>
               </span>
-              <input type="text" name="q" class="form-control" placeholder="Search Product">
+              <input type="text" name="q" class="form-control" placeholder="Search">
               <span class="input-group-btn text-left">
               <button class="btn btn-dark ml-1" type="submit">Search</button>
               </span>
@@ -41,17 +41,21 @@
             {% for product in products %}
           <div class="col-md-4">
             <div class="card mb-4 shadow-sm">
+            <span class="badge badge-danger"><strong><i class="fas fa-pound-sign"></i>&nbsp;{{ product.price }}</strong></span></h1>
              <a href ="{{ product.image.url }}" data-lightbox="{{ product.image.url }}"><img class="prd card-img-top img-fluid" src="{{ product.image.url }}"></a>
-              <div class="card-body">
+              
+             <div class="card-body">
                 <h3 class="card-text">{{ product.product_name}}</h3>
-                <p class="card-text"><strong><i class="fas fa-pound-sign"></i>&nbsp;{{ product.price }}</strong></p>
                 <p class="card-text">Category: {{ product.category}}</p>
                 <p class="card-text">Product added: {{ product.product_date | timesince }}</p>
-                <div class="input-group">
+                <form action="POST" action="{% url 'add_to_cart' product.id %}">
+                  {% csrf_token %}
+                <div class="input-group addition">
                     <input class="add-checkout text-center" name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Qty">
                      <span class="input-btn">
                          <button class = "btn btn-dark rounded-0 btn-sm" type="submit">Add to Cart</button>
                      </span>
+                    </form>
                   </div>
               </div>
             </div>           

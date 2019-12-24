@@ -17,3 +17,4 @@ def all_products(request):
 def do_search(request):
     products = Product.objects.filter(product_name__icontains=request.GET['q'])
     return render(request, "products/products.html", {"products": products})
+

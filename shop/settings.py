@@ -54,6 +54,8 @@ INSTALLED_APPS = [
     'feedback',
     'products',
     'contact',
+    'cart',
+    'checkout'
      
  
     
