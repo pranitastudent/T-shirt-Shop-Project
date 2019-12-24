@@ -23,51 +23,100 @@
 	</div>
 </section>
 
-<!-- carousel slides -->
- <section id="products" class="py-5">
-    <div class="container border">
-      <h2 class="text-center my-3"><strong>Top T-shirts</strong></h2>
-      <div class="row mx-2">
-            <div class="col-md-6 col-lg-4 mb-4">
-              <div class="card">
-                <img class="card-img-top" src="{% static 'img/slideimage1.jpg' %}" alt="">
-                <div class="card-body">
-                  <div class="listing-heading text-center">
-                    <h4 class="text-dark">January Special!</h4>
-                    <p>
-                    </div>              
-                  
-                </div>
-              </div>
-			</div>
-			<div class="col-md-6 col-lg-4 mb-4">
-				<div class="card">
-				<img class="card-img-top" src="{% static 'img/slideimage2.jpg' %}" alt="">
-				  <div class="card-body">
-					<div class="listing-heading text-center">
-					  <h4 class="text-dark">January Special!</h4>
-					  <p>
-					  </div>			
-				
+ <!-- Code taken from stack overflow : Bootstrap 4 Multiple Items Carousel (several carousel items shown at once)
+  https://stackoverflow.com/questions/40393210/bootstrap-4-multiple-items-carousel-several-carousel-items-shown-at-once -->
+  <section id="products" class="py-5">
+	<div class="container border">
+	<h2 class="text-center my-3"><strong>Top T-shirts</strong></h2>
+	<div class="container border">
+	  <div class="row">
+		  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+			  <div class="carousel-inner">
+				  <div class="carousel-item active">
+					  <div class="row">
+						  <div class="col-md-6 col-lg-4 mb-4">
+							  <div class="card">
+								<img class="card-img-top" src="{% static 'img/slideimage1.jpg' %}" alt="slide1">
+								<div class="card-body">
+								  <div class="product-heading text-center">
+									<h4 class="text-dark">January Special!</h4>                                 
+									</div>         
+								  </div>
+							  </div>
+							</div>    
+							<div class="col-md-6 col-lg-4 mb-4">
+							  <div class="card">
+								<img class="card-img-top" src="{% static 'img/slideimage2.jpg' %}" alt="slide2">
+								<div class="card-body">
+								  <div class="product-heading text-center">
+									<h4 class="text-dark">January Special!</h4>
+									<p>
+									</div>             
+								  </div>
+							  </div>
+							</div>
+							<div class="col-md-6 col-lg-4 mb-4">
+							  <div class="card">
+								<img class="card-img-top" src= "{% static 'img/slideimage3.jpg' %}" alt="slide3">
+								<div class="card-body">
+								  <div class="product-heading text-center">
+									<h4 class="text-dark">January Special!</h4>
+								  </div>            
+								 </div>
+							  </div>
+							</div>   
+						</div>
 				  </div>
-				</div>
-			  </div>
-			  <div class="col-md-6 col-lg-4 mb-4">
-				<div class="card">
-				  <img class="card-img-top" src="{% static 'img/slideimage3.jpg' %}" alt="">
-				  <div class="card-body">
-					<div class="listing-heading text-center">
-					  <h4 class="text-dark">January Special!</h4>
-					  <p>
-					  </div>				
-					
+				  <div class="carousel-item">
+					  <div class="row">
+						  <div class="col-md-6 col-lg-4 mb-4">
+							  <div class="card">
+								<img class="card-img-top" src="{% static 'img/slideimage1.jpg' %}" alt="slide4">
+								<div class="card-body">
+								  <div class="product-heading text-center">
+									<h4 class="text-dark">January Special!</h4>
+								  </div>              
+								  </div>
+							  </div>
+							</div>   
+							<div class="col-md-6 col-lg-4 mb-4">
+							  <div class="card">
+								<img class="card-img-top" src="{% static 'img/slideimage2.jpg' %}" alt="">
+								<div class="card-body">
+								  <div class="product-heading text-center">
+									<h4 class="text-dark">January Special!</h4>
+									</div>              
+								  </div>
+							  </div>
+							</div>
+							<div class="col-md-6 col-lg-4 mb-4">
+							  <div class="card">
+								<img class="card-img-top" src="{% static 'img/slideimage3.jpg' %}" alt="">
+								<div class="card-body">
+								  <div class="product-heading text-center">
+									<h4 class="text-dark">January Special!</h4>
+									</div>              
+								  </div>
+							  </div>
+							</div>    
+						 </div>
 				  </div>
-				</div>
 			  </div>
-		</div>
-		<a href="{% url 'products' %}" class="btn btn-outline-success text-center btn-block w-50 mx-auto mb-3">Shop Now</a>
-    </div>
+			  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+				  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				  <span class="sr-only">Previous</span>
+			  </a>
+			  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+				  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+				  <span class="sr-only">Next</span>
+			  </a>
+		  </div>
+	  </div>    
+  </div>
+  <a href="{% url 'products' %}" class="btn btn-outline-success text-center btn-block w-50 mx-auto my-3">Shop Now</a>
+  </div>
   </section>
+
 	  
 <!-- Shopping Opening Times  -->
 
