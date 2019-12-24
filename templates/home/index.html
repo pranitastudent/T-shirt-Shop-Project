@@ -28,13 +28,12 @@
   <section id="products" class="py-5">
 	<div class="container border">
 	<h2 class="text-center my-3"><strong>Top T-shirts</strong></h2>
-	<div class="container border">
-	  <div class="row">
+	 <div class="row">
 		  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 			  <div class="carousel-inner">
 				  <div class="carousel-item active">
-					  <div class="row">
-						  <div class="col-md-6 col-lg-4 mb-4">
+					  <div class="row carousel">
+						  <div class="col-md-6 col-lg-4">
 							  <div class="card">
 								<img class="card-img-top" src="{% static 'img/slideimage1.jpg' %}" alt="slide1">
 								<div class="card-body">
@@ -44,7 +43,7 @@
 								  </div>
 							  </div>
 							</div>    
-							<div class="col-md-6 col-lg-4 mb-4">
+							<div class="col-md-6 col-lg-4">
 							  <div class="card">
 								<img class="card-img-top" src="{% static 'img/slideimage2.jpg' %}" alt="slide2">
 								<div class="card-body">
@@ -55,7 +54,7 @@
 								  </div>
 							  </div>
 							</div>
-							<div class="col-md-6 col-lg-4 mb-4">
+							<div class="col-md-6 col-lg-4">
 							  <div class="card">
 								<img class="card-img-top" src= "{% static 'img/slideimage3.jpg' %}" alt="slide3">
 								<div class="card-body">
@@ -68,8 +67,8 @@
 						</div>
 				  </div>
 				  <div class="carousel-item">
-					  <div class="row">
-						  <div class="col-md-6 col-lg-4 mb-4">
+					  <div class="row carousel">
+						  <div class="col-md-6 col-lg-4">
 							  <div class="card">
 								<img class="card-img-top" src="{% static 'img/slideimage1.jpg' %}" alt="slide4">
 								<div class="card-body">
@@ -79,7 +78,7 @@
 								  </div>
 							  </div>
 							</div>   
-							<div class="col-md-6 col-lg-4 mb-4">
+							<div class="col-md-6 col-lg-4">
 							  <div class="card">
 								<img class="card-img-top" src="{% static 'img/slideimage2.jpg' %}" alt="">
 								<div class="card-body">
@@ -89,7 +88,7 @@
 								  </div>
 							  </div>
 							</div>
-							<div class="col-md-6 col-lg-4 mb-4">
+							<div class="col-md-6 col-lg-4">
 							  <div class="card">
 								<img class="card-img-top" src="{% static 'img/slideimage3.jpg' %}" alt="">
 								<div class="card-body">
@@ -110,8 +109,7 @@
 				  <span class="carousel-control-next-icon" aria-hidden="true"></span>
 				  <span class="sr-only">Next</span>
 			  </a>
-		  </div>
-	  </div>    
+		 </div>    
   </div>
   <a href="{% url 'products' %}" class="btn btn-outline-success text-center btn-block w-50 mx-auto my-3">Shop Now</a>
   </div>
