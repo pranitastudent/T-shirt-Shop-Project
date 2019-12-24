@@ -3,6 +3,8 @@ from django.contrib import auth, messages
 from django.contrib.auth.decorators import login_required
 from .forms import UserLoginForm, UserRegistrationForm
 
+# All Views adapted from Code Institute Lectures on Authentication in Fullstack Framework Module
+
 # Logout View
 
 @login_required

@@ -3,14 +3,12 @@
 {% load humanize %}
 {% block content%}
 
-<!-- search fields -->
-
-   <!-- Search Fields -->
+<!-- Search Fields- Input text adapted from Code Institute Ecommerce Mini Project lectures -->
    <section id ="search">
     <div class="container">
       <div class="row text-center">
         <div class="col-md-12 mx-auto">
-          <form action="{% url 'search' %}" method="GET">
+          <form action="#" method="GET">
             <div class="form-row">
               <div class="input-group col-md-6 mx-auto my-3">
                 <input type="text" name="#" class="form-control" placeholder="Search (Red, Black)">
@@ -26,7 +24,7 @@
   </section>
  
    
-   <!-- Please note the template for products below is taken from https://getbootstrap.com/docs/4.4/examples/album/ - Bootstrap 4 album example -->
+<!-- Please note the template for products below is taken from https://getbootstrap.com/docs/4.4/examples/album/ - Bootstrap 4 album example -->
   
    <div class="album py-5 bg-light">
       <div class="container">  
@@ -53,7 +51,7 @@
           {% endfor %}
 
           
-          <!-- Pagination template taken from Bootstrap 4 and adapted from: https://stackoverflow.com/questions/43679491/bootstrap-4-center-pagination-in-column and method followed from Brad Traversy Python Dev to Development Course -->
+<!-- Pagination template taken from Bootstrap 4 and adapted from: https://stackoverflow.com/questions/43679491/bootstrap-4-center-pagination-in-column and method followed from Brad Traversy Python Dev to Development Course -->
           <div class="container">
           <div class="row">
             <div class="col-lg-6 offset-lg-3 py-5 d-flex">
@@ -95,7 +93,7 @@
         </div>
       </div>
    
-    <!-- End of Pagination -->
+ <!-- End of Pagination -->
           
 
 

@@ -1,3 +1,3 @@
 from django.shortcuts import render
 
-# Create your views here.
+# All Views adapated from Code Institute Lectures on Blog in Fullstack Framework Module

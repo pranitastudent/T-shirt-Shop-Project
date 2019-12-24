@@ -3,7 +3,7 @@ from django.core.paginator import Paginator,EmptyPage, PageNotAnInteger
 from .models import Product
 
 
-# Product View
+# Product View- adapted from Django 3.0 documentation
 
 def all_products(request):
     products = Product.objects.all()
