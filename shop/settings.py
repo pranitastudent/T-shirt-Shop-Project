@@ -45,10 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_forms_bootstrap',
     'ckeditor',
-    'django.contrib.humanize',
-
-   
-   
+    'django.contrib.humanize',   
     
     # My own custom apps
     'home',
@@ -56,8 +53,7 @@ INSTALLED_APPS = [
     'feedback',
     'products',
     'contact',
-    'search',
-    
+     
  
     
 ]
@@ -199,7 +195,7 @@ CKEDITOR_CONFIGS = {
             ['Styles', 'Format', 'Bold', 'Italic', 'Underline', 'Strike', 'SpellChecker', 'Undo', 'Redo'],
             ['Table', 'HorizontalRule'],
             ['TextColor', 'BGColor'],
-            ['Smiley', 'SpecialChar', 'Image'],
+            ['Smiley', 'SpecialChar'],
         ]
     },
 } 
