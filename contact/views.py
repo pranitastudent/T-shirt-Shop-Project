@@ -1,4 +1,4 @@
-from django.shortcuts import render, render_to_response 
+from django.shortcuts import render
 from django.contrib import  messages
 from django.core.mail import EmailMessage
 from django.template.loader import get_template
