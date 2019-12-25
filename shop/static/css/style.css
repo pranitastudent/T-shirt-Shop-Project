@@ -37,11 +37,8 @@ html {
 
 .navbar {
     background: #808080;
-    opacity: 0.9;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-
-       
+    opacity: 0.9; 
+      
 }
 
 /* Carousel */
