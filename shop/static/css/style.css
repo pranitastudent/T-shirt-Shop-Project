@@ -102,10 +102,14 @@ html {
     font-size: 1.25em;
 }
 
-.badge {
-    height: 3.8vh;
-    font-size:1.0em;
+/* Badges */
+
+.badge-danger {
+    height: 3.6vh;
+    font-size:1.0rem;
+       
 }
+
 
 .rule {
    margin:auto;
@@ -219,7 +223,9 @@ html {
         font-size: 4.5em;
     }
     
-
+    .badge-danger {
+      padding:3px;
+    }
    
 
     .login-btn {
