@@ -12,8 +12,7 @@
       {% for item in cart_items %}
       <div class="col-md-4">
         <div class="card mb-4 shadow-sm">
-          <span class="badge badge-danger"><strong><i
-                class="fas fa-pound-sign"></i>&nbsp;{{ item.product.price | intcomma }}</strong></span></h1>
+          <span class="badge badge-danger"><strong><i class="fas fa-pound-sign"></i>&nbsp;{{ item.product.price | intcomma }}</strong></span></h1>
           <a href="{{ item.product.image.url }}" data-lightbox="{{item.product.image.url }}"><img
               class="prd card-img-top img-fluid" src="{{ item.product.image.url}}"></a>
 
@@ -44,7 +43,7 @@
   <div class="container-fluid border text-center">
     <div class="col-md-12 col-xs-12 mb-4 mt-2">
   <span>Total: <i class="fas fa-pound-sign"></i></span>&nbsp;{{ total }}<br><br>
-  <a href="/" class="btn btn-success" role="button"><span><i class="fas fa-check-circle"></i></span>&nbsp;Checkout</a>
+  <a href="{% url 'checkout' %}" class="btn btn-success" role="button"><span><i class="fas fa-check-circle"></i></span>&nbsp;Checkout</a>
     </div>
     </div>    
 
