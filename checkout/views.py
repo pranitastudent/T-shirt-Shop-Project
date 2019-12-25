@@ -30,6 +30,12 @@ def checkout(request):
             for id, quantity in cart.items():
                 product = get_object_or_404(Product, pk=id)
                 total += quantity * product.price
+            if total >=80:
+                messages.success(request, 'You have a 15% discount on this order as over over £80') 
+                total == (quantity * product.price) * 0.15
+            else:
+                total += quantity * product.price    
+                       
                 order_line_item = OrderLineItem(
                     order=order,
                     product=product,
@@ -40,7 +46,7 @@ def checkout(request):
             try:
                 customer = stripe.Charge.create(
                     amount=int(total * 100),
-                    currency="EUR",
+                    currency="GBP",
                     description=request.user.email,
                     card=payment_form.cleaned_data['stripe_id']
                 )
@@ -48,7 +54,7 @@ def checkout(request):
                 messages.error(request, "Your card was declined!")
             
             if customer.paid:
-                messages.error(request, "You have successfully paid")
+                messages.success(request, "You have successfully paid")
                 request.session['cart'] = {}
                 return redirect(reverse('products'))
             else:
@@ -60,4 +66,4 @@ def checkout(request):
         payment_form = MakePaymentForm()
         order_form = OrderForm()
     
-    return render(request, "checkout.html", {"order_form": order_form, "payment_form": payment_form, "publishable": settings.STRIPE_PUBLISHABLE})
+    return render(request, "checkout/checkout.html", {"order_form": order_form, "payment_form": payment_form, "publishable": settings.STRIPE_PUBLISHABLE})

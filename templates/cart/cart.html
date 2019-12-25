@@ -1,10 +1,14 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load bootstrap_tags %}
 {% load humanize %}
+
+
 {% block content %}
 <div class="album py-5 bg-light">
   <div class="container">
-    <div class="row">
+    <h3 class="text-center"><strong>Items in Cart- 15% discount if you buy £80 or more!!!!</strong></h3>
+    <div class="row">     
       {% for item in cart_items %}
       <div class="col-md-4">
         <div class="card mb-4 shadow-sm">
@@ -36,7 +40,7 @@
 
       <!--Checkout  -->
   
-
+  <h3 class="text-center"><strong>Checkout</strong></h3>
   <div class="container-fluid border text-center">
     <div class="col-md-12 col-xs-12 mb-4 mt-2">
   <span>Total: <i class="fas fa-pound-sign"></i></span>&nbsp;{{ total }}<br><br>
