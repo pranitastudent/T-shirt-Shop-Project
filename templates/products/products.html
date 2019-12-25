@@ -41,7 +41,7 @@
             {% for product in products %}
           <div class="col-md-4">
             <div class="card mb-4 shadow-sm">
-            <span class="badge badge-danger"><strong><i class="fas fa-pound-sign"></i>&nbsp;{{ product.price }}</strong></span></h1>
+            <span class="badge badge-danger"><strong><i class="fas fa-pound-sign"></i>&nbsp;{{ product.price | intcomma }}</strong></span></h1>
              <a href ="{{ product.image.url }}" data-lightbox="{{ product.image.url }}"><img class="prd card-img-top img-fluid" src="{{ product.image.url }}"></a>
               
              <div class="card-body">

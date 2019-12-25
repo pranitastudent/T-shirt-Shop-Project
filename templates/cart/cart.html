@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load humanize %}
 {% block content %}
 <div class="album py-5 bg-light">
   <div class="container">
@@ -8,7 +9,7 @@
       <div class="col-md-4">
         <div class="card mb-4 shadow-sm">
           <span class="badge badge-danger"><strong><i
-                class="fas fa-pound-sign"></i>&nbsp;{{ item.product.price }}</strong></span></h1>
+                class="fas fa-pound-sign"></i>&nbsp;{{ item.product.price | intcomma }}</strong></span></h1>
           <a href="{{ item.product.image.url }}" data-lightbox="{{item.product.image.url }}"><img
               class="prd card-img-top img-fluid" src="{{ item.product.image.url}}"></a>
 
