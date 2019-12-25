@@ -12,7 +12,6 @@ class Order(models.Model):
     street_address1 = models.CharField(max_length=40, blank=False)
     street_address2 = models.CharField(max_length=40, blank=False)
     county = models.CharField(max_length=40, blank=False)
-    email = models.EmailField(blank=False)
     date = models.DateField()
 
     def __str__(self):

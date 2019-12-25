@@ -1,5 +1,3 @@
-# Code taken from Code Institute Ecommerce app project
-
 from django import forms
 from .models import Order
 
