@@ -3,17 +3,19 @@
 body {
     min-height:100%; 
     position:relative; 
-    padding-bottom:80px;
     font-family: 'Manjari', sans-serif; 
     
-   
+      
     }
 
 html {
      height: 100%;
      }
 
-
+html, body  {
+     width: 100%;
+     overflow-x: hidden;
+     }     
 
 /* CSS Variables */
 
@@ -38,8 +40,7 @@ html {
 .navbar {
     background: #808080;
     opacity: 0.9; 
-    letter-spacing: 1px;
-      
+        
 }
 
 /* Carousel */

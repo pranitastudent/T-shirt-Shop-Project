@@ -1,42 +1,51 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load bootstrap_tags %}
-{% load humanize %}
 
 
 {% block content %}
 <div class="album py-5 bg-light">
-  <div class="container">
-    <h3 class="text-center"><strong>Items in Cart- 15% discount if you buy £80 or more!!!!</strong></h3>
-    <div class="row">
-      
-      {% for item in cart_items %}
-      <div class="col-md-4">
-        <div class="card mb-4 shadow-sm">
-          <span class="badge badge-danger"><strong><i class="fas fa-pound-sign"></i>&nbsp;{{ item.product.price | intcomma }}</strong></span></h1>
-          <a href="{{ item.product.image.url }}" data-lightbox="{{item.product.image.url }}"><img
-              class="prd card-img-top img-fluid" src="{{ item.product.image.url}}"></a>
-
-          <div class="card-body">
-            <h3 class="card-text">{{ item.product.product_name}}</h3>
-            <p class="card-text">Category: {{ item.product.category}}</p>
-            <form method="post" action="{% url 'adjust_cart' item.id %}">
-              {% csrf_token %}
-              <div class="form-group">
-                <div class="input-group">
-                    <input class="input-cart text-center" name="quantity" type="number" min="0" max="999" class="form-control" value="{{item.quantity}}" >
-                    <button type="submit" class="btn btn-success rounded-0 btn-sm"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Adjust Quantity</button>
-                </div>
-            </div>
-             </form>
-                 </div> 
-                </div>
-              </div>        
-          {% endfor %}
-      </div>
-    </div>
+  <div class="table-responsive">
+    <h3 class="text-center mx-2"><strong>Items in Cart- 15% discount if you buy £80 or more!!!!</strong></h3>
+   <div class="container-fluid">
+     <div class="row">
+       <div class="col-md-12 col-sm-12 col-xs-12">
+    
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+         <th scope="col">Product</th>
+          <th scope="col">Product Name</th>
+          <th scope="col">Price</th>
+          <th scope="col">Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in cart_items %}
+        <tr>
+          <td><img src="{{ item.product.image.url}}" width="100px" height="150px"></td>
+          <td>{{ item.product.product_name }}</td>
+          <td>{{ item.product.price }}</td>
+          <td><form method="post" action="{% url 'adjust_cart' item.id %}">
+            {% csrf_token %}
+            <div class="form-group">
+              <div class="input-group">
+                  <input class="input-cart text-center" name="quantity" type="number" min="0" max="999" class="form-control" value="{{item.quantity}}" >
+                  <button type="submit" class="btn btn-success rounded-0 btn-sm"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Qty</button>
+              </div>
+          </div>
+           </form>
+          </td>
+        </tr>
+        {% endfor %}
+       </tbody>
+    </table>
   </div>
-
+</div>
+</div>
+</div>
+</div>
+  
 
       <!--Checkout  -->
   
