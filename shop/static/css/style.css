@@ -165,6 +165,13 @@ html, body  {
   
 }
 
+/* Forms */
+
+.payment {
+    display: flex;
+    flex-direction: column;
+    
+}
 /* Footer */
 
 #main-footer { 
