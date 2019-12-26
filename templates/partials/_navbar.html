@@ -31,6 +31,13 @@
                     {% endif %}
                     <a class="nav-link" href="{% url 'logout' %}"> <i class="fas fa-sign-out-alt"></i>&nbsp;LOGOUT</a>
                 </li>
+                {% if 'logout' in request.path %}
+                <li class="nav-item active ">
+                    {% else %}
+                <li class="nav-item">
+                    {% endif %}
+                    <a class="nav-link" href="#"> <i class="fas fa-sign-out-alt"></i>&nbsp;ADD FEEDBACK</a>
+                </li>
                  {% else%}
 
                 {% if 'register' in request.path %}
