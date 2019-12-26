@@ -165,6 +165,12 @@ html, body  {
   
 }
 
+/* Submit */
+
+div.container.border.submit {
+    margin-bottom: 111px!important;
+}
+
 /* Forms */
 
 .payment {

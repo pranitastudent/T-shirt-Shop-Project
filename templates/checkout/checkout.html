@@ -37,7 +37,9 @@
 </div>
 </div>
 
-<div class="container border mb-5">
+<div class="container submit border" style="
+    margin-bottom: 111px;
+">
     <div class="row">
         <div class="col-md-12 col-xs-12">
 <form role="form" method="post" id="payment-form" action="{% url 'checkout' %}">
@@ -58,7 +60,7 @@
 
     {% csrf_token %}
     <div class="form-group col-md-6">
-        <input class=" btn btn-success" id="submit_payment_btn" name="commit" type="submit" value="Submit Payment">
+        <input class=" btn btn-success mb-5" id="submit_payment_btn" name="commit" type="submit" value="Submit Payment">
     </div>
 </form>
 </div>
