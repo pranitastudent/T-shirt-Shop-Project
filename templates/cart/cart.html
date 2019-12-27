@@ -34,7 +34,10 @@
                   <button type="submit" class="btn btn-success rounded-0 btn-sm"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Qty</button>
               </div>
           </div>
-           </form>
+           </form>          
+          <span>Total: <i class="fas fa-pound-sign"></i></span>&nbsp;{{ total }}<br><br>
+        <a href="{% url 'checkout' %}" class="btn btn-success btn-xs mb-5" role="button"><span><i class="fas fa-check-circle"></i></span>&nbsp;Checkout</a>
+      </div>       
           </td>
         </tr>
         {% endfor %}
@@ -48,14 +51,7 @@
   
 
       <!--Checkout  -->
-  
-  <h3 class="text-center"><strong>Checkout</strong></h3>
-  <div class="container-fluid border text-center">
-    <div class="col-md-12 col-xs-12 mb-4 mt-2">
-  <span>Total: <i class="fas fa-pound-sign"></i></span>&nbsp;{{ total }}<br><br>
-  <a href="{% url 'checkout' %}" class="btn btn-success" role="button"><span><i class="fas fa-check-circle"></i></span>&nbsp;Checkout</a>
-    </div>
-    </div>    
+
 
 
 {% endblock %}
