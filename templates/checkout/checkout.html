@@ -11,7 +11,7 @@
     //]]>
 </script>
 <script type="text/javascript" src="{% static 'js/stripe.js' %}"></script>
-{% endblock %}
+{% endblock head_js %}
 
 
 {% block content %}
@@ -50,9 +50,7 @@
 </div>
 </div>
 
-<div class="container submit border" style="
-    margin-bottom: 111px;
-">
+<div class="container submit border">
     <div class="row">
         <div class="col-md-12 col-xs-12">
 <form role="form" method="post" id="payment-form" action="{% url 'checkout' %}">
