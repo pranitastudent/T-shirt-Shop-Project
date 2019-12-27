@@ -3,14 +3,16 @@
 {% load bootstrap_tags %}
 
 {% block head_js %}
-<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+<script type="text/javascript" src="https://js.stripe.com/v2"></script>
 <script type="text/javascript">
+// Code taken from Code Institute ecommerce project
     //<![CDATA[
         Stripe.publishableKey = '{{ publishable }}';
     //]]>
 </script>
 <script type="text/javascript" src="{% static 'js/stripe.js' %}"></script>
-{% endblock head_js %}
+{% endblock %}
+
 
 {% block content %}
 

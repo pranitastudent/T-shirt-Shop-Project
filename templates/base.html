@@ -15,9 +15,32 @@
      <link rel="stylesheet" href="{% static 'css/lightbox.min.css' %}">
      <!-- Django Star Ratings -->
      <link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
+
+     <!-- Jquery for bootstrap -->
+    <script src="{% static 'js/jquery-3.3.1.min.js' %} "></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %} "></script>
+
+    <!-- Lightbox -->
+    <script src="{% static 'js/lightbox.min.js' %} "></script>
+
+    <script src="{% static 'js/main.js' %} "></script>
+    <script src="{% static 'js/map.js' %} "></script> 
+
+    <!-- Code snippet provided by tutor Stefan- CI -->
+    <script src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
+    <script src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
  
+    <!-- End of snippet -->
+
+    <!-- Django star ratings -->
+    <script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
+     
+    <!-- Google Maps -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZIkySAZYznJ_jZa19_RhpTPmT72zAt6A&callback=initMap" async defer></script>
    
     
+    {% block head_js %} {% endblock head_js %}
+
 
      <title>{% block page_title %}Pranita's T-shirt Shop{% endblock %}</title>
 </head>
@@ -43,30 +66,13 @@
 
  {% include 'partials/_footer.html'%}
 
-<script src="{% static 'js/jquery-3.3.1.min.js' %} "></script>
-<script src="{% static 'js/bootstrap.bundle.min.js' %} "></script>
 
-<!-- Lightbox -->
-<script src="{% static 'js/lightbox.min.js' %} "></script>
 
-<script src="{% static 'js/main.js' %} "></script>
-<script src="{% static 'js/map.js' %} "></script> 
 
-<!-- STRIPE JS -->
 
-<script type="text/javascript" src="{% static 'js/stripe.js' %}"></script>
 
-<!-- Code snippet provided by tutor Stefan- CI -->
-<script src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
-<script src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
- 
-<!-- End of snippet -->
 
-<!-- Django star ratings -->
-<script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
-     
-<!-- Google Maps -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZIkySAZYznJ_jZa19_RhpTPmT72zAt6A&callback=initMap" async defer></script>
+
 
 
     
