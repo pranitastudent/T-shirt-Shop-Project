@@ -39,6 +39,8 @@ html, body  {
 .navbar {
     background: #808080;
     opacity: 0.9; 
+    font-size:13px;
+    text-transform: uppercase;
         
 }
 
@@ -119,6 +121,7 @@ html, body  {
     width:100%;
 }
 
+
 /* Pagination */
 
 .pagination > li > a
@@ -131,12 +134,14 @@ html, body  {
     background-color: var(--dark-color);
     border-color: var(--dark-color);
 }
+
 /* Username  */
 
 .username {
     color: var(--secondary-color);
     font-weight:400;
 }
+
 /* Lists */
 
 .days {
@@ -159,8 +164,24 @@ html, body  {
   margin: 0 auto;
   margin-bottom: 10px;
   width:10%
-  
-  
+   
+}
+
+#topBtn {
+    position: fixed;
+    bottom: 100px;
+    right:40px;
+    font-size: 22px;
+    width: 50px;
+    height: 50px;
+    background: var(--secondary-color);
+    opacity:0.9;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    display:none;
+    z-index: 1;
+
 }
 
 /* Submit */
@@ -246,6 +267,12 @@ div.container.border.submit {
 
     .login-btn {
         width:50%;
+    }
+
+    #topBtn {
+        height: 20px;
+        width:20px;
+        right:10px;
     }
 }
  

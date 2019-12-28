@@ -37,7 +37,7 @@
       <tbody>
         {% for item in cart_items %}
         <tr>
-          <td><a href ="{{ product.image.url }}" data-lightbox="{{ product.image.url }}"><img src="{{ item.product.image.url}}" width="40px" height="60px"></a></td>
+          <td><a href="{{ item.product.image.url }}" data-lightbox="{{item.product.image.url }}"><img src="{{ item.product.image.url}}" width="40px" height="60px"></a></td>
           <td>{{ item.product.product_name }}</td>
           <td>{{ item.product.price }}</td>
           <td><form method="post" action="{% url 'adjust_cart' item.id %}">
