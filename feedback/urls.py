@@ -3,6 +3,8 @@ from .views import all_products
 from django.conf.urls import url
 from .views import (get_feedback, add_feedback, edit_feedback, delete_feedback, detail_feedback)
 
+# Adapted for Django 2.0+ from Code Institute Blog Lectures
+
 urlpatterns = [
     path('get_feedback/', get_feedback, name='get_feedback'), 
     path('<int:pk>/add_feedback', add_feedback, name= 'add_feedback'),
