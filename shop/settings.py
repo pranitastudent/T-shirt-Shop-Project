@@ -216,11 +216,6 @@ EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_PASSWORD")
 EMAIL_PORT = 587
 
 
-AUTHENTICATION_BACKENDS = [
-    'django.contrib.auth.backends.ModelBackend',
-    'accounts.backends.EmailAuth'
-]
-
 # CKEDITOR CONFIGS
 
 CKEDITOR_BASEPATH = "/'static'/ckeditor/ckeditor/"
