@@ -2,6 +2,19 @@
 {% load static %}
 {% load bootstrap_tags %}
 
+<!-- Breadcrumb -->
+
+<section id="bcrumb">
+  <div class="container-fluid px-0">
+      <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'index' %}"><i class="fas fa-home"></i>&nbsp;Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Cart</li>
+          </ol>
+        </nav>
+  </div>
+</section>
+
 
 {% block content %}
 <div class="album py-5 bg-light">

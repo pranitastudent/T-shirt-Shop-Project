@@ -3,6 +3,19 @@
 {% load humanize %}
 {% block content%}
 
+<!-- Breadcrumb -->
+
+<section id="bcrumb">
+  <div class="container-fluid px-0">
+      <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'index' %}"><i class="fas fa-home"></i>&nbsp;Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Products</li>
+          </ol>
+        </nav>
+  </div>
+</section>
+
 
 <!-- Product Search Fields- Input text adapted from Code Institute Ecommerce Mini Project lectures -->
 <section id ="search">

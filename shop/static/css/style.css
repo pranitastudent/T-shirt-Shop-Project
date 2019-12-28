@@ -4,8 +4,7 @@ body {
     min-height:100%; 
     position:relative; 
     font-family: 'Manjari', sans-serif; 
-    
-      
+     
     }
 
 html {
@@ -109,7 +108,6 @@ html, body  {
        
 }
 
-
 .rule {
    margin:auto;
    width:70%;
@@ -178,6 +176,13 @@ div.container.border.submit {
     flex-direction: column;
     
 }
+
+/* Containers - Registration and Contact */
+
+.contact-cont,
+.regi-cont {
+    margin-bottom:111px;
+}
 /* Footer */
 
 #main-footer { 
@@ -185,15 +190,6 @@ div.container.border.submit {
     left: 0 ; right: 0; bottom: 0; 
     height:90px;
 }
-
-
-
-
-
-
-
-
-
 
 
 /* Media Queries */
@@ -244,4 +240,4 @@ div.container.border.submit {
         width:50%;
     }
 }
-
+ 
