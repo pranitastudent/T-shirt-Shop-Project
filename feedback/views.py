@@ -26,10 +26,11 @@ def detail_feedback(request, pk):
     """
     post = get_object_or_404(Feedback, pk=pk)
     post.save()
-    return render(request, "feedback/detail_feedback.html", {"post":post})
+    return render(request, "feedback/detail_feedback.html", {"post":post
+                                                             })
 
 # Create a feedback post - only logged in users
-
+@login_required()
 def add_feedback(request):
     """
     Allows logged in user to add feedback
@@ -44,4 +45,41 @@ def add_feedback(request):
             return redirect('feedback/detail_feedback', pk=post.pk)
     else:
         form = FeedbackForm()
-    return render(request, "feedback/feedback.html", {"form":form})            
+    return render(request, "feedback/feedbackform.html", {"form":form})     
+
+#  Edit Feedback- Only Edit own post
+
+@login_required()
+def edit_feedback(request, pk):
+    """
+    Users can only edit there own feedback
+    post
+    """
+    post=get_object_or_404(Feedback, pk=pk)
+    if request.user == post.author:
+        if request.method == "POST":
+            form = FeedbackForm(request.POST, instance=post)
+            if form.is_valid():
+                form.save()
+                return redirect(get_feedback)
+            else:
+                form = FeedbackForm(instance=post)
+            return render(request,"feedback/feedbackform.html", {"form":form})
+        else:
+            form = FeedbackForm()
+        return('add_feedback')     
+    
+ # Delete Feedback Post - Only logged in users
+ 
+def delete_feedback(request, pk):
+     """
+     A view that allows a user to delete there own feedback
+     """
+     post = get_object_or_404(Feedback, pk=pk)
+     if request.user == post.user:
+         post.delete()
+         return redirect(get_feedback)         
+     return('feedback/feebback.html')    
+               
+    
+       
