@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block page_title %} Feedback{% endblock %}
+{% load bootstrap_tags %}
+{% load static %}
+{% load humanize %}
+{% load ratings %}
+{% ratings object %}
+
+{% block content %}
+
+<!-- Breadcrumb -->
+
+<section id="bcrumb">
+    <div class="container-fluid px-0">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="{% url 'index' %}"><i class="fas fa-home"></i>&nbsp;Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Feedback</li>
+            </ol>
+          </nav>
+    </div>
+</section>
+
+<!-- Feedback -->
+
+<section id="feedback">
+    <div class="container">
+        <div class="row">
+            <div class="col-md 12 col-xs-12 mx-auto">
+                <div class="card">
+                    {% for post in posts %}
+                    <div class="card-header">{{post.product_name}}</div>
+                    <div class="card-body">
+                      <h5 class="card-title">Posted by: {{post.author}}</h5>
+                      <p class="card-text product-post">{{ post.published_date|timesince}}}</p>
+                      <p class="card-text product-post">{{ post.user_feedback}}</p>
+                      <p class="card-text product-rating">{{ post.rating}}</p>
+
+                   
+                      {% if request.user == post.author %}  
+
+                      <a href="{% 'edit_feedback' %}" class="btn btn-warning">Edit</a>&nbsp;&nbsp;
+                      <a href="{% 'delete_feedback' %}" class="btn btn-danger">Danger</a>&nbsp;&nbsp;
+
+                      {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+                   <span class="votes">{{feedback.votes}}<i class="far fa-thumbs-up"></i></span>
+              </div>
+        </div>
+    </div>
+</section> 
+       
+  
+
+{% endblock %}

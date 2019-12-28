@@ -1,5 +1,4 @@
 from django.urls import path
-from .views import all_products
 from django.conf.urls import url
 from .views import (get_feedback, add_feedback, edit_feedback, delete_feedback, detail_feedback)
 

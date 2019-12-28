@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block page_title %} Feedback{% endblock %}
+{% load bootstrap_tags %}
+{% load static %}
+{% load humanize %}
+{% load ratings %}
+{% ratings object %}
+
+{% block content %}
+
+<!-- Breadcrumb -->
+
+<section id="bcrumb">
+    <div class="container-fluid px-0">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="{% url 'index' %}"><i class="fas fa-home"></i>&nbsp;Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Feedback</li>
+            </ol>
+          </nav>
+    </div>
+</section>
+
+
+{% endblock %}
