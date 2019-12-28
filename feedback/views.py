@@ -69,7 +69,7 @@ def edit_feedback(request, pk):
             form = FeedbackForm()
         return('add_feedback')     
     
- # Delete Feedback Post - Only logged in users
+# Delete Feedback Post - Only logged in users
  
 def delete_feedback(request, pk):
      """
@@ -78,8 +78,20 @@ def delete_feedback(request, pk):
      post = get_object_or_404(Feedback, pk=pk)
      if request.user == post.user:
          post.delete()
-         return redirect(get_feedback)         
-     return('feedback/feebback.html')    
-               
+         return redirect(get_feedback)      
+     return('feedback/feedback.html')    
+
+# Votes- anyone can vote
+
+def votes(request, pk):
+    """
+    A view that allows all users to votes on a feedback
+    """
+    if request.method == "POST":
+        votes =get_object_or_404(Feedback, pk=pk)
+        votes.votes += 1
+        votes.save()
+        return redirect ("feedback/feedback.html")
+        
     
        
