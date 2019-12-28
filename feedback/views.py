@@ -12,22 +12,9 @@ def get_feedback(request):
     """
     Create view all users can view feedback
     """
-    posts = Feedback.objects.filter(published_date__lte=timezone()
-                                    ).order_by('-published_date')
-    return render (request, "feedback.feedback.html", {"posts":posts})
-
-
-# Single View of feedback post
-
-def detail_feedback(request, pk):
-    """
-    This view allows users to see there only feedback
-    post
-    """
-    post = get_object_or_404(Feedback, pk=pk)
-    post.save()
-    return render(request, "feedback/detail_feedback.html", {"post":post
-                                                             })
+    posts = Feedback.objects.all()
+    
+    return render (request, "feedback/feedback.html", {"posts":posts})
 
 # Create a feedback post - only logged in users
 @login_required()
@@ -46,6 +33,21 @@ def add_feedback(request):
     else:
         form = FeedbackForm()
     return render(request, "feedback/feedbackform.html", {"form":form})     
+
+
+
+# Single View of feedback post
+
+def detail_feedback(request, pk):
+    """
+    This view allows users to see there only feedback
+    post
+    """
+    post = get_object_or_404(Feedback, pk=pk)
+    post.save()
+    return render(request, "feedback/detail_feedback.html", {"post":post
+                                                             })
+
 
 #  Edit Feedback- Only Edit own post
 

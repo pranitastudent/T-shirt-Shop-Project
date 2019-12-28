@@ -9,8 +9,6 @@ urlpatterns = [
     path('<int:pk>/add_feedback', add_feedback, name= 'add_feedback'),
     path('<int:pk>/edit_feedback', edit_feedback, name='edit_feedback'),
     path('<int:pk>/delete_feedback', delete_feedback, name='delete_feedback'),
-    path('<int:pk>/detail_feedback', detail_feedback, name='detail_feedback'),
-        
-   
-      
+    path('<int:pk>/detail_feedback', detail_feedback, name='detail_feedback'),       
+         
 ]

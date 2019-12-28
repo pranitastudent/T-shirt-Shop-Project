@@ -24,12 +24,13 @@
 <!-- Feedback -->
 
 <section id="feedback">
-    <div class="container">
+    <div class="container mb-5">
         <div class="row">
             <div class="col-md 12 col-xs-12 mx-auto">
+                <h3 class="text-center">Feedback ..</h3>
                 <div class="card">
                     {% for post in posts %}
-                    <div class="card-header">{{post.product_name}}</div>
+                    <div class="card-header text-center bg-dark text-white">{{post.product_name}}</div>
                     <div class="card-body">
                       <h5 class="card-title">Posted by: {{post.author}}</h5>
                       <p class="card-text product-post">{{ post.published_date|timesince}}}</p>
@@ -39,19 +40,18 @@
                    
                       {% if request.user == post.author %}  
 
-                      <a href="{% 'edit_feedback' %}" class="btn btn-warning">Edit</a>&nbsp;&nbsp;
-                      <a href="{% 'delete_feedback' %}" class="btn btn-danger">Danger</a>&nbsp;&nbsp;
+                      <a href="{% url 'edit_feedback' post.id %}" class="btn btn-warning">Edit</a>&nbsp;&nbsp;
+                      <a href="{% url 'delete_feedback' post.id %}" class="btn btn-danger">Danger</a>&nbsp;&nbsp;
 
                       {% endif %}
+                      <span class="votes">{{feedback.votes}}<i class="far fa-thumbs-up"></i></span>
                     </div>
                     {% endfor %}
                 </div>
-                   <span class="votes">{{feedback.votes}}<i class="far fa-thumbs-up"></i></span>
+                  
               </div>
         </div>
     </div>
-</section> 
-       
-  
+</section>  
 
 {% endblock %}
