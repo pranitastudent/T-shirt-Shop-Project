@@ -10,6 +10,7 @@ class Feedback(models.Model):
     user_feedback = models.TextField(null=True)
     created_date = models.DateTimeField(auto_now_add=True, null=True)
     rating = models.ForeignKey('star_ratings.Rating', null=True, on_delete=models.CASCADE)
+    votes= models.IntegerField(default=0)
     
     def __str__(self):
         return self.product_name
