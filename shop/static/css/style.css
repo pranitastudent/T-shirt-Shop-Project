@@ -39,7 +39,7 @@ html, body  {
 .navbar {
     background: #808080;
     opacity: 0.9; 
-    font-size:13px;
+    white-space: nowrap;
     text-transform: uppercase;
         
 }
@@ -167,6 +167,11 @@ html, body  {
    
 }
 
+.thumb {
+    border:none;
+    background-color: #fff;
+}
+
 #topBtn {
     position: fixed;
     bottom: 100px;
@@ -198,14 +203,18 @@ div.container.border.submit {
     
 }
 
-/* Containers - Registration and Contact */
+/* Containers - Registration, Feedback, Login and Contact */
 
 .contact-cont,
 .regi-cont,
 .login-cont,
-.feedback-cont
+.feedback-cont,
 #shop {
     margin-bottom:111px;
+}
+
+.cont-form {
+    margin-bottom: 120px;
 }
 
 /* Feedback */

@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib import messages
 from django.utils import timezone
 from django.contrib.auth.models import User
@@ -14,8 +15,10 @@ def get_feedback(request):
     """
     Create view all users can view feedback
     """
-    posts = Feedback.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
-    
+    posts = Feedback.objects.order_by('-published_date').all()
+    paginator = Paginator(posts, 6)
+    page = request.GET.get('page')
+    paged_posts = paginator.get_page(page)
     return render (request, "feedback/feedback.html", {"posts":posts})
 
 # Single View of feedback post
@@ -100,7 +103,6 @@ def upvote(request,pk):
     if request.method == "POST":
         upvote = get_object_or_404(Feedback, pk=pk)
         upvote.upvote +=1
-        print(upvote.upvote)
         upvote.save()
         return redirect ('get_feedback')
         

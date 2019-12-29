@@ -33,7 +33,7 @@ class Feedback(models.Model):
     user_feedback = models.TextField(null=True)
     published_date = models.DateTimeField(auto_now_add=True, null=True)
     ratings = models.CharField(max_length=100,choices=RATING_CHOICES, null=False, blank=False)
-    votes = models.IntegerField(default=0)
+    upvote = models.IntegerField(default=0)
     
     def __str__(self):
         return self.product_name
