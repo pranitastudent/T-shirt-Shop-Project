@@ -96,12 +96,13 @@ def delete_feedback(request, pk):
 
 # Votes - All Allowed to vote
 
-def vote(request,pk):
+def upvote(request,pk):
     if request.method == "POST":
-        votes = get_object_or_404(Feedback, pk=pk)
-        votes.votes +=1
-        votes.save()
-        return redirect('get_feedback')
+        upvote = get_object_or_404(Feedback, pk=pk)
+        upvote.upvote +=1
+        print(upvote.upvote)
+        upvote.save()
+        return redirect ('get_feedback')
         
     
        

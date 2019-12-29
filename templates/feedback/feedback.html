@@ -35,6 +35,12 @@
                       <p class="card-text product-post">Published Date: {{ post.published_date|timesince}}</p>
                       <p class="card-text product-post">{{ post.user_feedback}}</p>
                       <p class="card-text product-post"><strong>Rating: {{ post.ratings}} stars</strong></p> 
+
+                      <form action="{% url 'upvote' post.id %}" class="form-vote">
+                        {% csrf_token%}
+                        <button type="submit" class="fa fa-thumbs-up fa-2x">{{post.upvote}}</button>
+                      </form>
+                      <br>
                       {% if request.user == post.author %}  
 
                       <a href="{% url 'edit_feedback' post.id %}" class="btn btn-warning">Edit</a>&nbsp;&nbsp;
