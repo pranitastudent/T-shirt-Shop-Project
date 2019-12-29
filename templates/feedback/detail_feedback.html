@@ -3,8 +3,7 @@
 {% load bootstrap_tags %}
 {% load static %}
 {% load humanize %}
-{% load ratings %}
-{% ratings object %}
+
 
 {% block content %}
 
@@ -19,7 +18,7 @@
                       <h5 class="card-title">Posted by: {{post.author}}</h5>
                       <p class="card-text product-post">{{ post.published_date|timesince}}</p>
                       <p class="card-text product-post">{{ post.user_feedback}}</p> 
-                      <p class="card-text product-post">{{ post.ratings}}</p> 
+                      <p class="card-text product-post">Rating: {{ post.ratings}}</p> 
                       <a href="{% url 'get_feedback'  %}" class="btn btn-primary">Feedback</a>&nbsp;&nbsp;                                 
                       <a href="{% url 'edit_feedback' post.id %}" class="btn btn-warning">Edit</a>&nbsp;&nbsp;
                       <a href="{% url 'delete_feedback' post.id %}" class="btn btn-danger">Delete</a>                                    

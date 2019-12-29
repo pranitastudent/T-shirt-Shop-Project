@@ -3,8 +3,7 @@
 {% load bootstrap_tags %}
 {% load static %}
 {% load humanize %}
-{% load ratings %}
-{% ratings object %}
+
 
 {% block content %}
 
@@ -33,9 +32,9 @@
                  <div class="card-header bg-dark text-white ">{{post.product_name}}</div>
                     <div class="card-body">
                       <h5 class="card-title">Posted by: {{post.author}}</h5>
-                      <p class="card-text product-post">{{ post.published_date|timesince}}</p>
+                      <p class="card-text product-post">Published Date: {{ post.published_date|timesince}}</p>
                       <p class="card-text product-post">{{ post.user_feedback}}</p>
-                      <p class="card-text product-post">{{ post.ratings}}</p> 
+                      <p class="card-text product-post">Rating: {{ post.ratings}}</p> 
                                          
                       {% if request.user == post.author %}  
 
