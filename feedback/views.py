@@ -45,6 +45,7 @@ def add_feedback(request):
             post = form.save(commit=False)
             post.author = request.user
             post.save()
+            messages.info(request, "Your Feedback has been successfully been added!")
             return redirect('detail_feedback', pk=post.pk)
     else:
         form=FeedbackForm()
@@ -85,6 +86,7 @@ def delete_feedback(request, pk):
     post=get_object_or_404(Feedback, pk=pk)
     if request.user == post.author:
         post.delete()
+        messages.info(request, "Your Feedback has been successfully deleted!")
         return redirect(get_feedback)
     else:
         messages.info(request, "You don't have permission to delete this feedback")
@@ -92,7 +94,14 @@ def delete_feedback(request, pk):
     
     
 
+# Votes - All Allowed to vote
 
+def vote(request,pk):
+    if request.method == "POST":
+        votes = get_object_or_404(Feedback, pk=pk)
+        votes.votes +=1
+        votes.save()
+        return redirect('get_feedback')
         
     
        

@@ -8,10 +8,12 @@ PRODUCT_CHOICES = (
     ('Womens Pink-Tshirt','Womens Pink-Tshirt'),
     ('Womens White-Tshirt','Womens White-Tshirt'),
     ('Mens Black-Tshirt','Mens Black-Tshirt'),
+    ('Mens Black- Skeleton-Tshirt','Mens Black-Skeleton-Tshirt'),
     ('Mens White-Tshirt', 'Mens White-Tshirt'),
     ('Mens Striped-Tshirt','Mens Striped-Tshirt'),
-    ('Boy Tshirt', 'Boy Tshirt'),
-    ('Girl Unicorn-Tshirt','Girl Unicorn-Tshirt'),   
+    ('Boy White-Tshirt', 'Boy White-Tshirt'),
+    ('Boy Striped-Tshirt', 'Boy Striped-Tshirt'),
+    ('Girl Pink-Unicorn-Tshirt','Girl Pink-Unicorn-Tshirt'),   
      
 )
 
@@ -31,6 +33,7 @@ class Feedback(models.Model):
     user_feedback = models.TextField(null=True)
     published_date = models.DateTimeField(auto_now_add=True, null=True)
     ratings = models.CharField(max_length=100,choices=RATING_CHOICES, null=False, blank=False)
+    votes = models.IntegerField(default=0)
     
     def __str__(self):
         return self.product_name
