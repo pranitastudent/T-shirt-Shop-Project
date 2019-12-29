@@ -48,7 +48,6 @@ INSTALLED_APPS = [
     'django_forms_bootstrap',
     'ckeditor',
     'django.contrib.humanize',
-    'django_filters', 
     'star_ratings',
     'storages',  
     
