@@ -19,6 +19,7 @@ def get_feedback(request):
     return render (request, "feedback/feedback.html", {"posts":posts})
 
 # Single View of feedback post
+
 @login_required()
 def detail_feedback(request, pk):
     """
@@ -50,37 +51,48 @@ def add_feedback(request):
     return render(request, "feedback/feedbackform.html", {"form":form})
         
 # Edit Feedback post - logged in
+
 @login_required()
-def edit_feedback(request, pk):    
+def edit_feedback(request, pk=None):
+    """
+    This view allows users to edit only there
+    own feedback if logged in
+    """    
     post = get_object_or_404(Feedback, pk=pk)
     if request.user == post.author:
         if request.method == "POST":
             form = FeedbackForm(request.POST, instance=post)
             if form.is_valid():
                 form.save()
-                return redirect(get_feedback)
+                return redirect('detail_feedback', pk=post.pk)
         else:
             form = FeedbackForm(instance=post)
         return render(request,"feedback/feedbackform.html", {"form":form}) 
     else:
         messages.info(request, "You don't have permission to edit this feedback")
         form = FeedbackForm() 
-    return redirect ('add_feedback')     
+    return ('add_feedback') 
 
-
-        
+ 
+ # Delete Feedback - only logged in user
+ 
+@login_required()
+def delete_feedback(request, pk):
+    """
+    This view allows users to delete there own
+    feedback if logged in
+    """
+    post=get_object_or_404(Feedback, pk=pk)
+    if request.user == post.author:
+        post.delete()
+        return redirect(get_feedback)
+    else:
+        messages.info(request, "You don't have permission to delete this feedback")
+    return ('get_feedback')    
     
-# Votes- anyone can vote
+    
 
-# def votes(request, pk):
-#     """
-#     A view that allows all users to votes on a feedback
-#     """
-#     if request.method == "POST":
-#         votes =get_object_or_404(Feedback, pk=pk)
-#         votes.votes += 1
-#         votes.save()
-#         return redirect ("feedback/feedback.html")
+
         
     
        

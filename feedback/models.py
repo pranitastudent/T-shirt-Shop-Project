@@ -10,6 +10,7 @@ class Feedback(models.Model):
     product_name= models.CharField(max_length=100, null=True)
     user_feedback = models.TextField(null=True)
     published_date = models.DateTimeField(auto_now_add=True, null=True)
+    ratings = models.IntegerField('star_ratings.Rating')
     
     def __str__(self):
         return self.product_name
