@@ -23,7 +23,7 @@
 <!-- Feedback -->
 
 <section id="feedback">
-  <div class="container mb-5">
+  <div class="container mb-3">
       <div class="row">
           <div class="col-md 12 col-xs-12 mx-auto">
               <h1 class="text-center d-3"> Customer Feedback</h1>
@@ -32,7 +32,7 @@
                  <div class="card-header bg-dark text-white ">{{post.product_name}}</div>
                     <div class="card-body">
                       <h5 class="card-title">Posted by: {{post.author}}</h5>
-                      <p class="card-text product-post">Published Date: {{ post.published_date|timesince}}</p>
+                      <p class="card-text product-post">Published Date: {{ post.published_date}}</p>
                       <p class="card-text product-post">{{ post.user_feedback}}</p>
                       <p class="card-text product-post"><strong>Rating: {{ post.ratings}} stars</strong></p> 
 
@@ -46,61 +46,58 @@
                       <a href="{% url 'edit_feedback' post.id %}" class="btn btn-warning">Edit</a>&nbsp;&nbsp;
                       <a href="{% url 'delete_feedback' post.id %}" class="btn btn-danger">Delete</a>
                     
-                      {% endif %}
-                     
-                    </div>
-                  
+                      {% endif %}                     
+                    </div>                  
                 </div>
-                {% endfor %}
-                <button id ="topBtn"><i class="fas fa-arrow-up"></i></button>
-
-          <!-- Pagination template taken from Bootstrap 4 and adapted from: https://stackoverflow.com/questions/43679491/bootstrap-4-center-pagination-in-column and method followed from Brad Traversy Python Dev to Development Course -->
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-6 offset-lg-3 py-5 d-flex">
-                {% if posts.has_other_pages %}
-                  <ul class="pagination mx-auto">
-                    {% if posts.has_previous %}
-                      <li class="page-item">
-                        <a href="?page={{posts.previous_page_number}}" class="page-link">&laquo;</a>
-                      </li>
-                    {% else %}
-                      <li class="page-item disabled">
-                        <a class="page-link">&laquo;</a>
-                      </li>
-                    {% endif %}
-                    {% for i in posts.paginator.page_range %}
-                      {% if posts.number == i %}
-                        <li class="page-item active">
-                          <a class="page-link">{{i}}</a>
-                        </li>
-                      {% else %}
-                        <li class="page-item">
-                          <a href="?page={{i}}" class="page-link">{{i}}</a>
-                        </li>
-                      {% endif %}
-                    {% endfor %}
-                    {% if posts.has_next %}
-                      <li class="page-item">
-                        <a href="?page={posts.next_page_number}}" class="page-link">&raquo;</a>
-                      </li>
-                    {% else %}
-                      <li class="page-item disabled">
-                        <a class="page-link">&raquo;</a>
-                      </li>
-                    {% endif %}
-                  </ul>
-                {% endif %}
-              </div>
-            </div>
-          </div>
-        </div>     
-   <!-- End of Pagination -->
-   
-         </div>         
-      </div>
+                {% endfor %}                
+                <button id ="topBtn"><i class="fas fa-arrow-up"></i></button>     
+            </div>         
+        </div>
     </div>
 </section>
+
+<!-- Pagination template taken from Bootstrap 4, adapated/taken from Python Dev to deployment course- Brad Traversy and adapted from: https://stackoverflow.com/questions/43679491/bootstrap-4-center-pagination-in-column and method followed from Brad Traversy Python Dev to Development Course -->
+<div class="container mb-5">
+  <div class="row">
+    <div class="col-lg-6 offset-lg-3 py-5 d-flex">
+      {% if posts.has_other_pages %}
+        <ul class="pagination mx-auto">
+          {% if posts.has_previous %}
+            <li class="page-item">
+              <a href="?page={{posts.previous_page_number}}" class="page-link">&laquo;</a>
+            </li>
+          {% else %}
+            <li class="page-item disabled">
+              <a class="page-link">&laquo;</a>
+            </li>
+          {% endif %}
+          {% for i in posts.paginator.page_range %}
+            {% if posts.number == i %}
+              <li class="page-item active">
+                <a class="page-link">{{i}}</a>
+              </li>
+            {% else %}
+              <li class="page-item">
+                <a href="?page={{i}}" class="page-link">{{i}}</a>
+              </li>
+            {% endif %}
+          {% endfor %}
+          {% if posts.has_next %}
+            <li class="page-item">
+              <a href="?page={{posts.next_page_number}}" class="page-link">&raquo;</a>
+            </li>
+          {% else %}
+            <li class="page-item disabled">
+              <a class="page-link">&raquo;</a>
+            </li>
+          {% endif %}
+        </ul>
+      {% endif %}      
+    </div>
+  </div>
+</div>
+</div>     
+<!-- End of Pagination and adapted code -->
 
 
 

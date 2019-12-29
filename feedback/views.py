@@ -19,7 +19,7 @@ def get_feedback(request):
     paginator = Paginator(posts, 6)
     page = request.GET.get('page')
     paged_posts = paginator.get_page(page)
-    return render (request, "feedback/feedback.html", {"posts":posts})
+    return render (request, "feedback/feedback.html", {"posts":paged_posts})
 
 # Single View of feedback post
 

@@ -213,7 +213,9 @@ div.container.border.submit {
     margin-bottom:111px;
 }
 
-.cont-form {
+.cont-form,
+.cont-reset
+ {
     margin-bottom: 120px;
 }
 
@@ -237,7 +239,26 @@ div.container.border.submit {
         height: 50vh;
         object-fit: cover;
     }
+
+    #reset
+    {
+    position: fixed;
+    width: 100vw;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    }
+
+    #login {
+        position: fixed;
+        width: 100vw;
+        top: 62%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+    }
 }
+
 
 @media(min-width:768px) and (max-width:768px) {
     .map {
