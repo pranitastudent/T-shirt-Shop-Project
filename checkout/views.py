@@ -34,7 +34,7 @@ def checkout(request):
             for id, quantity in cart.items():
                 product = get_object_or_404(Product, pk=id) 
                 total += quantity * product.price        
-                sub_total += quantity * product.price                           
+                total += quantity * product.price                         
                 order_line_item = OrderLineItem(
                     order = order, 
                     product = product, 
@@ -43,13 +43,13 @@ def checkout(request):
                 order_line_item.save()
                 
             #  If total over £80 then 15% discount applied
-            if total >= 80:
-                print("total is 80 or over") # test statement
+                if total >= 80:
+                    print("total is 80 or over") # test statement
                  
-                total = total - discount   
+                    total = total - discount   
                                                                              
-            else:                
-                total = total
+                else:                
+                    total = total
                 print("total under 80") # test statement                
               
                 

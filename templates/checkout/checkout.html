@@ -47,16 +47,13 @@
     <div class="col-md-12 col-xs-12 mt-3">
     <p>Total: &nbsp;</p>                
     <p><span> <i class="fas fa-pound-sign"></i>&nbsp;
-        {% if total >= 80 %}   
+     {% if total >= 80 %}   
+        £{{ total }}
+     {% else %}
+        £{{ sub_total}}
+     {% endif %}   
+    </span></p>  
         
-        {{ total }}
-          
-        {% else %}  
-         
-        {{sub_total}}
-                  
-        {% endif %}
-    </span></p>
  </div>
 </div>
 </div>
