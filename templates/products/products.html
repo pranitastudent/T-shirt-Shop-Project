@@ -19,8 +19,9 @@
 
 
 <!-- Product Search Fields- Input text adapted from Code Institute Ecommerce Mini Project lectures -->
-<section id ="search">
-  <div class="container">
+
+<section id ="search ">
+  <div class="container mb-5">
     <div class="row text-center">
       <div class="col-md-12 mx-auto">
         <form action="{% url 'search' %}" method="GET">
@@ -61,7 +62,7 @@
              <div class="card-body">
                 <h3 class="card-text">{{ product.product_name}}</h3>
                 <p class="card-text">Category: {{ product.category}}</p>
-                <p class="card-text">Product added: {{ product.product_date | timesince }}</p>
+                <p class="card-text">Product added: {{ product.product_date }}</p>
                 <form method="post" action="{% url 'add_to_cart' product.id %}">
                   {% csrf_token %}
                 <div class="input-group addition">

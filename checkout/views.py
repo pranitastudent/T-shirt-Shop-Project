@@ -17,6 +17,7 @@ stripe.api_key = settings.STRIPE_SECRET
 
 @login_required()
 def checkout(request):
+    discount = 20
     if request.method=="POST":
         order_form = OrderForm(request.POST)
         payment_form = MakePaymentForm(request.POST)
@@ -27,22 +28,27 @@ def checkout(request):
             order.save()            
             cart = request.session.get('cart', {})           
             total = 0
-            grandtotal = 0
+         
+          
             for id, quantity in cart.items():
                 product = get_object_or_404(Product, pk=id)          
-                total += quantity * product.price 
-                grandtotal += quantity * product.price           
+                total += quantity * product.price                            
                 order_line_item = OrderLineItem(
                     order = order, 
                     product = product, 
                     quantity = quantity
                     )
                 order_line_item.save()
+                
             #  If total over £80 then 15% discount applied
             if total >= 80:
-                total = total * 0.15                                                
-            else:
+                print("total is 80 or over") # test statement
+                 
+                total == total - discount   
+                                                                             
+            else:                
                 total = total
+                print("total under 80") # test statement
                 
             try:
                 customer = stripe.Charge.create(

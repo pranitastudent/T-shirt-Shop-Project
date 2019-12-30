@@ -54,9 +54,11 @@
                     </div>
                   </form>
                   {% endfor %}
+                  <div class="checkout">
                   <span>Total: <i class="fas fa-pound-sign"></i></span>&nbsp;{{ total }}<br><br>
                   <a href="{% url 'checkout' %}" class="btn btn-success btn-xs mb-5" role="button"><span><i
                         class="fas fa-check-circle"></i></span>&nbsp;Checkout</a>
+                  </div>     
                   </div>
                 </td>
                </tr>
