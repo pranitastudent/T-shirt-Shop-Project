@@ -44,7 +44,7 @@ def checkout(request):
             if total >= 80:
                 print("total is 80 or over") # test statement
                  
-                total == total - discount   
+                total = total - discount   
                                                                              
             else:                
                 total = total
