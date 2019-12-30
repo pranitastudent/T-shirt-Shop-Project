@@ -24,13 +24,12 @@ def checkout(request):
         if order_form.is_valid() and payment_form.is_valid():
             order = order_form.save(commit=False)
             order.date = timezone.now()
-            order.save()
-            
-            cart = request.session.get('cart', {})
+            order.save()            
+            cart = request.session.get('cart', {})           
             total = 0
             for id, quantity in cart.items():
-                product = get_object_or_404(Product, pk=id)
-                total += quantity * product.price
+                product = get_object_or_404(Product, pk=id)          
+                total += quantity * product.price         
                 order_line_item = OrderLineItem(
                     order = order, 
                     product = product, 
@@ -49,7 +48,7 @@ def checkout(request):
                 messages.error(request, "Your card was declined!")
                 
             if customer.paid:
-                messages.error(request, "You have successfully paid")
+                messages.error(request, "You have successfully paid and your products are on there way")
                 request.session['cart'] = {}
                 return redirect(reverse('products'))
             else:

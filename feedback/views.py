@@ -104,7 +104,5 @@ def upvote(request,pk):
         upvote = get_object_or_404(Feedback, pk=pk)
         upvote.upvote +=1
         upvote.save()
-        return redirect ('get_feedback')
-        
-    
-       
+        return redirect ('get_feedback')  
+         

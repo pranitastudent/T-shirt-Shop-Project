@@ -13,6 +13,9 @@ def all_products(request):
     paged_products = paginator.get_page(page)
     return render(request,"products/products.html", {"products":paged_products})
 
+def products_list(request):
+    products = Product.objects.all()
+
 
 def do_search(request):
     products = Product.objects.filter(product_name__icontains=request.GET['q'])
