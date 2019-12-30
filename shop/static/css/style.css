@@ -170,6 +170,7 @@ html, body  {
 .thumb {
     border:none;
     background-color: #fff;
+    color: var(--secondary-color);
 }
 
 #topBtn {
@@ -219,7 +220,11 @@ div.container.border.submit {
     margin-bottom: 120px;
 }
 
+/* Table */
 
+.checkout-table {
+    margin-bottom: 10em;
+}
 /* Feedback */
 
 /* Footer */

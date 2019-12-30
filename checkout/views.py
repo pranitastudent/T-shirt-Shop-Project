@@ -28,12 +28,13 @@ def checkout(request):
             order.save()            
             cart = request.session.get('cart', {})           
             total = 0
+            sub_total = 0
          
           
             for id, quantity in cart.items():
                 product = get_object_or_404(Product, pk=id) 
                 total += quantity * product.price        
-                                         
+                sub_total += quantity * product.price                           
                 order_line_item = OrderLineItem(
                     order = order, 
                     product = product, 
@@ -49,9 +50,8 @@ def checkout(request):
                                                                              
             else:                
                 total = total
-                print("total under 80") # test statement
-                
-               
+                print("total under 80") # test statement                
+              
                 
             try:
                 customer = stripe.Charge.create(
