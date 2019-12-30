@@ -31,17 +31,18 @@ def checkout(request):
             for id, quantity in cart.items():
                 product = get_object_or_404(Product, pk=id)          
                 total += quantity * product.price 
-            if total > 80:
-                grandtotal = total * 0.15
-            else:
-                total += quantity * product.price 
-                                
+                grandtotal += quantity * product.price           
                 order_line_item = OrderLineItem(
                     order = order, 
                     product = product, 
                     quantity = quantity
                     )
                 order_line_item.save()
+            #  If total over £80 then 15% discount applied
+            if total >= 80:
+                total = total * 0.15                                                
+            else:
+                total = total
                 
             try:
                 customer = stripe.Charge.create(
