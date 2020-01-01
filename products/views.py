@@ -14,7 +14,21 @@ def all_products(request):
     return render(request,"products/products.html", {"products":paged_products}) 
     
 
-def do_search(request):
-    products = Product.objects.filter(product_name__icontains=request.GET['q'])
-    return render(request, "products/products.html", {"products": products})
+# Search 
 
+def do_search(request):
+    queryset_list = Product.objects.all()
+    
+    # Keywords
+    if 'keywords' in request.GET:
+        keywords = request.GET['keywords']
+        if keywords:
+            queryset_list = queryset_list.filter(product_name__icontains=keywords)       
+                    
+            context = {                              
+                
+                'products': queryset_list,
+                'values': request.GET
+                
+                }
+            return render(request,'products/products.html', context)

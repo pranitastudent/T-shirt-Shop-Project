@@ -24,7 +24,7 @@
   <div class="container mb-5">
     <div class="row text-center">
       <div class="col-md-12 mx-auto">
-        <form action="{% url 'search' %}" method="GET">
+        <form action="{% url 'search' %}">
           <div class="form-row">
             <div class="input-group col-md-6 mx-auto mt-3">
               <span class="input-group-append">
@@ -32,10 +32,10 @@
                   <i class="fa fa-search"></i>
                 </div>
               </span>
-              <input type="text" name="q" class="form-control" placeholder="Search">
-              <span class="input-group-btn text-left">
-              <button class="btn btn-dark ml-1" type="submit">Search</button>
-              </span>
+              
+              <input type="text" name="keywords" class="form-control" placeholder="Search" value="{{ values.keywords }}">
+              <span class="input-group-btn text-left"></span>                                
+              <button class="btn btn-dark ml-1" type="submit">Search</button>              
            </div>       
           </div>
           </form>
@@ -56,13 +56,13 @@
             {% for product in products %}
           <div class="col-md-4">
             <div class="card mb-4 shadow-sm">
-            <span class="badge badge-danger"><strong><i class="fas fa-pound-sign"></i>&nbsp;{{ product.price | intcomma }}</strong></span></h1>
+            <span class="badge badge-danger"><strong><i class="fas fa-pound-sign"></i>&nbsp;{{ product.price }}</strong></span></h1>
              <a href ="{{ product.image.url }}" data-lightbox="{{ product.image.url }}"><img class="prd card-img-top img-fluid" src="{{ product.image.url }}"></a>
               
              <div class="card-body">
                 <h3 class="card-text">{{ product.product_name}}</h3>
                 <p class="card-text">Category: {{ product.category}}</p>
-                <p class="card-text">Product added: {{ product.product_date }}</p>
+                <p class="card-text">Product added: {{ product.product_date | naturalday }}</p>
                 <form method="post" action="{% url 'add_to_cart' product.id %}">
                   {% csrf_token %}
                 <div class="input-group addition">
@@ -77,6 +77,8 @@
           </div>        
     
           {% endfor %}
+<!-- Back To The Top Button -->
+<button id ="topBtn"><i class="fas fa-arrow-up"></i></button> 
 
           
 <!-- Pagination template taken from Bootstrap 4 and adapted from: https://stackoverflow.com/questions/43679491/bootstrap-4-center-pagination-in-column and method followed from Brad Traversy Python Dev to Development Course -->

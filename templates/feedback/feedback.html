@@ -32,7 +32,7 @@
                  <div class="card-header bg-dark text-white ">{{post.product_name}}</div>
                     <div class="card-body">
                       <h5 class="card-title">Posted by: {{post.author}}</h5>
-                      <p class="card-text product-post">Published Date: {{ post.published_date}}</p>
+                      <p class="card-text product-post">Published Date: {{ post.published_date | naturalday }}</p>
                       <p class="card-text product-post">{{ post.user_feedback}}</p>
                       <p class="card-text product-post"><strong>Rating: {{ post.ratings}} stars</strong></p> 
 

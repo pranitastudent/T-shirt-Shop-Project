@@ -45,8 +45,7 @@ def checkout(request):
             #  If total over £80 then 15% discount applied
                 if total >= 80:
                     print("total is 80 or over") # test statement
-                 
-                    
+                                     
                     total = total - discount   
                                                                              
                 else:                
