@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from django.core.paginator import Paginator,EmptyPage, PageNotAnInteger
 from .models import Product
 
@@ -32,3 +32,5 @@ def do_search(request):
                 
                 }
             return render(request,'products/products.html', context)
+       
+       
