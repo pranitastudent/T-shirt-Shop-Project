@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.org/pranitastudent/Milestone_5_project.svg?branch=master)](https://travis-ci.org/pranitastudent/Milestone_5_project)
 
+[Deployed Website](https://pranita-tshirt-shop.herokuapp.com/)
+
 # Full Stack Frameworks with Django Milestone Project- Ecommerce store - Milestone 5 Project 
 
 ## Project Entrails
