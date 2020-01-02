@@ -28,31 +28,19 @@ def checkout(request):
             order.save()            
             cart = request.session.get('cart', {})           
             total = 0
-            sub_total = 0
+            
          
           
             for id, quantity in cart.items():
                 product = get_object_or_404(Product, pk=id) 
                 total += quantity * product.price        
-                sub_total += quantity * product.price                         
                 order_line_item = OrderLineItem(
                     order = order, 
                     product = product, 
                     quantity = quantity
                     )
-                order_line_item.save()
-                
-            #  If total over £80 then 15% discount applied
-                if total >= 80:
-                    print("total is 80 or over") # test statement
-                                     
-                    total = total - discount   
-                                                                             
-                else:                
-                    sub_total = total
-                print("total under 80") # test statement                
-              
-                
+                order_line_item.save()                                 
+                             
             try:
                 customer = stripe.Charge.create(
                     amount = int(total * 100),
@@ -75,17 +63,5 @@ def checkout(request):
     else:
         payment_form = MakePaymentForm()
         order_form = OrderForm()
-        sub_total = 0
-        total = 0        
-        total += quantity * product.price
-        sub_total += quantity * product.price 
-    if total >= 80:
-        print("total is 80 or over") # test statement
-                                   
-        total = total - discount   
-                                                                          
-    else:                
-        sub_total = total
-        print("total is under 80")  # test statement   
         
-    return render(request, "checkout/checkout.html", {'order_form': order_form, 'payment_form': payment_form,'sub_total':sub_total,'total':total, 'publishable': settings.STRIPE_PUBLISHABLE})
+    return render(request, "checkout/checkout.html", {'order_form': order_form, 'payment_form': payment_form, 'publishable': settings.STRIPE_PUBLISHABLE})
