@@ -6,21 +6,23 @@ class TestUrls(SimpleTestCase):
       
     # Login  
     
-    def test_login_url_is_resolved(self):
+    def test_login_url_resolves(self):
       url = reverse('login')
       print(resolve(url))
       self.assertEquals(resolve(url).func,login)
       
     # Logout  
       
-    def test_logout_url_is_resolved(self):
+    def test_logout_url_resolves(self):
       url = reverse('logout')
       print(resolve(url))
       self.assertEquals(resolve(url).func,logout) 
       
     # Register
     
-    def test_register_url_is_resolved(self):
+    def test_register_url_resolves(self):
       url = reverse('register')
       print(resolve(url))
-      self.assertEquals(resolve(url).func,register)     
+      self.assertEquals(resolve(url).func,register)    
+      
+   
