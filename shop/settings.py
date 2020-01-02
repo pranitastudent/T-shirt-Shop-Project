@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'django.contrib.humanize',
     'storages',
+    
   
     
     # My own custom apps
