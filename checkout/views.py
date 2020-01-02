@@ -75,6 +75,17 @@ def checkout(request):
     else:
         payment_form = MakePaymentForm()
         order_form = OrderForm()
+        sub_total = 0
+        total = 0        
+        total += quantity * product.price
         sub_total += quantity * product.price 
+    if total >= 80:
+        print("total is 80 or over") # test statement
+                                   
+        total = total - discount   
+                                                                          
+    else:                
+        sub_total = total
+        print("total is under 80")  # test statement   
         
-    return render(request, "checkout/checkout.html", {'order_form': order_form, 'payment_form': payment_form, 'publishable': settings.STRIPE_PUBLISHABLE})
+    return render(request, "checkout/checkout.html", {'order_form': order_form, 'payment_form': payment_form,'sub_total':sub_total,'total':total, 'publishable': settings.STRIPE_PUBLISHABLE})
