@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css?family=Manjari&display=swap');
+
+body {
+    min-height:100%; 
+    position:relative; 
+    font-family: 'Manjari', sans-serif; 
+     
+    }
+
+html {
+     height: 100%;
+     }
+
+html, body  {
+     width: 100%;
+     overflow-x: hidden;
+     }     
+
+/* CSS Variables */
+
+:root {
+    --light-color: #f3f3f3;
+    --dark-color: #333;
+    --primary-color:#00b33c;
+    --secondary-color: #0066ff;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+
+}
+
+/* Navbar */
+
+.navbar {
+    background: #808080;
+    opacity: 0.9; 
+    font-size:12px;
+    text-transform: uppercase;
+    height:auto;
+    width:auto
+        
+}
+
+/* Carousel */
+
+.carousel {
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+
+/* Alert */
+
+.alert {
+    margin-bottom:0!important;
+}
+
+/* Social Media Icons */
+
+.fab {
+   margin-right:0.5em; 
+   color: var(--dark-color);
+}
+
+ .social a :hover {
+    color: var(--secondary-color);
+}
+
+
+/* Showcase */
+
+#showcase {
+    position:relative;
+    background: url("../img/showcase_1.jpg") no-repeat center center/cover ;
+    min-height:600px;         
+}
+
+ #showcase .primary-overlay {
+    background:rgba(153,153,153,0.5);
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    width:100%;
+   height: 100%;   
+
+}
+
+.main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.location {
+    font-size: 1.25em;
+}
+
+/* Badges */
+
+.badge-danger {
+    height: 3.6vh;
+    font-size:1.0rem;
+       
+}
+
+.rule {
+   margin:auto;
+   width:70%;
+   border-top: 1px solid #fff;
+}
+
+/*  Card styles */
+.form-body {
+    width:100%;
+}
+
+
+/* Pagination */
+
+.pagination > li > a
+{
+    background-color: white;
+    color: var(--secondary-color);
+}
+
+.page-item.active .page-link {
+    background-color: var(--dark-color);
+    border-color: var(--dark-color);
+}
+
+/* Username  */
+
+.username {
+    color: var(--secondary-color);
+    font-weight:400;
+}
+
+/* Lists */
+
+.days {
+    list-style: none;
+}
+
+/* Shop Times and Map */
+
+.map {
+    height: 300px;
+    width: 500px;
+    margin-bottom: 100px;
+}
+
+/* Buttons */
+
+.login-btn {
+   
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  width:10%
+   
+}
+
+#topBtn {
+    position: fixed;
+    bottom: 100px;
+    right:40px;
+    font-size: 22px;
+    width: 50px;
+    height: 50px;
+    background: var(--secondary-color);
+    opacity:0.9;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    display:none;
+    z-index: 1;
+
+}
+
+/* Submit */
+
+div.container.border.submit {
+    margin-bottom: 111px!important;
+}
+
+/* Forms */
+
+.payment {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+/* Containers - Registration and Contact */
+
+.contact-cont,
+.regi-cont,
+.login-cont,
+.cont-feedback,
+.cont-form {
+    margin-bottom:111px;
+}
+
+#shop {
+    margin-bottom: 90px;
+}
+
+/* Feedback */
+
+#feedback {
+    margin-bottom:111px;
+}
+
+/* Footer */
+
+#main-footer { 
+    position: absolute; 
+    left: 0 ; right: 0; bottom: 0; 
+    height:90px;
+}
+
+
+/* Media Queries */
+
+
+@media (min-width: 700px) {
+    .prd  {
+        width: 100%;
+        height: 50vh;
+        object-fit: cover;
+    }
+}
+
+@media(min-width:768px) and (max-width:768px) {
+    .map {
+        width:351px;
+    }
+}
+
+@media (max-width: 766px) {
+    #top-bar {
+        text-align:center;
+    }
+
+    .map {
+        padding: 0;
+        height:300px;
+        width:300px;
+    }
+
+   .social  {
+        text-align: center!important;
+
+    }
+
+    .main-text {
+        
+        padding-top: 32px;
+        font-size: 4.5em;
+    }
+    
+    .badge-danger {
+      padding:3px;
+    }
+   
+
+    .login-btn {
+        width:50%;
+    }
+
+    #topBtn {
+        height: 20px;
+        width:20px;
+        right:10px;
+    }
+}
+ 

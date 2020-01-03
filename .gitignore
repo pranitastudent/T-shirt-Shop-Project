@@ -6,6 +6,5 @@ __pycache__/
 .vscode
 env.py
 db.sqlite3
-/static
 /media
 /image_upload
