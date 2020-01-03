@@ -27,8 +27,7 @@ def checkout(request):
             order.date = timezone.now()
             order.save()            
             cart = request.session.get('cart', {})           
-            total = 0
-            
+            total = 0           
          
           
             for id, quantity in cart.items():
