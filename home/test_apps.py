@@ -1,6 +1,6 @@
 from django.apps import apps
 from django.test import TestCase
-from .apps import HomeConfig
+from home.apps import HomeConfig
 
 class TestAppsConfig(TestCase):
     
