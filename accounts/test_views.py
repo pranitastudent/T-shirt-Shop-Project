@@ -15,6 +15,8 @@ class TestAccountsViews(TestCase):
         response = self.client.get('/accounts/login/')
         self.assertEquals(response.status_code, 200)
         self.assertTemplateUsed(response, 'accounts/login.html')
+        
+            
   
     
    
