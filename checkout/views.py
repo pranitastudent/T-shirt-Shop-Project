@@ -95,4 +95,4 @@ def checkout(request):
                 else:
                     total = total     
         
-    return render(request, "checkout/checkout.html", {'order_form': order_form, 'payment_form': payment_form, 'publishable': settings.STRIPE_PUBLISHABLE})
+    return render(request, "checkout/checkout.html", {'order_form': order_form, 'payment_form': payment_form,'sub_total':sub_total, 'total':total, 'publishable': settings.STRIPE_PUBLISHABLE})
