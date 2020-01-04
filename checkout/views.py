@@ -9,6 +9,7 @@ from django.conf import settings
 from django.utils import timezone
 from products.models import Product
 import stripe
+from django.http import request
 
 
 # Create your views here.
@@ -26,19 +27,25 @@ def checkout(request):
             order = order_form.save(commit=False)
             order.date = timezone.now()
             order.save()            
-            cart = request.session.get('cart', {})           
+            cart = request.session.get('cart', {}) 
+            sub_total = 0          
             total = 0           
          
           
             for id, quantity in cart.items():
                 product = get_object_or_404(Product, pk=id) 
+                sub_total += quantity * product.price
                 total += quantity * product.price        
                 order_line_item = OrderLineItem(
                     order = order, 
                     product = product, 
                     quantity = quantity
                     )
-                order_line_item.save()                                 
+                order_line_item.save()
+                if total >= 80:
+                    total = total - discount
+                else:
+                    total = total                                     
                              
             try:
                 customer = stripe.Charge.create(
@@ -60,7 +67,32 @@ def checkout(request):
             print(payment_form.errors)
             messages.error(request, "We were unable to take a payment with that card!")
     else:
-        payment_form = MakePaymentForm()
-        order_form = OrderForm()
+       if request.method == "GET":
+           
+        payment_form = MakePaymentForm(request.GET)
+        order_form = OrderForm(request.GET)
+        if order_form.is_valid() and payment_form.is_valid():
+            order = order_form.save(commit=False)
+            order.date = timezone.now()
+            order.save()            
+            cart = request.session.get('cart', {}) 
+            sub_total = 0          
+            total = 0           
+         
+          
+            for id, quantity in cart.items():
+                product = get_object_or_404(Product, pk=id) 
+                sub_total += quantity * product.price
+                total += quantity * product.price        
+                order_line_item = OrderLineItem(
+                    order = order, 
+                    product = product, 
+                    quantity = quantity
+                    )
+                order_line_item.save()
+                if total >= 80:
+                    total = total - discount
+                else:
+                    total = total     
         
     return render(request, "checkout/checkout.html", {'order_form': order_form, 'payment_form': payment_form, 'publishable': settings.STRIPE_PUBLISHABLE})

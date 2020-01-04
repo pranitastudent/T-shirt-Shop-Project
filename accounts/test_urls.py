@@ -4,6 +4,9 @@ from accounts.views import logout,login,register
 
 class TestUrls(SimpleTestCase):
       
+  # PLEASE NOTE ALL URLS TESTS WERE CODED FO USING - Django Testing Tutorial - How to set up tests and Testing (https://www.youtube.com/watch?v=0MrgsYswT1c) 
+  # The Dumbfounds.
+      
     # Login  
     
     def test_login_url_resolves(self):
