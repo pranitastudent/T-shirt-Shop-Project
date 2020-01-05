@@ -1,9 +1,11 @@
-  
+ Contact Name: 
  
 {{ contact_name }}
 
+Contact Email:
 
 {{ contact_email }}
 
+Message:
 
 {{ contact_content }}

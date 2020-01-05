@@ -19,7 +19,7 @@
 
 <!-- For loop for items in cart -->
 
-<div class="album py-5 bg-light">
+<div class="py-5 bg-light">
     <div class="container">
         <div class="row">
             {% for item in cart_items %}
@@ -45,14 +45,9 @@
 <div class="container text-center">
 <div class="row">
     <div class="col-md-12 col-xs-12 mt-3">
-    <p>Total: &nbsp;</p>                
-    <p><span> Sub_Total: <i class="fas fa-pound-sign"></i>&nbsp;
-     {% if sub_total => 80 %}   
-        {{ total }}
-     {% else %}
-     {{ sub_total }}
-     {% endif %}
-    </span></p>  
+        <!-- Code Edited and  -->                
+    <p><span> Sub_Total: <i class="fas fa-pound-sign"></i> {{ total }}</span></p>
+    <p>Total: <i class="fas fa-pound-sign"></i> {{ sub_total }} <br>(-<i class="fas fa-pound-sign"></i> {{ discount}} discount)</p> 
  </div>
 </div>
 </div>

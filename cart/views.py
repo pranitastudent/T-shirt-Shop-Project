@@ -1,10 +1,15 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import get_object_or_404, redirect, render, reverse
 from products.models import Product
 
 # Create your views here.
 def view_cart(request):
+    cart = request.session.get('cart', {})
+    sub_total = 0
+    for id, quantity in cart.items():
+         product = get_object_or_404(Product, pk=id)
+         sub_total = sub_total + (quantity * product.price)
     """A View that renders the cart contents page"""
-    return render(request, "cart/cart.html")
+    return render(request, "cart/cart.html", {'sub_total':sub_total})
 
 
 def add_to_cart(request, id):
@@ -15,10 +20,13 @@ def add_to_cart(request, id):
     if id in cart:
         cart[id] = int(cart[id]) + quantity      
     else:
+        product = get_object_or_404(Product, pk=id)
+        sub_total=0       
+        sub_total = sub_total + (quantity * product.price)
         cart[id] = cart.get(id, quantity) 
 
     request.session['cart'] = cart
-    return redirect(reverse('products'))
+    return redirect(reverse('products'), {'sub_total':sub_total})
 
 def adjust_cart(request, id):
     """

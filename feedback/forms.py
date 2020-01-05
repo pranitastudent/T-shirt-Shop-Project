@@ -1,5 +1,6 @@
 from django import forms
 from .models import Feedback
+from django.forms import widgets
 
 
 
@@ -9,5 +10,5 @@ from .models import Feedback
 class FeedbackForm(forms.ModelForm):
     class Meta:
         model = Feedback
-        fields = {'product_name', 'ratings','user_feedback'}
-       
+        fields = {'product_name', 'ratings','user_feedback' }
+      

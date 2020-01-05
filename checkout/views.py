@@ -16,83 +16,72 @@ from django.http import request
 
 stripe.api_key = settings.STRIPE_SECRET
 
+
 @login_required()
 def checkout(request):
     discount = 20
-    if request.method=="POST":
+    sub_total = 0
+    total = 0
+    if request.method == "POST":
         order_form = OrderForm(request.POST)
         payment_form = MakePaymentForm(request.POST)
-        
+
         if order_form.is_valid() and payment_form.is_valid():
             order = order_form.save(commit=False)
             order.date = timezone.now()
-            order.save()            
-            cart = request.session.get('cart', {}) 
-            sub_total = 0          
-            total = 0           
-         
-          
+            order.save()
+            cart = request.session.get('cart', {})
+
             for id, quantity in cart.items():
-                product = get_object_or_404(Product, pk=id) 
-                sub_total += quantity * product.price
-                total += quantity * product.price        
+                product = get_object_or_404(Product, pk=id)
+                sub_total = sub_total + (quantity * product.price)
+                total = total + (quantity * product.price)
                 order_line_item = OrderLineItem(
-                    order = order, 
-                    product = product, 
-                    quantity = quantity
-                    )
+                    order=order,
+                    product=product,
+                    quantity=quantity
+                )
                 order_line_item.save()
                 if total >= 80:
                     total = total - discount
                 else:
-                    total = total                                     
-                             
+                    total = total
+
             try:
                 customer = stripe.Charge.create(
-                    amount = int(total * 100),
-                    currency = "GBP",
-                    description = request.user.email,
-                    card = payment_form.cleaned_data['stripe_id'],
+                    amount=int(total * 100),
+                    currency="GBP",
+                    description=request.user.email,
+                    card=payment_form.cleaned_data['stripe_id'],
                 )
             except stripe.error.CardError:
                 messages.error(request, "Your card was declined!")
-                
+
             if customer.paid:
-                messages.error(request, "You have successfully paid and your products are on there way")
+                messages.error(
+                    request, "You have successfully paid and your products are on there way")
                 request.session['cart'] = {}
                 return redirect(reverse('products'))
             else:
                 messages.error(request, "Unable to take payment")
         else:
             print(payment_form.errors)
-            messages.error(request, "We were unable to take a payment with that card!")
+            messages.error(
+                request, "We were unable to take a payment with that card!")
     else:
-       if request.method == "GET":
-           
-        payment_form = MakePaymentForm(request.GET)
-        order_form = OrderForm(request.GET)
-        if order_form.is_valid() and payment_form.is_valid():
-            order = order_form.save(commit=False)
-            order.date = timezone.now()
-            order.save()            
-            cart = request.session.get('cart', {}) 
-            sub_total = 0          
-            total = 0           
-         
-          
+        if request.method == "GET":
+            payment_form = MakePaymentForm(request.GET)
+            order_form = OrderForm(request.GET)
+            cart = request.session.get('cart', {})
             for id, quantity in cart.items():
-                product = get_object_or_404(Product, pk=id) 
-                sub_total += quantity * product.price
-                total += quantity * product.price        
-                order_line_item = OrderLineItem(
-                    order = order, 
-                    product = product, 
-                    quantity = quantity
+                    product = get_object_or_404(Product, pk=id)
+                    sub_total = sub_total + (quantity * product.price)
+                    total = total + (quantity * product.price)
+                    order_line_item = OrderLineItem(
+                        product=product,
+                        quantity=quantity
                     )
-                order_line_item.save()
-                if total >= 80:
-                    total = total - discount
-                else:
-                    total = total     
-        
-    return render(request, "checkout/checkout.html", {'order_form': order_form, 'payment_form': payment_form,'sub_total':sub_total, 'total':total, 'publishable': settings.STRIPE_PUBLISHABLE})
+            if total >= 80:
+                sub_total = total - discount
+
+    return render(request, "checkout/checkout.html", {'order_form': order_form, 'payment_form': payment_form, 'sub_total': sub_total, 'total': total, 'discount': discount, 'publishable': settings.STRIPE_PUBLISHABLE})
