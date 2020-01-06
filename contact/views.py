@@ -3,6 +3,7 @@ from django.contrib import  messages
 from django.core.mail import EmailMessage
 from django.template.loader import get_template
 from .forms import ContactForm
+from django.conf import settings
 
 
 # Contact Form- Code adapted from (Django-2.2 Part-7 Django Contact Form with SMTP Email Backed Tutorial | By Creative web) 
@@ -42,5 +43,5 @@ def contact(request):
             messages.error(request, "Please check your email is correct")
             print(form.errors)      
 
-    return render(request, 'contact/contact.html', {'contact_form':Contact_Form })
+    return render(request, 'contact/contact.html', {'contact_form':Contact_Form }, {'site_key':settings.RECAPTCHA_SITE_KEY})
 

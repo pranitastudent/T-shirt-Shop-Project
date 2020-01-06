@@ -19,6 +19,11 @@ function initMap() {
     const marker = new google.maps.Marker({ position: loc, map: map });
 }
 
+// Fade Out JS for Alerts
+
+setTimeout(function(){
+    $('#message').fadeOut('fast');
+}, 3000);
 
 
 

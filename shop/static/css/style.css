@@ -142,6 +142,9 @@ html, body  {
     font-weight:400;
 }
 
+.discount {
+    color:red;  
+}
 /* Lists */
 
 .days {

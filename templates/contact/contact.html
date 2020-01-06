@@ -2,6 +2,10 @@
 {% block page_title %} Contact {% endblock %}
 {% load static %}
 {% load bootstrap_tags %}
+{% block top_js %}
+<script type="text/javascript" src="{% static 'js/recaptcha.js' %}"></script>
+
+{% endblock top_js %}
 
 {% block content %}
 
@@ -44,9 +48,10 @@
                     </div>
                     <div class="card-body">
                         <form method="POST">
-                            {% csrf_token %}
+                           {% csrf_token %}
                            {{ contact_form| as_bootstrap }}                                                              
-                            <button type= "submit" class= "btn btn-success">Submit</button>
+                           
+                           <button type= "submit" class= "btn btn-success">Submit</button>
                         </form>
                     </div>
                 </div>

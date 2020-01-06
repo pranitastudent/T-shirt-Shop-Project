@@ -12,8 +12,6 @@ import stripe
 from django.http import request
 
 
-# Create your views here.
-
 stripe.api_key = settings.STRIPE_SECRET
 
 

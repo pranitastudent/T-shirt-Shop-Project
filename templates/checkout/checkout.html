@@ -45,10 +45,11 @@
 <div class="container text-center">
 <div class="row">
     <div class="col-md-12 col-xs-12 mt-3">
-        <!-- Code Edited and  -->                
+    <!-- Code Edited and Completed - SubTotal and Total by Tim Nelson - Tutor -->                
     <p><span> Sub_Total: <i class="fas fa-pound-sign"></i> {{ total }}</span></p>
-    <p>Total: <i class="fas fa-pound-sign"></i> {{ sub_total }} <br>(-<i class="fas fa-pound-sign"></i> {{ discount}} discount)</p> 
- </div>
+    <p>Total: <i class="fas fa-pound-sign"></i> {{ sub_total }} <br>{% if sub_total >= 80 %}<span class="discount">(-<i class="fas fa-pound-sign"></i> {{ discount}} discount)</span>{% endif %}</p> 
+     <!--End of Edited Code  -->
+</div>
 </div>
 </div>
 

@@ -143,6 +143,10 @@ html, body  {
     color: var(--secondary-color);
     font-weight:400;
 }
+ 
+.discount {
+    color:red;  
+}
 
 /* Lists */
 
