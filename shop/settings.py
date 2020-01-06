@@ -26,6 +26,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY =  os.environ.get('SECRET_KEY')
+GOOGLE_RECAPTCHA_SECRET_KEY = os.environ.get('GOOGLE_RECAPTCHA_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -48,10 +49,8 @@ INSTALLED_APPS = [
     'ckeditor',
     'django.contrib.humanize',
     'storages',
-   
     
-  
-    
+     
     # My own custom apps
     'home',
     'accounts',
@@ -226,8 +225,8 @@ CKEDITOR_CONFIGS = {
         'height': 250,
         'width': 600,
         'toolbar':'Custom',
-        'height': '115',
-        'width': '500',
+        'height': '50',
+        'width': 'auto',
         'toolbar_Custom': [
             ['Styles', 'Format', 'Bold', 'Italic', 'Underline', 'Strike', 'SpellChecker', 'Undo', 'Redo'],
             ['Table', 'HorizontalRule'],

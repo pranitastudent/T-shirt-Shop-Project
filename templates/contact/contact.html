@@ -45,7 +45,8 @@
                     <div class="card-body">
                         <form method="POST">
                            {% csrf_token %}
-                           {{ contact_form| as_bootstrap }}                                                              
+                           {{ contact_form| as_bootstrap }}
+                           <div class="g-recaptcha" data-sitekey="6LfguswUAAAAAAll8_MPRkA6S-2KASUV8HAfW_Fd"></div>                                                              
                            
                            <button type= "submit" class= "btn btn-success">Submit</button>
                         </form>

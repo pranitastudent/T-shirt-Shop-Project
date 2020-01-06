@@ -1,3 +1,5 @@
+import urllib
+import json
 from django.shortcuts import render
 from django.contrib import  messages
 from django.core.mail import EmailMessage
@@ -34,10 +36,26 @@ def contact(request):
                 ['pranitacoder12@gmail.com'],
                 headers = { 'Reply To': contact_email }
             )
-
+            # reCaptcha - CODE TAKEN FROM How to Add reCAPTCHA to a Django Site- VITOR FREITAS
+            recaptcha_response = request.POST.get('g-recaptcha-response')
+            url = 'https://www.google.com/recaptcha/api/siteverify'
+            values = {
+                'secret': settings.GOOGLE_RECAPTCHA_SECRET_KEY,
+                'response': recaptcha_response
+            }
+            data = urllib.parse.urlencode(values).encode()
+            req =  urllib.request.Request(url, data=data)
+            response = urllib.request.urlopen(req)
+            result = json.loads(response.read().decode())
+            ''' End reCAPTCHA validation '''
+            
             email.send()
-            messages.success(request, "You email has been successfully sent!") 
-        
+
+            if result['success']:
+                messages.success(request, "You email has been successfully sent!") 
+            else:
+                messages.error(request, "Your reCAPTCHA is invalid, please try again")    
+            # End of taken code
             return render (request, 'home/index.html')
         else:
             messages.error(request, "Please check your email is correct")
