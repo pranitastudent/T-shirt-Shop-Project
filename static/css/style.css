@@ -14,6 +14,7 @@ html {
 html, body  {
      width: 100%;
      overflow-x: hidden;
+     
      }     
 
 /* CSS Variables */
@@ -206,13 +207,16 @@ div.container.border.submit {
 
 /* Containers - Registration and Contact */
 
-.contact-cont,
+/* .contact-cont, */
 .regi-cont,
 .login-cont,
 .cont-feedback,
 .cont-form {
     margin-bottom:111px;
 }
+
+
+
 
 #shop {
     margin-bottom: 90px;

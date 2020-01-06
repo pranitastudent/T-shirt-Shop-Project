@@ -43,5 +43,5 @@ def contact(request):
             messages.error(request, "Please check your email is correct")
             print(form.errors)      
 
-    return render(request, 'contact/contact.html', {'contact_form':Contact_Form }, {'site_key':settings.RECAPTCHA_SITE_KEY})
+    return render(request, 'contact/contact.html', {'contact_form':Contact_Form })
 

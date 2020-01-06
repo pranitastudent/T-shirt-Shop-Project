@@ -2,10 +2,6 @@
 {% block page_title %} Contact {% endblock %}
 {% load static %}
 {% load bootstrap_tags %}
-{% block top_js %}
-<script type="text/javascript" src="{% static 'js/recaptcha.js' %}"></script>
-
-{% endblock top_js %}
 
 {% block content %}
 
@@ -39,7 +35,7 @@
         </div>
     {% endfor %}
 {% endif %}
-    <div class="container contact-cont">
+    <div class="container contact-cont ">
         <div class="row">
             <div class="col-md-6 col-xs-12 mx-auto">
                 <div class="card form-body my-4">

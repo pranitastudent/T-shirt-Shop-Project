@@ -12,10 +12,12 @@ html {
      scroll-behavior: smooth;
      }
 
+
 html, body  {
-     width: 100%;
-     overflow-x: hidden;
-     }     
+        width: 100%;
+        overflow-x: hidden;
+       
+        }     
 
 /* CSS Variables */
 
@@ -208,8 +210,8 @@ div.container.border.submit {
 }
 
 /* Containers - Registration, Feedback, Login and Contact */
-
-.contact-cont,
+/* 
+.contact-cont, */
 .regi-cont,
 .login-cont,
 .feedback-cont,
@@ -222,6 +224,9 @@ div.container.border.submit {
  {
     margin-bottom: 120px;
 }
+
+
+
 
 /* Table */
 

@@ -8,7 +8,6 @@ from ckeditor.fields import RichTextFormField
 class ContactForm(forms.Form):
     
     
-
     contact_name = forms.CharField(required=True, widget=forms.Textarea(attrs={
         "placeholder":" Full name",
         "rows":1,

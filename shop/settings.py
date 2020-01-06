@@ -223,11 +223,11 @@ CKEDITOR_UPLOAD_PATH = "image_upload/"
 
 CKEDITOR_CONFIGS = {
     'awesome_ckeditor': {
-        'height': 300,
-        'width': 750,
+        'height': 250,
+        'width': 600,
         'toolbar':'Custom',
-        'height': 'auto',
-        'width': 'auto',
+        'height': '115',
+        'width': '500',
         'toolbar_Custom': [
             ['Styles', 'Format', 'Bold', 'Italic', 'Underline', 'Strike', 'SpellChecker', 'Undo', 'Redo'],
             ['Table', 'HorizontalRule'],
