@@ -31,9 +31,9 @@ GOOGLE_RECAPTCHA_SECRET_KEY = os.environ.get('GOOGLE_RECAPTCHA_SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['pranita-tshirt-shop.herokuapp.com']
+ALLOWED_HOSTS = []
 
-
+#'pranita-tshirt-shop.herokuapp.com'
 
 # Application definition
 

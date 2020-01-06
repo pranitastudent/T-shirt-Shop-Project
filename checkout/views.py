@@ -9,7 +9,7 @@ from django.conf import settings
 from django.utils import timezone
 from products.models import Product
 import stripe
-from django.http import request
+
 
 
 stripe.api_key = settings.STRIPE_SECRET
@@ -20,17 +20,21 @@ def checkout(request):
     discount = 20
     sub_total = 0
     total = 0
+    print("Entering Checkout")
     if request.method == "POST":
+        print("Entering if post")
         order_form = OrderForm(request.POST)
         payment_form = MakePaymentForm(request.POST)
 
         if order_form.is_valid() and payment_form.is_valid():
+            print("Form is valid")
             order = order_form.save(commit=False)
             order.date = timezone.now()
             order.save()
             cart = request.session.get('cart', {})
 
             for id, quantity in cart.items():
+                print("Order Line")
                 product = get_object_or_404(Product, pk=id)
                 sub_total = sub_total + (quantity * product.price)
                 total = total + (quantity * product.price)
@@ -56,16 +60,16 @@ def checkout(request):
                 messages.error(request, "Your card was declined!")
 
             if customer.paid:
-                messages.error(
-                    request, "You have successfully paid and your products are on there way")
+                messages.error(request, "You have successfully paid and your products are on there way")
                 request.session['cart'] = {}
                 return redirect(reverse('products'))
             else:
                 messages.error(request, "Unable to take payment")
         else:
             print(payment_form.errors)
-            messages.error(
-                request, "We were unable to take a payment with that card!")
+            messages.error(request, "We were unable to take a payment with that card!")
+            request.session['cart'] = {}
+            return redirect(reverse('products'))
     else:
         if request.method == "GET":
             payment_form = MakePaymentForm(request.GET)
