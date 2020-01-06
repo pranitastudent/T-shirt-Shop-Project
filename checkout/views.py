@@ -76,6 +76,7 @@ def checkout(request):
                     sub_total = sub_total + (quantity * product.price)
                     total = total + (quantity * product.price)
                     order_line_item = OrderLineItem(
+                        # order = order,
                         product=product,
                         quantity=quantity
                     )

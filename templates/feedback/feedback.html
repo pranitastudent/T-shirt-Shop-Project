@@ -38,7 +38,7 @@
 
                       <form action="{% url 'upvote' post.id %}" method="POST" class="form-vote">
                         {% csrf_token%}
-                        <button type="submit" class="fa fa-thumbs-up fa-2x thumb color: blue">&nbsp{{post.upvote}}</button>
+                        <button type="submit" class="fa fa-thumbs-up fa-2x thumb">&nbsp{{post.upvote}}</button>
                       </form>
                       <br>
                       {% if request.user == post.author %}  

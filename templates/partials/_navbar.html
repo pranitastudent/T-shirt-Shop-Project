@@ -10,12 +10,11 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup">
          <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-         <ul class="navbar-nav ml-auto">
+   
 
 <!-- (Active link code only!) Code adapated from Brad Traversy - Python Django to Dev Course (Nov 2018) -->
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav ml-auto">
                 {% if '/' == request.path %}
                 <li class="nav-item active ">
                     {% else %}
@@ -96,8 +95,7 @@
               
 
              </ul>
-        </div>
-    </div>
+      </div>
 </nav>
 {% if messages %}
 <div id="message" class = "container-fluid">
