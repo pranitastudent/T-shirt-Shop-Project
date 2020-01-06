@@ -1,5 +1,5 @@
 from django import forms
-from ckeditor.fields import RichTextFormField
+
 
 
 
@@ -17,8 +17,10 @@ class ContactForm(forms.Form):
         'rows': 1, 
         }))
     
-    content = RichTextFormField(config_name='awesome_ckeditor', required=True, widget=forms.Textarea(attrs = {'cols': 10, 
-        'rows': 20}))
+    content = forms.CharField(required=True, widget=forms.Textarea(attrs={
+        "placeholder":" Content",
+        "rows":5,
+    }) )
    
     
     

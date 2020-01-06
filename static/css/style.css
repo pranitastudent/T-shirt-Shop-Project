@@ -207,16 +207,13 @@ div.container.border.submit {
 
 /* Containers - Registration and Contact */
 
-/* .contact-cont, */
+.contact-cont,
 .regi-cont,
 .login-cont,
 .cont-feedback,
 .cont-form {
     margin-bottom:111px;
 }
-
-
-
 
 #shop {
     margin-bottom: 90px;
@@ -235,7 +232,6 @@ div.container.border.submit {
     left: 0 ; right: 0; bottom: 0; 
     height:90px;
 }
-
 
 /* Media Queries */
 

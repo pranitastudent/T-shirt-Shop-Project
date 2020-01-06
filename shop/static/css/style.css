@@ -210,8 +210,8 @@ div.container.border.submit {
 }
 
 /* Containers - Registration, Feedback, Login and Contact */
-/* 
-.contact-cont, */
+
+.contact-cont,
 .regi-cont,
 .login-cont,
 .feedback-cont,
@@ -225,15 +225,17 @@ div.container.border.submit {
     margin-bottom: 120px;
 }
 
-
-
-
 /* Table */
 
 .checkout-table {
     margin-bottom: 10em;
 }
+
 /* Feedback */
+
+#feedback {
+    margin-bottom:111px;
+}
 
 /* Footer */
 
