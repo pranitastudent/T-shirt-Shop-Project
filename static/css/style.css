@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Manjari&display=swap');
 
+/* Global Styles */
+
 body {
     min-height:100%; 
     position:relative; 
@@ -40,7 +42,7 @@ html, body  {
 .navbar {
     background: #808080;
     opacity: 0.9; 
-    font-size:12px;
+    font-size:20px;
     text-transform: uppercase;
     height:auto;
     width:auto
@@ -120,6 +122,7 @@ html, body  {
 }
 
 /*  Card styles */
+
 .form-body {
     width:100%;
 }
@@ -174,6 +177,13 @@ html, body  {
    
 }
 
+.fa-thumbs-up{
+    color:var(--secondary-color);
+    border:none;
+    background-color:#fff;
+
+}
+
 #topBtn {
     position: fixed;
     bottom: 100px;
@@ -210,7 +220,6 @@ div.container.border.submit {
 .contact-cont,
 .regi-cont,
 .login-cont,
-.cont-feedback,
 .cont-form {
     margin-bottom:111px;
 }
@@ -219,11 +228,6 @@ div.container.border.submit {
     margin-bottom: 90px;
 }
 
-/* Feedback */
-
-#feedback {
-    margin-bottom:111px;
-}
 
 /* Footer */
 

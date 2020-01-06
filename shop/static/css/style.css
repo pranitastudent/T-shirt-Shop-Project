@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Manjari&display=swap');
 
+/* Global Styles */
+
 body {
     min-height:100%; 
     position:relative; 
@@ -9,15 +11,13 @@ body {
 
 html {
      height: 100%;
-     scroll-behavior: smooth;
      }
 
-
 html, body  {
-        width: 100%;
-        overflow-x: hidden;
-       
-        }     
+     width: 100%;
+     overflow-x: hidden;
+     
+     }     
 
 /* CSS Variables */
 
@@ -42,8 +42,11 @@ html, body  {
 .navbar {
     background: #808080;
     opacity: 0.9; 
-    white-space: nowrap;
-    text-transform: uppercase;       
+    font-size:14px;
+    text-transform: uppercase;
+    height:auto;
+    width:auto
+        
 }
 
 /* Carousel */
@@ -119,6 +122,7 @@ html, body  {
 }
 
 /*  Card styles */
+
 .form-body {
     width:100%;
 }
@@ -143,10 +147,11 @@ html, body  {
     color: var(--secondary-color);
     font-weight:400;
 }
-
+ 
 .discount {
     color:red;  
 }
+
 /* Lists */
 
 .days {
@@ -172,10 +177,11 @@ html, body  {
    
 }
 
-.thumb {
+.fa-thumbs-up {
+    color:var(--secondary-color);
     border:none;
-    background-color: #fff;
-    color: var(--secondary-color);
+    background-color:#fff;
+
 }
 
 #topBtn {
@@ -209,32 +215,17 @@ div.container.border.submit {
     
 }
 
-/* Containers - Registration, Feedback, Login and Contact */
+/* Containers - Registration and Contact */
 
 .contact-cont,
 .regi-cont,
 .login-cont,
-.feedback-cont,
+.cont-form {
+    margin-bottom:111px;
+}
+
 #shop {
-    margin-bottom:111px;
-}
-
-.cont-form,
-.cont-reset
- {
-    margin-bottom: 120px;
-}
-
-/* Table */
-
-.checkout-table {
-    margin-bottom: 10em;
-}
-
-/* Feedback */
-
-#feedback {
-    margin-bottom:111px;
+    margin-bottom: 90px;
 }
 
 /* Footer */
@@ -245,7 +236,6 @@ div.container.border.submit {
     height:90px;
 }
 
-
 /* Media Queries */
 
 
@@ -255,26 +245,7 @@ div.container.border.submit {
         height: 50vh;
         object-fit: cover;
     }
-
-    #reset
-    {
-    position: fixed;
-    width: 100vw;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    }
-
-    #login {
-        position: fixed;
-        width: 100vw;
-        top: 62%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-
-    }
 }
-
 
 @media(min-width:768px) and (max-width:768px) {
     .map {
@@ -318,6 +289,5 @@ div.container.border.submit {
         width:20px;
         right:10px;
     }
-} 
-
-
+}
+ 
