@@ -5,6 +5,7 @@ from accounts.views import login, register, logout
 from django.contrib.auth.views import PasswordResetView
 from django.conf.urls import url
 
+
 urlpatterns = [
     path('login/', login, name='login'),
     path('register/', register, name='register'),

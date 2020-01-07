@@ -10,15 +10,21 @@ from django.conf import settings
 
 # Contact Form- Code adapted from (Django-2.2 Part-7 Django Contact Form with SMTP Email Backed Tutorial | By Creative web) 
 
+# POST method initiated for Contact
+
 def contact(request):
     Contact_Form = ContactForm
     if request.method == 'POST':
         form = Contact_Form(data=request.POST)
+        
+# Check is Contact form is valid
 
         if form.is_valid():
             contact_name = request.POST.get('contact_name')
             contact_email = request.POST.get('contact_email')
             contact_content = request.POST.get('content')
+            
+# Contact form message template
 
             template = get_template('contact/contact_form.txt')
             context = {
@@ -28,6 +34,8 @@ def contact(request):
             }
             
             content = template.render(context)
+            
+# Format of received email message
 
             email = EmailMessage(
                 "New contact form email",
@@ -36,6 +44,9 @@ def contact(request):
                 ['pranitacoder12@gmail.com'],
                 headers = { 'Reply To': contact_email }
             )
+            
+# End of adapted code
+            
             # reCaptcha - CODE TAKEN FROM How to Add reCAPTCHA to a Django Site- VITOR FREITAS
             recaptcha_response = request.POST.get('g-recaptcha-response')
             url = 'https://www.google.com/recaptcha/api/siteverify'

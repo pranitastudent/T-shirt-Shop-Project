@@ -7,7 +7,10 @@ from django.contrib.auth.models import User
 from .models import Feedback
 from .forms import FeedbackForm
 
-# All Views adapated from Code Institute Lectures on Blog in Fullstack Framework Module
+"""
+All Views adapated from Code Institute Lectures on Blog in Fullstack Framework Module and
+and Python Django Web Framework - Full Course for Beginners- https://www.youtube.com/watch?v=F5mRW0jo-U4 
+"""
 
 # All users can see feedback
 

@@ -15,11 +15,15 @@ import stripe
 stripe.api_key = settings.STRIPE_SECRET
 
 
+# Login to Checkout
+
 @login_required()
 def checkout(request):
     discount = 20
     sub_total = 0
     total = 0
+    
+# POST method to check forms are valid and intitate payment   
     
     if request.method == "POST":        
         order_form = OrderForm(request.POST)
@@ -45,6 +49,8 @@ def checkout(request):
                     total = total - discount
                 else:
                     total = total
+                    
+# Payment with STRIPE
 
             try:
                 customer = stripe.Charge.create(
@@ -67,6 +73,9 @@ def checkout(request):
             messages.error(request, "We were unable to take a payment with that card!")
             request.session['cart'] = {}
             return redirect(reverse('products'))
+        
+ # GET method - display discount and total on front-end (before payment)   
+     
     else:
         if request.method == "GET":
             payment_form = MakePaymentForm(request.GET)
