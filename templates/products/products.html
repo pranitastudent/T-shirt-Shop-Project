@@ -8,128 +8,125 @@
 
 <section id="bcrumb">
   <div class="container-fluid px-0">
-      <nav aria-label="breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{% url 'index' %}"><i class="fas fa-home"></i>&nbsp;Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Products</li>
-          </ol>
-        </nav>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'index' %}"><i class="fas fa-home"></i>&nbsp;Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Products</li>
+      </ol>
+    </nav>
   </div>
 </section>
 
 
 <!-- Product Search Fields- Input text adapted from Code Institute Ecommerce Mini Project lectures -->
 
-<section id ="search ">
+<section id="search">
   <div class="container mb-5">
     <div class="row text-center">
       <div class="col-md-12 mx-auto">
         <form action="{% url 'search' %}">
           <div class="form-row">
             <div class="input-group col-md-6 mx-auto mt-3">
-              <span class="input-group-append">
-                <div class="input-group-text bg-transparent">
-                  <i class="fa fa-search"></i>
-                </div>
-              </span>              
-              <input type="text" name="keywords" class="form-control" placeholder="Search" value="{{ values.keywords }}">
-              <span class="input-group-btn text-left"></span>                                
-              <button class="btn btn-dark ml-1" type="submit">Search</button>              
-           </div>       
-          </div>
-          </form>
-        </div>
-      </div>
-    </div>    
-  </section>
-
-  <!-- End of Search Code -->
-
- 
-   
-<!-- Please note the template for products below is taken from https://getbootstrap.com/docs/4.4/examples/album/ - Bootstrap 4 album example -->
-  
-   <div class="album py-5 bg-light">
-      <div class="container">
-        <h2 class="text-center pb-2"><strong>£20 OFF ON ALL ORDERS OVER £80!</strong></h2>  
-        <div class="row">
-          
-            {% for product in products %}
-          <div class="col-md-4">
-            <div class="card mb-4 shadow-sm">
-            <span class="badge badge-danger"><strong><i class="fas fa-pound-sign"></i>&nbsp;{{ product.price }}</strong></span></h1>
-             <a href ="{{ product.image.url }}" data-lightbox="{{ product.image.url }}"><img class="prd card-img-top img-fluid" src="{{ product.image.url }}"></a>
-              
-             <div class="card-body">
-                <h3 class="card-text">{{ product.product_name}}</h3>
-                <p class="card-text">Category: {{ product.category}}</p>
-                <p class="card-text">Product added: {{ product.product_date | naturalday }}</p>
-                <form method="post" action="{% url 'add_to_cart' product.id %}">
-                  {% csrf_token %}
-                <div class="input-group addition">
-                    <input class="add-checkout text-center" name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Qty">
-                     <span class="input-btn">
-                         <button class = "btn btn-dark rounded-0 btn-sm" type="submit">Add to Cart</button>
-                     </span>
-                    </form>
-                  </div>
+              <div class="input-group-text bg-transparent input-search">
+                <span class="input-group-append"></span>
+                <i class="fa fa-search"></i>
               </div>
-            </div>           
-          </div> 
-             
-    
-          {% endfor %}
-<!-- Back To The Top Button -->
-<button id ="topBtn"><i class="fas fa-arrow-up"></i></button> 
-
-          
-<!-- Pagination template taken from Bootstrap 4 and adapted from: https://stackoverflow.com/questions/43679491/bootstrap-4-center-pagination-in-column and method followed from Brad Traversy Python Dev to Development Course -->
-          <div class="container">
-          <div class="row">
-            <div class="col-lg-6 offset-lg-3 py-5 d-flex">
-              {% if products.has_other_pages %}
-                <ul class="pagination mx-auto">
-                  {% if products.has_previous %}
-                    <li class="page-item">
-                      <a href="?page={{products.previous_page_number}}" class="page-link">&laquo;</a>
-                    </li>
-                  {% else %}
-                    <li class="page-item disabled">
-                      <a class="page-link">&laquo;</a>
-                    </li>
-                  {% endif %}
-                  {% for i in products.paginator.page_range %}
-                    {% if products.number == i %}
-                      <li class="page-item active">
-                        <a class="page-link">{{i}}</a>
-                      </li>
-                    {% else %}
-                      <li class="page-item">
-                        <a href="?page={{i}}" class="page-link">{{i}}</a>
-                      </li>
-                    {% endif %}
-                  {% endfor %}
-                  {% if products.has_next %}
-                    <li class="page-item">
-                      <a href="?page={{products.next_page_number}}" class="page-link">&raquo;</a>
-                    </li>
-                  {% else %}
-                    <li class="page-item disabled">
-                      <a class="page-link">&raquo;</a>
-                    </li>
-                  {% endif %}
-                </ul>
-              {% endif %}
+              <input type="text" name="keywords" class="form-control" placeholder="Search"
+                value="{{ values.keywords }}">
+              <span class="input-group-btn text-left"></span>
+              <button class="btn btn-dark ml-1" type="submit">Search</button>
             </div>
           </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- End of Search Code -->
+
+
+
+<!-- Please note the template for products below is taken from https://getbootstrap.com/docs/4.4/examples/album/ - Bootstrap 4 album example -->
+
+<div class="album py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center pb-2"><strong>£20 OFF ON ALL ORDERS OVER £80!</strong></h2>
+    <div class="row">
+      {% for product in products %}
+      <div class="col-md-4">
+        <div class="card mb-4 shadow-sm">
+          <span class="badge badge-danger"><strong><i
+                class="fas fa-pound-sign"></i>&nbsp;{{ product.price }}</strong></span>
+          <a href="{{ product.image.url }}" data-lightbox="{{ product.image.url }}"><img
+              class="prd card-img-top img-fluid" src="{{ product.image.url }}"></a>
+          <div class="card-body">
+            <h3 class="card-text">{{ product.product_name}}</h3>
+            <p class="card-text">Category: {{ product.category}}</p>
+            <p class="card-text">Product added: {{ product.product_date | naturalday }}</p>
+            <form method="post" action="{% url 'add_to_cart' product.id %}">
+              {% csrf_token %}
+              <div class="input-group addition">
+                <input class="add-checkout text-center" name="quantity" type="number" min="1" max="999"
+                  class="form-control" placeholder="Qty">
+                <span class="input-btn">
+                  <button class="btn btn-dark rounded-0 btn-sm" type="submit">Add to Cart</button>
+                </span>
+              </div>
+            </form>          
         </div>
       </div>
-   
- <!-- End of Pagination -->
-          
+    </div>
+    {% endfor %}
+  </div>
+ </div>
+</div>
+<!-- Back To The Top Button -->
+<button id="topBtn"><i class="fas fa-arrow-up"></i></button>
 
 
+<!-- Pagination template taken from Bootstrap 4 and adapted from: https://stackoverflow.com/questions/43679491/bootstrap-4-center-pagination-in-column and method followed from Brad Traversy Python Dev to Development Course -->
+<div class="container mb-5">
+  <div class="row">
+    <div class="col-lg-6 offset-lg-3 py-5 d-flex">
+      {% if products.has_other_pages %}
+      <ul class="pagination mx-auto">
+        {% if products.has_previous %}
+        <li class="page-item">
+          <a href="?page={{products.previous_page_number}}" class="page-link">&laquo;</a>
+        </li>
+        {% else %}
+        <li class="page-item disabled">
+          <a class="page-link">&laquo;</a>
+        </li>
+        {% endif %}
+        {% for i in products.paginator.page_range %}
+        {% if products.number == i %}
+        <li class="page-item active">
+          <a class="page-link">{{i}}</a>
+        </li>
+        {% else %}
+        <li class="page-item">
+          <a href="?page={{i}}" class="page-link">{{i}}</a>
+        </li>
+        {% endif %}
+        {% endfor %}
+        {% if products.has_next %}
+        <li class="page-item">
+          <a href="?page={{products.next_page_number}}" class="page-link">&raquo;</a>
+        </li>
+        {% else %}
+        <li class="page-item disabled">
+          <a class="page-link">&raquo;</a>
+        </li>
+        {% endif %}
+      </ul>
+      {% endif %}
+    </div>
+  </div>
+</div>
 
 
+<!-- End of Pagination -->
 
 {% endblock %}

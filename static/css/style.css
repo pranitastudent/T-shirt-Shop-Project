@@ -56,11 +56,14 @@ html, body  {
     margin-left: 5px;
 }
 
-
-/* Alert */
+/* Alert and Input */
 
 .alert {
     margin-bottom:0!important;
+}
+
+.input-search {
+    border-radius:0;
 }
 
 /* Social Media Icons */
