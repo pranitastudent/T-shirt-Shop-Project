@@ -34,7 +34,7 @@
                       <h5 class="card-title"><strong>Posted by: {{post.author}}</strong></h5>
                       <p class="card-text product-post"><strong>Published Date: {{ post.published_date | naturalday }}</strong></p>
                       <p class="card-text product-post">{{ post.user_feedback}}</p>
-                      <p class="card-text product-post"><strong>Rating: {{ post.ratings}} stars</strong></p> 
+                      <p class="card-text product-post"><strong>Rating (1-5): {{ post.ratings}} stars</strong></p> 
 
                       <form action="{% url 'upvote' post.id %}" method="POST" class="form-vote">
                         {% csrf_token%}
