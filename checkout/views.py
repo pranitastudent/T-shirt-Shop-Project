@@ -20,21 +20,18 @@ def checkout(request):
     discount = 20
     sub_total = 0
     total = 0
-    print("Entering Checkout")
-    if request.method == "POST":
-        print("Entering if post")
+    
+    if request.method == "POST":        
         order_form = OrderForm(request.POST)
         payment_form = MakePaymentForm(request.POST)
 
         if order_form.is_valid() and payment_form.is_valid():
-            print("Form is valid")
             order = order_form.save(commit=False)
             order.date = timezone.now()
             order.save()
             cart = request.session.get('cart', {})
 
             for id, quantity in cart.items():
-                print("Order Line")
                 product = get_object_or_404(Product, pk=id)
                 sub_total = sub_total + (quantity * product.price)
                 total = total + (quantity * product.price)
@@ -80,7 +77,6 @@ def checkout(request):
                     sub_total = sub_total + (quantity * product.price)
                     total = total + (quantity * product.price)
                     order_line_item = OrderLineItem(
-                        # order = order,
                         product=product,
                         quantity=quantity
                     )
