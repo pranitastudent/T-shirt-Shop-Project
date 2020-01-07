@@ -10,12 +10,12 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
+import dj_database_url
 import os
 
 if os.path.exists('env.py'):
     import env
-    
-import dj_database_url    
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -25,7 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY =  os.environ.get('SECRET_KEY')
+SECRET_KEY = os.environ.get('SECRET_KEY')
 GOOGLE_RECAPTCHA_SECRET_KEY = os.environ.get('GOOGLE_RECAPTCHA_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -33,7 +33,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-#'pranita-tshirt-shop.herokuapp.com'
+# 'pranita-tshirt-shop.herokuapp.com'
 
 # Application definition
 
@@ -47,8 +47,8 @@ INSTALLED_APPS = [
     'django_forms_bootstrap',
     'django.contrib.humanize',
     'storages',
-    
-     
+
+
     # My own custom apps
     'home',
     'accounts',
@@ -56,8 +56,8 @@ INSTALLED_APPS = [
     'products',
     'contact',
     'cart',
-    'checkout',      
-    
+    'checkout',
+
 ]
 
 
@@ -105,15 +105,15 @@ WSGI_APPLICATION = 'shop.wsgi.application'
 
 if "DATABASE_URL" in os.environ:
     DATABASES = {
-        'default' : dj_database_url.parse(os.environ.get('DATABASE_URL'))
-    } 
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
 else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
     }
-}       
 
 
 # Password validation
@@ -157,7 +157,7 @@ AWS_S3_OBJECT_PARAMETERS = {
     'CacheControl': 'max-age=9460800',
 }
 
-AWS_STORAGE_BUCKET_NAME ="milestone-5-tshirt"
+AWS_STORAGE_BUCKET_NAME = "milestone-5-tshirt"
 
 AWS_S3_REGION_NAME = 'eu-west-1'
 
@@ -173,7 +173,7 @@ STATICFILES_LOCATION = 'static'
 
 STATICFILES_STORAGE = 'custom_storages.StaticStorage'
 
-STATIC_ROOT= os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'shop/static')
@@ -204,5 +204,3 @@ EMAIL_PORT = 587
 
 STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE')
 STRIPE_SECRET = os.getenv('STRIPE_SECRET')
-
-

@@ -1,7 +1,9 @@
 from django.db import models
 from products.models import Product
 
-# Create your models here. Code below taken from Code Institute ecommerce ap project
+
+# Code below taken from Code Institute ecommerce app project
+
 
 class Order(models.Model):
     full_name = models.CharField(max_length=50, blank=False)
