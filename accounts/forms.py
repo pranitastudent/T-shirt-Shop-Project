@@ -4,7 +4,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.core.exceptions import ValidationError
 
 
-# Forms adapated from Code Institute lectures on ecommerce min-project.
+# Forms adapated from Code Institute lectures on ecommerce mini-project.
 
 # User Login
 

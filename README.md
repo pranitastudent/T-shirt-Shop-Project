@@ -105,7 +105,7 @@ Logged in users can delete there own feedback only using the delete button. Non-
 
 #### Checkout
 
-<p> Checkout is completed using the checkout page. Whereby users fill in personal details and use the credit card number : 4242 4242 4242 4242 to checkout - makes use of the STRIPE API. Success message displayed once payment is successful.
+<p> Checkout is completed using the checkout page. Whereby users fill in personal details and use the credit card number : 4242 4242 4242 4242, CVV (three digit), expiry month and year (don't enter any real credit card information) to checkout - makes use of the STRIPE API. Success message displayed once payment is successful.</p>
 
 ### Features left to implement
 
@@ -137,6 +137,7 @@ Several more features could have been incorporated into the project:
 <li><a href ="https://www.javascript.com/">JavaScript</a></li> JavaScript was used to write the function for the google map and  stripe JS.
 <li><a href = "https://jquery.com/">JQuery</a></li>JQuery is used to create the back-to-the top button function and date function enabling the website to contain appropriate year date. 
 <li><a href="https://stripe.com/gb">Stripe</a></li> STRIPE API is used as a payment method and the STRIPE dashboard can be used by the developer to see payments displayed. 
+<li><a href ="https://aws.amazon.com/">AWS S3, IAM services</a><li> Images are stored in s3 buckets on AWS, Boto3 is used as dependency and AWS passwords are stored in env.py.
 
 </ul>
 
@@ -275,11 +276,49 @@ Example Checkout Model Test:
 
 <p> The code above tests that the Order model fields inputs are strings and are asserted to strings for example: country, town_or city. Country is tested and self-asserts correctly to 'france'.</p>  
 
+
+#### Travis CI
+
+<p> The GitHub repository was linked to travis continuous integration testing when the project was started and CI checks were completed every time the code was pushed to GitHub using Git. The code was connected to Travis integration through creating a .travis.yml file and adding the build status markup:
+
+`[![Build Status](https://travis-ci.org/pranitastudent/Milestone_5_project.svg?branch=master)](https://travis-ci.org/pranitastudent/Milestone_5_project)`
+
+
+ Continuous integration ensured that views and URLs matched, apps created and placed in installed apps in settings.py existed and views and templates rendered. Errors were flag up if views and URLs did not match and the build would be shown as failing. Currently build has passed all integration testing and is shown as 'Build Passing'.
+
 #### Manual Testing
 
-<p> Each of the links were tested and the STRIPE API payment was tested using the API credit card number: 4242 4242 4242 4242 and payment was found to be successful. The reCAPTCHA was tested and the contact form each showing a HTTP Response Code of 200 indicating the message has been validated and sent:
+###### Login
+
+<p> Each of the links were tested. If an incorrect username or password is entered on the login page a error message  appears and indicates that error. A success message is displayed when the correct username and password is used to login. If a user tries to register and does not fill all the fields an empty fields error message is displayed.</p>
+
+###### Stripe and Checkout
+
+<p> The checkout form if not fully completed , an error message flags showing the empty fields.The STRIPE API payment was tested using the API credit card number: 4242 4242 4242 4242, Three digit CVV and expiry month and year (don't enter any real credit card information) and message indicating payment was found to be successful is displayed,  HTTP Response code 200 seen on Network tab of Chrome Dev Tools. If an incorrect card number is applied , the appropriate error message is shown "Your card was declined". The payment time and status code can also be checked in the Stripe Dashboard
+</p>
+
+###### Contact Form
+
+<ul>
+
+<li> Go to Contact page </li>
+<li> Try to submit an empty form - error messages flag up to show empty fields (hence form validation)
+</li>
+<li> Try to submit a form without completing the reCAPTCHA task - error message for invalid reCAPTCHA flags up</li>
+<li> Try to submit a form with all fields filled in and reCAPTCHA task completed - success message indicates message has been sent, HTTP Response code 200 seen on Network tab of Chrome Dev Tools</li>
+
+</ul>
+
+<p> An example  received message is shown below </p>
 
 [Example_message](example/example.png)
+
+##### Discount Testing
+
+<li> Go to Products page </li>
+<li> Add 20 products to the quantity which are £4.99</li>
+<li> Click on Cart - SubTotal shown without discount (£99.80) </li>
+<li> Click on Checkout - Total shown with £20 discount applied (£79.80) </li>
 
 The discount was shown to successfully apply on order £80 and above thereby validating the checkout and cart.views code.</p>
 
@@ -351,12 +390,87 @@ On mobile view elements stack on top of each as required for example: products. 
 ## Deployment
 
 ####  Version Control
+<p> Code was pushed to GitHub using git. Git was used as version control. </p>
 
+#### To run locally
+<ol>
+<li> Manually download the project from GitHub and upload to the IDE of choice</li>
+<li> Install Python on your machine</li>
+<li> Create a folder to store project</li>
+<li> Install a virtual environment </li>
+<li> Activate virtual environment <li>
+<li> Install Django inside virtual environment </li>
+<li> Create a Django project : 
+
+`django-admin startproject <name>` </li>
+
+<li> Install dependencies using the command:
+
+`pip install -r requirements.txt` </li>
+
+<li> Add each APP to your settings.py file under INSTALLED_APPS </li>
+
+<li> Next run the command :
+
+`python manage.py makemigrations`
+
+to create a database and then run:
+
+`python manage.py migrate ` to create the tables and fields. </li>
+
+<li> To run the project use the command :
+
+`python manage.py runserver` </li>
+
+</ol>
+
+####  Deploy To Heroku 
+
+<ol>
+<li> Created a requriements.txt file which contains all dependencies </li>
+<li> Created a Heroku app on Heroku with a unique name </li>
+<li> Click on Deploy tab and choose the Heroku PostgreSQL  as a add-on - store URL as an environmental variable in env.py </li>
+<li> Under Config Vars in Heroku - add your SECRET KEY , AWS Keys and Stripe KEYS an an environmental variables from env.py </li>
+<li> Ensure all migrations are migrated to PostgreSQL database </li>
+<li> Created a Procfile- ensure Heroku knows what type of app is being created </li>
+<li> Under Deploy the Deployment method- Connected to GitHub is chosen and under Manual deploy : Deploy Branch is chosen to connect the project from GitHub and deploy.
+<li> Finally add the Heroku URL to ALLOWED_HOSTS in settings.py </li>
+</ol>
 
 
 
 ## Credits
 
-https://getbootstrap.com/docs/4.4/examples/album/
+#### Images
+
+<p> All Images were taken from [Unsplash](https://unsplash.com/) and [Debenhams Store Site] (https://www.debenhams.com/)</p>
+
+#### Logo 
+
+<p>The logo was creates using [Flat_Icon](https://www.flaticon.com/). The icon is referenced on the live website as well as required by Flat Icon regulations.</p>
+
+#### Adapted and Taken Code
+
+<p><strong> Where Code has been taken and adapted, references are made within that section of code.</strong></p>
+
+The references which were used are :
+<ol>
+<li> Traversy Media Udemy Course - Python Django Dev to Development</li>
+<li> Bootstrap examples to create product page - https://getbootstrap.com/docs/4.4/examples/album/ </li>
+<li> Contact Form- Code adapted from (Django-2.2 Part-7 Django Contact Form
+# with SMTP Email Backed Tutorial | By Creative web - https://www.youtube.com/watch?v=QQj561w0wt4 </li>
+<li> How to Add reCAPTCHA to a Django Site- VITOR FREITAS - https://simpleisbetterthancomplex.com/tutorial/2017/02/21/how-to-add-recaptcha-to-django-site.html </li> 
+<li> Free Code Camp Python Django Web Framework - Full Course for Beginners - https://www.youtube.com/watch?v=F5mRW0jo-U4 </li>
+<li> #4 Django Tutorial: How to allow users to login with both username or email ?- 
+Jaikrishna Sharma-  https://www.youtube.com/watch?v=c7PqMsQiWKU</li>
+<li> The Dumbfounds - Django Testing - URLS and Views - https://www.youtube.com/watch?v=qwypH3YvMKc&list=PLbpAWbHbi5rMF2j5n6imm0enrSD9eQUaM </li>
+<li> Code Institute Blog Lectures - https://courses.codeinstitute.net/courses/course-v1:CodeInstitute+F101+2017_T1/course/ </li>
+<li> Code Institute Mini Ecommerce Project Lectures - https://courses.codeinstitute.net/courses/course-v1:CodeInstitute+F101+2017_T1/course/ </li>
+
+</ol>
 
 ## Acknowledgements
+
+<p> I received inspiration for this project from The Debenhams Store Site </p>
+
+<p> I would like to acknowledge The Code Institute tutors for there immense help and guidance during this project. A very special thanks to Tim Nelson who aided me to debug and create my discount function in my cart.views and Checkout.Views. A special thanks to Anna Greaves who helped me debug my Contact Form Code. A special thank-you to Xavier who taught me how to execute the logging method when trying to debug code. </p>
