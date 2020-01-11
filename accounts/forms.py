@@ -16,6 +16,7 @@ class UserLoginForm(forms.Form):
 
 
 # User Registration
+
 class UserRegistrationForm(UserCreationForm):
     """Form to allow users to register"""
     password1 = forms.CharField(

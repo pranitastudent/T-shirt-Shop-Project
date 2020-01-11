@@ -7,7 +7,7 @@
 ## Project Entrails
 
 <p> An e-commerce site will be built which will sell t-shirts for men, women and children. The user should be able to search for a particular T-shirt for example 'Red T-shirt. In order to buy the t-shirts the user will have to register with a username and password and login. The registration and username will be a secure application using the authentication process. The user will navigate through the site using a navbar  through : Home, Cart, Feedback. Cart, Login and Register.  The user once logged in can pay for the item using the strip authentication system. Logged in users are able to leave feedback for the site in terms of 'likes' and a feedback review on the item purchased.
-Logged in users can only edit and deleted there own feedback. Users will not be able to delete items from the website or delete reviews from other users.  All users will be able to view feedback reviews.SQLite3 will be used for as a testing databases once tables are created and PostgreSQL will be used as a production database. Git and GitHub will be used for version control. The final site will be deployed and hosted on Heroku. <strong> Please note that this website is only for educational purposes to fulfil the criteria for Milestone 5 Full Stack Frameworks Django Project.</p>
+Logged in users can only edit and deleted there own feedback. Users will not be able to delete items from the website or delete reviews from other users.  All users will be able to view feedback reviews.SQLite3 will be used for as a testing databases once tables are created and PostgreSQL will be used as a production database. Git and GitHub will be used for version control. The final site will be deployed and hosted on Heroku. <strong> Please note that this website is only for educational purposes to fulfil the criteria for Milestone 5 Full Stack Frameworks Django Project.</strong></p>
 
 ## UX Design - User Experience
 <br>
@@ -127,7 +127,7 @@ Several more features could have been incorporated into the project:
 <li><a href="https://code.visualstudio.com/">Visual Studio Code</a></li>Visual Studio Code was used as the chosen IDE and all code was written in Visual Studio Code.
 </ul>
 
-### Front-end Technologies
+### Front-end Technologies and Frameworks
 
 <ul>
 
@@ -137,7 +137,8 @@ Several more features could have been incorporated into the project:
 <li><a href ="https://www.javascript.com/">JavaScript</a></li> JavaScript was used to write the function for the google map and  stripe JS.
 <li><a href = "https://jquery.com/">JQuery</a></li>JQuery is used to create the back-to-the top button function and date function enabling the website to contain appropriate year date. 
 <li><a href="https://stripe.com/gb">Stripe</a></li> STRIPE API is used as a payment method and the STRIPE dashboard can be used by the developer to see payments displayed. 
-<li><a href ="https://aws.amazon.com/">AWS S3, IAM services</a><li> Images are stored in s3 buckets on AWS, Boto3 is used as dependency and AWS passwords are stored in env.py.
+<li><a href ="https://aws.amazon.com/">AWS S3, IAM services</a></li> Images are stored in s3 buckets on AWS, Boto3 is used as dependency and AWS passwords are stored in env.py.
+<li><a href="https://fontawesome.com/">Font Awesome</a></li> Font Awesome is used to add icons to text to make it visually appealing.
 
 </ul>
 
@@ -149,7 +150,7 @@ Several more features could have been incorporated into the project:
 
 </ul>
 
-### Back-End Technologies
+### Back-End Technologies and Frameworks
 
 <ul>
 
@@ -230,7 +231,7 @@ Example Login Url Test :
         print(resolve(url))
         self.assertEquals(resolve(url).func, login)`
 
-<p> The code above tests that the url for login is directed to the login url and resolves as login url </p>        
+<p> The code above tests that the URL for login is directed to the login URL and resolves as login URL </p>        
         
 #### Views
 
@@ -288,16 +289,16 @@ Example Checkout Model Test:
 
 #### Manual Testing
 
-###### Login
+##### Login
 
 <p> Each of the links were tested. If an incorrect username or password is entered on the login page a error message  appears and indicates that error. A success message is displayed when the correct username and password is used to login. If a user tries to register and does not fill all the fields an empty fields error message is displayed.</p>
 
-###### Stripe and Checkout
+##### Stripe and Checkout
 
 <p> The checkout form if not fully completed , an error message flags showing the empty fields.The STRIPE API payment was tested using the API credit card number: 4242 4242 4242 4242, Three digit CVV and expiry month and year (don't enter any real credit card information) and message indicating payment was found to be successful is displayed,  HTTP Response code 200 seen on Network tab of Chrome Dev Tools. If an incorrect card number is applied , the appropriate error message is shown "Your card was declined". The payment time and status code can also be checked in the Stripe Dashboard
 </p>
 
-###### Contact Form
+##### Contact Form
 
 <ul>
 
@@ -443,7 +444,27 @@ to create a database and then run:
 
 #### Images
 
-<p> All Images were taken from [Unsplash](https://unsplash.com/) and [Debenhams Store Site] (https://www.debenhams.com/)</p>
+<p> All Images were taken from [Unsplash](https://unsplash.com/) and [Debenhams Store Site] (https://www.debenhams.com/). If the authors wish for me to take these images them they can email on : pranitacoder12@gmail.com</p>
+
+##### Debenhams Store Images
+
+<ol>
+<li>Women's Pink T-shirt</li>
+<li>Boy White T-shirt</li>
+<li>Boy Striped T-shirt</li>
+<li>Men's Striped T-shirt</li>
+<li>Men's Black T-shirt</li>
+<li>Men's White T-shirt</li>
+</ol>
+
+##### Unsplash Images
+
+<ol>
+<li>Men's Black Skeleton T-shirt</li>
+<li>Women's White T-shirt</li>
+<li>Women's Black T-shirt</li>
+<li>Women's Red T-shirt</li>
+</ol>
 
 #### Logo 
 
@@ -463,7 +484,9 @@ The references which were used are :
 <li> Free Code Camp Python Django Web Framework - Full Course for Beginners - https://www.youtube.com/watch?v=F5mRW0jo-U4 </li>
 <li> #4 Django Tutorial: How to allow users to login with both username or email ?- 
 Jaikrishna Sharma-  https://www.youtube.com/watch?v=c7PqMsQiWKU</li>
-<li> The Dumbfounds - Django Testing - URLS and Views - https://www.youtube.com/watch?v=qwypH3YvMKc&list=PLbpAWbHbi5rMF2j5n6imm0enrSD9eQUaM </li>
+<li> The Dumbfounds - Django Testing - URLS, Forms , Models and Views - https://www.youtube.com/watch?v=qwypH3YvMKc&list=PLbpAWbHbi5rMF2j5n6imm0enrSD9eQUaM </li>
+<li>Convert Ratings in stars in Django Templates- stack overflow - https://stackoverflow.com/questions/55448221/convert-ratings-in-stars-in-django-template</li>
+<li>Bootstrap 4 Multiple Items Carousel (several carousel items shown at once)- stack overflow - https://stackoverflow.com/questions/40393210/bootstrap-4-multiple-items-carousel-several-carousel-items-shown-at-once</li>
 <li> Code Institute Blog Lectures - https://courses.codeinstitute.net/courses/course-v1:CodeInstitute+F101+2017_T1/course/ </li>
 <li> Code Institute Mini Ecommerce Project Lectures - https://courses.codeinstitute.net/courses/course-v1:CodeInstitute+F101+2017_T1/course/ </li>
 
@@ -473,4 +496,4 @@ Jaikrishna Sharma-  https://www.youtube.com/watch?v=c7PqMsQiWKU</li>
 
 <p> I received inspiration for this project from The Debenhams Store Site </p>
 
-<p> I would like to acknowledge The Code Institute tutors for there immense help and guidance during this project. A very special thanks to Tim Nelson who aided me to debug and create my discount function in my cart.views and Checkout.Views. A special thanks to Anna Greaves who helped me debug my Contact Form Code. A special thank-you to Xavier who taught me how to execute the logging method when trying to debug code. </p>
+<p> I would like to acknowledge The Code Institute tutors for there immense help and guidance during this project. A very special thanks to Tim Nelson who aided me to debug my discount function in my cart.views and checkout.views and helped to point out what is required. A special thanks to Anna Greaves who helped me debug my Contact Form Code. A special thank-you to Xavier who taught me how to execute the logging method when trying to debug code. </p>

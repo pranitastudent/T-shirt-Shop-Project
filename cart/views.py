@@ -1,6 +1,8 @@
 from django.shortcuts import get_object_or_404, redirect, render, reverse
 from products.models import Product
 
+# Views adapted from Code Institute E-commerce Lectures
+
 # View Cart
 
 

@@ -1,112 +1,116 @@
 {% load static %}
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark">
-  
-    <a class="navbar-brand" href="{% url 'index' %}"><img src="{% static 'img/logo.png'%}" alt="logo"><h6 class="d-inline align-middle">&nbsp;Pranita's T-shirt Shop</h6></a>
-              
+
+    <a class="navbar-brand" href="{% url 'index' %}"><img src="{% static 'img/logo.png'%}" alt="logo">
+        <h6 class="d-inline align-middle">&nbsp;Pranita's T-shirt Shop</h6>
+    </a>
+
     {% if user.is_authenticated %}
-    <span class="username"><strong>User:&nbsp;{{user.username}}</strong></span>   
+    <span class="username"><strong>User:&nbsp;{{user.username}}</strong></span>
     {% endif %}
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup">
-         <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon"></span>
     </button>
-   
-
-<!-- (Active link code only!) Code adapated from Brad Traversy - Python Django to Dev Course (Nov 2018) -->
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <ul class="navbar-nav ml-auto">
-                {% if '/' == request.path %}
-                <li class="nav-item active ">
-                    {% else %}
-                <li class="nav-item ">
-                    {% endif %}
-                    <a class="nav-link" href="{% url 'index' %}"><i class="fas fa-home"></i>&nbsp;HOME</a>
-                </li>
-                  {% if user.is_authenticated %}
-                  {% if 'logout' in request.path %}
-                <li class="nav-item active ">
-                    {% else %}
-                <li class="nav-item">
-                    {% endif %}
-                    <a class="nav-link" href="{% url 'logout' %}"> <i class="fas fa-sign-out-alt"></i>&nbsp;LOGOUT</a>
-                </li>
-                {% if 'logout' in request.path %}
-                <li class="nav-item active ">
-                    {% else %}
-                <li class="nav-item">
-                    {% endif %}
-                    <a class="nav-link" href="{% url 'add_feedback' %}">&nbsp;ADD FEEDBACK</a>
-                </li>
-                 {% else%}
-
-                {% if 'register' in request.path %}
-                <li class="nav-item active ">
-                    {% else %}
-                <li class="nav-item ">
-                    {% endif %}
-                    <a class="nav-link" href="{% url 'register'%}"><i class="fas fa-user-plus"></i>&nbsp;REGISTER</a>
-                </li>
 
 
-                {% if 'login' in request.path %}
-                <li class="nav-item active">
-                    {% else %}
-                <li class="nav-item">
-                    {% endif %}
-                    <a class="nav-link" href="{% url 'login'%}"><i class="fas fa-sign-in-alt"></i>&nbsp;LOGIN</a>
-                </li>
+    <!-- (Active link code only!) Code adapated from Brad Traversy - Python Django Dev to Development Course (Nov 2018) -->
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <ul class="navbar-nav ml-auto">
+            {% if '/' == request.path %}
+            <li class="nav-item active ">
+                {% else %}
+            <li class="nav-item ">
                 {% endif %}
+                <a class="nav-link" href="{% url 'index' %}"><i class="fas fa-home"></i>&nbsp;HOME</a>
+            </li>
+            {% if user.is_authenticated %}
+            {% if 'logout' in request.path %}
+            <li class="nav-item active ">
+                {% else %}
+            <li class="nav-item">
+                {% endif %}
+                <a class="nav-link" href="{% url 'logout' %}"> <i class="fas fa-sign-out-alt"></i>&nbsp;LOGOUT</a>
+            </li>
+            {% if 'logout' in request.path %}
+            <li class="nav-item active ">
+                {% else %}
+            <li class="nav-item">
+                {% endif %}
+                <a class="nav-link" href="{% url 'add_feedback' %}">&nbsp;ADD FEEDBACK</a>
+            </li>
+            {% else%}
 
-                
-                {% if 'feedback' in request.path %}
-                <li class="nav-item active">
-                    {% else %}
-                <li class="nav-item">
-                    {% endif %}
-                    <a class="nav-link" href="{% url 'get_feedback' %}">FEEDBACK</a>
-                </li>
+            {% if 'register' in request.path %}
+            <li class="nav-item active ">
+                {% else %}
+            <li class="nav-item ">
+                {% endif %}
+                <a class="nav-link" href="{% url 'register'%}"><i class="fas fa-user-plus"></i>&nbsp;REGISTER</a>
+            </li>
 
-                {% if 'products' in request.path %}
-                <li class="nav-item active ">
-                    {% else %}
-                <li class="nav-item ">
-                    {% endif %}
-                    <a class="nav-link" href="{% url 'products' %}"><i class="fas fa-store"></i>&nbsp;PRODUCTS</a>
-                </li>
 
-                 
-                {% if 'contact' in request.path %}
-                <li class="nav-item active ">
-                    {% else %}
-                <li class="nav-item ">
-                    {% endif %}
-                    <a class="nav-link" href="{% url 'contact' %}">CONTACT</a>
-                </li>
+            {% if 'login' in request.path %}
+            <li class="nav-item active">
+                {% else %}
+            <li class="nav-item">
+                {% endif %}
+                <a class="nav-link" href="{% url 'login'%}"><i class="fas fa-sign-in-alt"></i>&nbsp;LOGIN</a>
+            </li>
+            {% endif %}
 
-                {% if 'cart' in request.path %}
-                <li class="nav-item active">
-                    {% else %}
-                <li class="nav-item ">
-                    {% endif %}
-                    <a class="nav-link" href="{% url 'view_cart' %}"><i class="fas fa-shopping-cart"></i>&nbsp;CART {% if product_count > 0 %}
-                        <label class="badge badge-warning">{{ product_count }}</label>
+
+            {% if 'feedback' in request.path %}
+            <li class="nav-item active">
+                {% else %}
+            <li class="nav-item">
+                {% endif %}
+                <a class="nav-link" href="{% url 'get_feedback' %}">FEEDBACK</a>
+            </li>
+
+            {% if 'products' in request.path %}
+            <li class="nav-item active ">
+                {% else %}
+            <li class="nav-item ">
+                {% endif %}
+                <a class="nav-link" href="{% url 'products' %}"><i class="fas fa-store"></i>&nbsp;PRODUCTS</a>
+            </li>
+
+
+            {% if 'contact' in request.path %}
+            <li class="nav-item active ">
+                {% else %}
+            <li class="nav-item ">
+                {% endif %}
+                <a class="nav-link" href="{% url 'contact' %}">CONTACT</a>
+            </li>
+
+            {% if 'cart' in request.path %}
+            <li class="nav-item active">
+                {% else %}
+            <li class="nav-item ">
+                {% endif %}
+                <a class="nav-link" href="{% url 'view_cart' %}"><i class="fas fa-shopping-cart"></i>&nbsp;CART
+                    {% if product_count > 0 %}
+                    <label class="badge badge-warning">{{ product_count }}</label>
                     {% endif %}</a>
-                </li>             
-              
-
-             </ul>
-      </div>
+            </li>
+        </ul>
+    </div>
 </nav>
+
+<!-- End of Active Link Code -->
+
 {% if messages %}
-<div id="message" class = "container-fluid">
+<div id="message" class="container-fluid">
     <div class="row">
         <div class="col-md 12 col-xs-12 text-center alert alert-success alert-dismissible mb-0" role="alert">
-        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button>    
-    {% for message in messages %}
-    {{ message }}
-    {% endfor %}
-</div>
-</div>
+            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button>
+            {% for message in messages %}
+            {{ message }}
+            {% endfor %}
+        </div>
+    </div>
 </div>
 {% endif %}
 

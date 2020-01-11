@@ -48,8 +48,7 @@ def contact(request):
 
 # End of adapted code
 
-            # reCaptcha - CODE TAKEN FROM How to Add reCAPTCHA to a Django
-            # Site- VITOR FREITAS
+            # reCaptcha - CODE TAKEN FROM How to Add reCAPTCHA to a Django Site- VITOR FREITAS
             recaptcha_response = request.POST.get('g-recaptcha-response')
             url = 'https://www.google.com/recaptcha/api/siteverify'
             values = {

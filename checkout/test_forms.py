@@ -1,7 +1,7 @@
 from django.test import TestCase
 from checkout.forms import MakePaymentForm, OrderForm
 
-
+# Code Adapated from Django Testing Tutorial - Testing Forms #5 - (https://www.youtube.com/watch?v=zUl-Tf-UEzw)- The DumbFounds
 class TestOrderForm(TestCase):
 
     # First test - insertion of personal details
@@ -19,7 +19,7 @@ class TestOrderForm(TestCase):
         })
         self.assertTrue(form.is_valid())
 
-    # Second Test - insertion of creditcard numbers ans stripe id
+    # Second Test - insertion of creditcard numbers and stripe id
 
     # Payment can be made
 
@@ -38,7 +38,7 @@ class TestPaymentMethod(TestCase):
 
         self.assertTrue(form.is_valid())
 
-     # Payment can't be made - with no stripe id
+# Payment can't be made - with no stripe id
 
 
 class TestPaymentMethod(TestCase):

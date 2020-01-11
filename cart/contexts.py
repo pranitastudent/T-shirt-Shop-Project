@@ -3,6 +3,7 @@ from products.models import Product
 
 # Code adapted from Code  Institute Mini Project Ecommerce
 
+# Cart Contents
 
 def cart_contents(request):
     """

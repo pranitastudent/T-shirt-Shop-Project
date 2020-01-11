@@ -1,8 +1,7 @@
 from django import forms
 
 
-# Contact Form- Code adapted from (Django-2.2 Part-7 Django Contact Form
-# with SMTP Email Backed Tutorial | By Creative web)
+# Contact Form- Code adapted from (Django-2.2 Part-7 Django Contact Form with SMTP Email Backed Tutorial | By Creative web)
 
 class ContactForm(forms.Form):
 

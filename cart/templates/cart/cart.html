@@ -16,6 +16,9 @@
   </div>
 </section>
 
+<!-- End of Breadcrumb -->
+
+<!-- Cart Table -->
 
 {% block content %}
 <div class="album py-5 bg-light">
@@ -58,16 +61,17 @@
                   <br><br>
                   <a href="{% url 'checkout' %}" class="btn btn-success btn-xs mb-5" role="button"><span><i
                         class="fas fa-check-circle"></i></span>&nbsp;Checkout</a>
-                  </div>     
-                
-                </td>
+                  </div>  
+                 </td>
                </tr>
             </tbody>
           </table>
         </div>
       </div>
     </div>
+  </div>
 </div>
-</div>
+
+<!-- End of Cart Table -->
 
 {% endblock %}

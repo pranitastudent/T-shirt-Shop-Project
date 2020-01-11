@@ -18,8 +18,7 @@ PRODUCT_CHOICES = (
 )
 
 
-# Rating's range adapated from Django star - stackoverflow
-# https://stackoverflow.com/questions/55448221/convert-ratings-in-stars-in-django-template
+# Rating's range adapated from Django star - stackoverflow - https://stackoverflow.com/questions/55448221/convert-ratings-in-stars-in-django-template
 
 RATING_CHOICES = (
     ('1', '1'),
@@ -29,7 +28,7 @@ RATING_CHOICES = (
     ('5', '5')
 )
 
-
+# Feedback Model
 class Feedback(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     product_name = models.CharField(
