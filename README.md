@@ -306,7 +306,7 @@ Example Checkout Model Test:
 <li> Try to submit an empty form - error messages flag up to show empty fields (hence form validation)
 </li>
 <li> Try to submit a form without completing the reCAPTCHA task - error message for invalid reCAPTCHA flags up</li>
-<li> Try to submit a form with all fields filled in and reCAPTCHA task completed - success message indicates message has been sent, HTTP Response code 200 seen on Network tab of Chrome Dev Tools</li>
+<li> Try to submit a form with all fields filled in and  tick reCAPTCHA - success message indicates message has been sent, HTTP Response code 200 seen on Network tab of Chrome Dev Tools</li>
 
 </ul>
 
@@ -357,6 +357,9 @@ The website was testing on the following devices and found to display code eleme
 
 On mobile view elements stack on top of each as required for example: products. The toggle button is functional to navigate between elements. The website if fully functional throughout all devices.
 
+#### Interesting Bugs
+
+<p> A SMTP Authentication Error was found on Heroku when a user tries to reset there password and submit the contact form. This was resolved by navigating to DisplayUnlockCaptcha on the google account and then a password reset link was successfully sent to the user.</p>
 
 ## Testing User Stories
 
