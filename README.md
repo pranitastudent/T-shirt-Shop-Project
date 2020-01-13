@@ -139,6 +139,7 @@ Several more features could have been incorporated into the project:
 <li><a href="https://stripe.com/gb">Stripe</a></li> STRIPE API is used as a payment method and the STRIPE dashboard can be used by the developer to see payments displayed. 
 <li><a href ="https://aws.amazon.com/">AWS S3, IAM services</a></li> Images are stored in s3 buckets on AWS, Boto3 is used as dependency and AWS passwords are stored in env.py.
 <li><a href="https://fontawesome.com/">Font Awesome</a></li> Font Awesome is used to add icons to text to make it visually appealing.
+<li><a href="https://lokeshdhakar.com/projects/lightbox2/">LightBox 2</a></li> LightBox 2 is used to open up images in a separate window on the same page so the user can view the images clearly.
 
 </ul>
 
@@ -206,7 +207,7 @@ Code was tested using the command below for specific file:
 
 ### Testing URLS, Views and Models.
 
-Django Unit Testing was used to test URLS and Views. The URLS and views were tested to check if an response of 200 or 302 for redirect as required to see if they pass the tests. The models are tested to check they return the the correct fields inputs.
+Django Unit Testing was used to test URLS and Views. The URLS and views were tested to check if an response of 200 or 302 for redirect as required to see if they pass the tests. The models are tested to check they return the the correct fields inputs. All views,URLs and models tests passed.
 
 Interesting testing was completed on the testing database SQLite3 and not PostgreSQL as production testing is not required. 
 
@@ -295,8 +296,10 @@ Example Checkout Model Test:
 
 ##### Stripe and Checkout
 
-<p> The checkout form if not fully completed , an error message flags showing the empty fields.The STRIPE API payment was tested using the API credit card number: 4242 4242 4242 4242, Three digit CVV and expiry month and year (don't enter any real credit card information) and message indicating payment was found to be successful is displayed,  HTTP Response code 200 seen on Network tab of Chrome Dev Tools. If an incorrect card number is applied , the appropriate error message is shown "Your card was declined". The payment time and status code can also be checked in the Stripe Dashboard
+<p> The checkout form if not fully completed , an error message flags showing the empty fields.The STRIPE API payment was tested using the API credit card number: 4242 4242 4242 4242, Three digit CVV and expiry month and year (don't enter any real credit card information) and message indicating payment was found to be successful is displayed,  HTTP Response code 200 seen on Network tab of Chrome Dev Tools. If an incorrect card number is applied , the appropriate error message is shown "Your card was declined". The payment time and status code can also be checked in the Stripe Dashboard. 
 </p>
+
+<p> If a user tries to submit an empty form, error messages flag up to show empty fence (form validation). </p>
 
 ##### Contact Form
 
@@ -471,7 +474,9 @@ to create a database and then run:
 
 #### Logo 
 
-<p>The logo was creates using [Flat_Icon](https://www.flaticon.com/). The icon is referenced on the live website as well as required by Flat Icon regulations.</p>
+<p>
+
+The logo was created using [Flat_Icon](https://www.flaticon.com/). The icon is referenced on the live website as well as required by Flat Icon regulations.</p>
 
 #### Adapted and Taken Code
 
@@ -479,19 +484,46 @@ to create a database and then run:
 
 The references which were used are :
 <ol>
-<li> Traversy Media Udemy Course - Python Django Dev to Development</li>
-<li> Bootstrap examples to create product page - https://getbootstrap.com/docs/4.4/examples/album/ </li>
-<li> Contact Form- Code adapted from (Django-2.2 Part-7 Django Contact Form
-# with SMTP Email Backed Tutorial | By Creative web - https://www.youtube.com/watch?v=QQj561w0wt4 </li>
-<li> How to Add reCAPTCHA to a Django Site- VITOR FREITAS - https://simpleisbetterthancomplex.com/tutorial/2017/02/21/how-to-add-recaptcha-to-django-site.html </li> 
-<li> Free Code Camp Python Django Web Framework - Full Course for Beginners - https://www.youtube.com/watch?v=F5mRW0jo-U4 </li>
-<li> #4 Django Tutorial: How to allow users to login with both username or email ?- 
-Jaikrishna Sharma-  https://www.youtube.com/watch?v=c7PqMsQiWKU</li>
-<li> The Dumbfounds - Django Testing - URLS, Forms , Models and Views - https://www.youtube.com/watch?v=qwypH3YvMKc&list=PLbpAWbHbi5rMF2j5n6imm0enrSD9eQUaM </li>
-<li>Convert Ratings in stars in Django Templates- stack overflow - https://stackoverflow.com/questions/55448221/convert-ratings-in-stars-in-django-template</li>
-<li>Bootstrap 4 Multiple Items Carousel (several carousel items shown at once)- stack overflow - https://stackoverflow.com/questions/40393210/bootstrap-4-multiple-items-carousel-several-carousel-items-shown-at-once</li>
-<li> Code Institute Blog Lectures - https://courses.codeinstitute.net/courses/course-v1:CodeInstitute+F101+2017_T1/course/ </li>
-<li> Code Institute Mini Ecommerce Project Lectures - https://courses.codeinstitute.net/courses/course-v1:CodeInstitute+F101+2017_T1/course/ </li>
+<li> 
+
+[Traversy Media Python Django Dev to Development](https://www.udemy.com/course/thon-django-dev-to-deployment/)</li>
+<li> 
+
+[Bootstrap examples to create product page](https://getbootstrap.com/docs/4.4/examples/album/) </li>
+<li>
+
+[Contact Form Code adapted from Django- 2.2 Part 7 Django Contact Form with SMTP Email Backend Tutorial | By Creative Web](https://www.youtube.com/watch?v=QQj561w0wt4)
+</li>
+
+<li>
+
+[How to Add reCAPTCHA to a Django Site- VITOR FREITAS](https://simpleisbetterthancomplex.com/tutorial/2017/02/21/how-to-add-recaptcha-to-django-site.html) </li> 
+
+<li>
+
+[Free Code Camp Python Django Web Framework - Full Course for Beginners](https://www.youtube.com/watch?v=F5mRW0jo-U4) </li>
+
+<li>
+
+[#4 Django Tutorial: How to allow users to login with both username or email ? Jaikrishna Sharma](https://www.youtube.com/watch?v=c7PqMsQiWKU)</li>
+
+<li>
+
+[The Dumbfounds - Django Testing - URLS, Forms , Models and Views](https://www.youtube.com/watch?v=qwypH3YvMKc&list=PLbpAWbHbi5rMF2j5n6imm0enrSD9eQUaM) </li>
+
+<li>
+
+[Convert Ratings in stars in Django Templates- stack overflow](https://stackoverflow.com/questions/55448221/convert-ratings-in-stars-in-django-template)</li>
+
+<li>
+
+[Bootstrap 4 Multiple Items Carousel (several carousel items shown at once)- stack overflow](https://stackoverflow.com/questions/40393210/bootstrap-4-multiple-items-carousel-several-carousel-items-shown-at-once)</li>
+<li>
+
+[Code Institute Blog Lectures](https://courses.codeinstitute.net/courses/course-v1:CodeInstitute+F101+2017_T1/course/) </li>
+<li>
+
+[Code Institute Mini Ecommerce Project Lectures](https://courses.codeinstitute.net/courses/course-v1:CodeInstitute+F101+2017_T1/course/) </li>
 
 </ol>
 
