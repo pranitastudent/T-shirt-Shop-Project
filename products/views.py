@@ -14,8 +14,7 @@ def all_products(request):
                   {"products": paged_products})
 
 
-# Search - method adapted from Traversy Media - Python Django Dev To
-# Development
+# Search - method adapted from Traversy Media - Python Django Dev To Development
 
 def do_search(request):
     queryset_list = Product.objects.all()

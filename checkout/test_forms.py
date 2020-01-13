@@ -1,7 +1,7 @@
 from django.test import TestCase
 from checkout.forms import MakePaymentForm, OrderForm
 
-# Code Adapated from Django Testing Tutorial - Testing Forms #5 - (https://www.youtube.com/watch?v=zUl-Tf-UEzw)- The DumbFounds
+# Code Adapated from Django Testing Tutorial - Testing Forms #5 - The DumbFounds
 class TestOrderForm(TestCase):
 
     # First test - insertion of personal details

@@ -18,8 +18,7 @@ PRODUCT_CHOICES = (
 )
 
 
-# Rating's range adapated from Django star - stackoverflow - https://stackoverflow.com/questions/55448221/convert-ratings-in-stars-in-django-template
-
+# Rating's range adapated from Django star - stackoverflow 
 RATING_CHOICES = (
     ('1', '1'),
     ('2', '2'),

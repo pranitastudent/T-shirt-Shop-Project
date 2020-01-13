@@ -2,7 +2,7 @@ from django.test import TestCase, Client
 from django.urls import reverse
 from django.contrib.auth.models import User
 
-# PLEASE NOTE ALL URLS TESTS WERE CODED FOR USING - Django Testing Tutorial - Testing Views #3(https://www.youtube.com/watch?v=hA_VxnxCHbo) - The Dumbfounds.
+# PLEASE NOTE ALL URLS TESTS WERE CODED FOR USING - Django Testing Tutorial - Testing Views #3 - The Dumbfounds.
 class TestAccountsViews(TestCase):
 
     def test_registration_page(self):

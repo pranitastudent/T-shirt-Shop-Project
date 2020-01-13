@@ -6,7 +6,7 @@
 
 ## Project Entrails
 
-<p> An e-commerce site will be built which will sell t-shirts for men, women and children. The user should be able to search for a particular T-shirt for example 'Red T-shirt. In order to buy the t-shirts the user will have to register with a username and password and login. The registration and username will be a secure application using the authentication process. The user will navigate through the site using a navbar  through : Home, Cart, Feedback. Cart, Login and Register.  The user once logged in can pay for the item using the strip authentication system. Logged in users are able to leave feedback for the site in terms of 'likes' and a feedback review on the item purchased.
+<p> An e-commerce site will be built which will sell t-shirts for men, women and children. The user should be able to search for a particular T-shirt for example 'Red T-shirt. In order to buy the t-shirts the user will have to register with a username and password and login. The registration and username will be a secure application using the authentication process. The user will navigate through the site using a navbar  through : Home, Cart, Feedback. Cart, Login and Register.  The user once logged in can pay for the item using the stripe authentication system. Logged in users are able to leave feedback for the site in terms of 'likes' and a feedback review on the item purchased.
 Logged in users can only edit and deleted there own feedback. Users will not be able to delete items from the website or delete reviews from other users.  All users will be able to view feedback reviews.SQLite3 will be used for as a testing databases once tables are created and PostgreSQL will be used as a production database. Git and GitHub will be used for version control. The final site will be deployed and hosted on Heroku. <strong> Please note that this website is only for educational purposes to fulfil the criteria for Milestone 5 Full Stack Frameworks Django Project.</strong></p>
 
 ## UX Design - User Experience
@@ -40,13 +40,13 @@ Logged in users can delete there own feedback only using the delete button. Non-
 <br>
 <ul>
 <li> As a user to the site I should view a responsive site on ; desktop, mobile, tablet and large screens.</li> 
-<li> As a user to the site I should be able to view all t-shirts available</li>
+<li> As a user to the site I should be able to view all t-shirts available.</li>
 <li> As a user I should be able to register on the ecommerce site in order to purchase my product through strip authentication.</li>
 <li> A a consumer I should be able to buy t-shirts for myself and others through searching the options </li>
 <li> As a logged in user I should be able to leave a review for the product I purchased. </li>
 <li> As a logged in user I should be able to purchase the product I wish up to a maximum quantity of 999.</li>
-<li> As a user I should be able to register, login and reset my password on the website </li>
-<li> The user can contact the shop using the contact form, validate through reCAPTCHA and submit</li>
+<li> As a user I should be able to register, login and reset my password on the website. </li>
+<li> The user can contact the shop using the contact form, validate through reCAPTCHA and submit.</li>
 </ul>
 
 ## Wireframes
@@ -56,7 +56,7 @@ Logged in users can delete there own feedback only using the delete button. Non-
 [Wire Frames](wireframes/ecommerce.pdf)
 
 ## Database Schema
-<p> A database schema is provided so that I could visualise the tables. The relationship between tables is shown in the schema<p>
+<p> A database schema is provided so that I could visualise the tables. The relationship between tables is shown in the schema.<p>
 
 [Database_Schema](schema/databaseschema.pdf)
 
@@ -68,12 +68,12 @@ Logged in users can delete there own feedback only using the delete button. Non-
 <p> A non-logged in user is able to access the following links on the Navbar:</p>
 
 <ul>
-<li> Home Page - Able to press 'Shop Now' button to see products. Able to view top t-shirts and google map indicating destination and address of shop </li>
-<li> Contact Page- Able to send an email to the shop  and validate message through reCAPTCHA </li>
-<li> Products Page - Able to view Products and add to cart </li>
-<li> Cart Page - Able to view items in cart and adjust quantity but NOT checkout unless a registered and logged in user</li>
-<li> Feedback Page - Able to view feedback from all users and like 'Upvote' feedback</li>
-<li> Register Page - Able to Register as a user</li>
+<li> Home Page - Able to press 'Shop Now' button to see products. Able to view top t-shirts and google map indicating destination and address of shop. </li>
+<li> Contact Page- Able to send an email to the shop  and validate message through reCAPTCHA .</li>
+<li> Products Page - Able to view Products and add to cart. </li>
+<li> Cart Page - Able to view items in cart and adjust quantity but NOT checkout unless a registered and logged in user.</li>
+<li> Feedback Page - Able to view feedback from all users and like 'Upvote' feedback.</li>
+<li> Register Page - Able to Register as a user.</li>
 <li> Login Page - Able to login as a user once register. Ability to reset password through an email link which is sent to the registered email address. </li>
 <li> Messages - Able to view success and error messages which are displayed below navigation and dismiss them by clicking on the cross icon.</li>
 </ul>
@@ -82,23 +82,23 @@ Logged in users can delete there own feedback only using the delete button. Non-
 </p> A logged in user is able to access the following links on the Navbar:</p>
 
 <ul>
-<li> Home Page - Able to press 'Shop Now' button to see products. Able to view top t-shirts and google map indicating destination and address of shop </li>
-<li> Contact Page- Able to send an email to the shop  and validate message through reCAPTCHA </li>
-<li> Products Page - Able to view Products and add to cart </li>
-<li> Cart Page - Able to view items in cart  and adjust quantity </li>
+<li> Home Page - Able to press 'Shop Now' button to see products. Able to view top t-shirts and google map indicating destination and address of shop. </li>
+<li> Contact Page- Able to send an email to the shop  and validate message through reCAPTCHA. </li>
+<li> Products Page - Able to view Products and add to cart. </li>
+<li> Cart Page - Able to view items in cart  and adjust quantity. </li>
 <li> Checkout Page - Able to fill in  checkout form details, discount displayed if applicable and submit as necessary </li>
 <li> Login Page - Able to login as a user once register. Ability to reset password through an email link which is sent to the registered email address. </li>
-<li> Logout Page - Once logged in the login link on the navbar is not-visible.  Ability out logout through logout link on navbar when required </li>
-<li> Feedback Page - Able to view feedback from all users and like 'Upvote' feedback</li>
+<li> Logout Page - Once logged in the login link on the navbar is not-visible.  Ability out logout through logout link on navbar when required. </li>
+<li> Feedback Page - Able to view feedback from all users and like 'Upvote' feedback.</li>
 <li> Add Feedback Page - Able to add feedback, edit and delete own feedback through edit and delete buttons.</li>
 <li> Messages - Able to view success and error messages which are displayed below navigation and dismiss them by clicking on the cross icon.</li>
 </ul>
 
 #### Products
-<p> All users can click on the products and view them in a separate window displaying a larger image of the product and dismiss on the page through the cross icon </p> 
+<p> All users can click on the products and view them in a separate window displaying a larger image of the product and dismiss on the page through the cross icon. </p> 
 
 #### Logo and Breadcrumb
-<p> All users can return to the homepage by clicking on the t-shirt icon and through clicking on the home link on the breadcrumb which is displayed on each page</p>
+<p> All users can return to the homepage by clicking on the t-shirt icon and through clicking on the home link on the breadcrumb which is displayed on each page.</p>
 
 #### Pagination
 <p> A maximum of 6 products are displayed on the products page and 6 feedback responses on the feedback page using pagination. Users can move between pages 1 and 2 using the pagination tab at the bottom.</p>
@@ -111,15 +111,15 @@ Logged in users can delete there own feedback only using the delete button. Non-
 
 Several more features could have been incorporated into the project:
 <ul>
-<li> A filter function could have been included whereby the user is able to filter through category and filter through a price range </li>
-<li> The like button could have been restricted to users who can only like the same post once and not again </li>
-<li> Users can choose different sizes and colours of t-shirts and this choice is copied through to checkout </li>
-<li> Perhaps a coupon discount section could have been included as well whereby the users enters a coupon code and is able to acquire a discount </li>
+<li> A filter function could have been included whereby the user is able to filter through category and filter through a price range. </li>
+<li> The like button could have been restricted to users who can only like the same post once and not again. </li>
+<li> Users can choose different sizes and colours of t-shirts and this choice is copied through to checkout. </li>
+<li> Perhaps a coupon discount section could have been included as well whereby the users enters a coupon code and is able to acquire a discount. </li>
 </ul>
 
 ## Technologies Used
 
-<p> The Full Stack Frameworks module requires a project to be built using: HTML, CSS, Bootstrap 4.4, JavaScript, stripe payment system, Python and Django. The project will use the Postgres relational database and will use additional libraries. The project brief indicates to build an e-commerce site. CI tested through travis integration</p>
+<p> The Full Stack Frameworks module requires a project to be built using: HTML, CSS, Bootstrap 4.4, JavaScript, stripe payment system, Python and Django. The project will use the Postgres relational database and will use additional libraries. The project brief indicates to build an e-commerce site. CI tested through travis integration.</p>
 
 ### IDE
 
@@ -186,7 +186,7 @@ Several more features could have been incorporated into the project:
 <li><a href = "https://validator.w3.org/">WC3 Markup Validation Service</a></li> WC3 was used to validate HTML Code.
 <li><a href = "https://jigsaw.w3.org/css-validator/">WC3 CSS Validation Service</a></li> WC3 CSS was used to validate CSS Code.
 <li><a href ="https://pypi.org/project/autopep8/">autopep8</a></li> autopep8 was used confirm python code to the PEP8 standard. 
-<li><a href = "https://jshint.com/">JS Hint</a></li>JS Hint was used to validate JavaScript and JQuery
+<li><a href = "https://jshint.com/">JS Hint</a></li>JS Hint was used to validate JavaScript and JQuery.
 
 </ul>
 
@@ -232,7 +232,7 @@ Example Login Url Test :
         print(resolve(url))
         self.assertEquals(resolve(url).func, login)`
 
-<p> The code above tests that the URL for login is directed to the login URL and resolves as login URL </p>        
+<p> The code above tests that the URL for login is directed to the login URL and resolves as login URL. </p>        
         
 #### Views
 
@@ -248,7 +248,7 @@ Example Products Views Test:
 
 #### Apps
 
-<p> Each of the apps were tested to test that they asserted to the app that was created e.g products configures to products</p>
+<p> Each of the apps were tested to test that they asserted to the app that was created e.g products configures to products.</p>
 
 Example Feedback App Test:
 
@@ -257,7 +257,7 @@ Example Feedback App Test:
         self.assertEqual("feedback", FeedbackConfig.name)
         self.assertEqual("feedback", apps.get_app_config("feedback").name)`
 
-<p> The code above tests that the app is configures to feedback</p>   
+<p> The code above tests that the app is configures to feedback.</p>   
 
 #### Models
 
@@ -306,22 +306,21 @@ Example Checkout Model Test:
 <ul>
 
 <li> Go to Contact page </li>
-<li> Try to submit an empty form - error messages flag up to show empty fields (hence form validation)
-</li>
-<li> Try to submit a form without completing the reCAPTCHA task - error message for invalid reCAPTCHA flags up</li>
-<li> Try to submit a form with all fields filled in and  tick reCAPTCHA - success message indicates message has been sent, HTTP Response code 200 seen on Network tab of Chrome Dev Tools</li>
+<li> Try to submit an empty form - error messages flag up to show empty fields (hence form validation).</li>
+<li> Try to submit a form without completing the reCAPTCHA task - error message for invalid reCAPTCHA flags up.</li>
+<li> Try to submit a form with all fields filled in and  tick reCAPTCHA - success message indicates message has been sent, HTTP Response code 200 seen on Network tab of Chrome Dev Tools.</li>
 
 </ul>
 
-<p> An example  received message is shown below </p>
+<p> An example  received message is shown below: </p>
 
 [Example_message](example/example.png)
 
 ##### Discount Testing
 
-<li> Go to Products page </li>
-<li> Add 20 products to the quantity which are £4.99</li>
-<li> Click on Cart - SubTotal shown without discount (£99.80) </li>
+<li> Go to Products page. </li>
+<li> Add 20 products to the quantity which are £4.99.</li>
+<li> Click on Cart - SubTotal shown without discount (£99.80). </li>
 <li> Click on Checkout - Total shown with £20 discount applied (£79.80) </li>
 
 The discount was shown to successfully apply on order £80 and above thereby validating the checkout and cart.views code.</p>
@@ -366,10 +365,10 @@ On mobile view elements stack on top of each as required for example: products. 
 
 ## Testing User Stories
 
-<li> A potential user is able to navigate round the site, view products, register and login. The user's username is displayed top  left underneath the logo once logged in. The user is able to view 6 products/feedback reviews at a time using the pagination bar at the bottom and move between pages 1 and 2 </li>
+<li> A potential user is able to navigate round the site, view products, register and login. The user's username is displayed top  left underneath the logo once logged in. The user is able to view 6 products/feedback reviews at a time using the pagination bar at the bottom and move between pages 1 and 2. </li>
 <li> A potential user is able to reset there password using the password reset link through entering there email address, clicking on the link sent to there email address and entering the new password twice. </li>
-<li> A potential user to able to views and add products to cart</li>
-<li> A logged in user to able to checkout and purchase products using the stripe API and API credit card number 4242 4242 4242 4242</li>
+<li> A potential user to able to views and add products to cart.</li>
+<li> A logged in user to able to checkout and purchase products using the stripe API and API credit card number 4242 4242 4242 4242.</li>
 <li> A potential user is able to view feedback and send a contact email and validate through reCAPTCHA.
 </li>
 <li> A potential user is able to like/vote a feedback review but clicking on the 'thumbs-up' icon.</li>
@@ -401,12 +400,12 @@ On mobile view elements stack on top of each as required for example: products. 
 
 #### To run locally
 <ol>
-<li> Manually download the project from GitHub and upload to the IDE of choice</li>
-<li> Install Python on your machine</li>
-<li> Create a folder to store project</li>
-<li> Install a virtual environment </li>
-<li> Activate virtual environment <li>
-<li> Install Django inside virtual environment </li>
+<li> Manually download the project from GitHub and upload to the IDE of choice.</li>
+<li> Install Python on your machine.</li>
+<li> Create a folder to store project.</li>
+<li> Install a virtual environment. </li>
+<li> Activate virtual environment. <li>
+<li> Install Django inside virtual environment. </li>
 <li> Create a Django project : 
 
 `django-admin startproject <name>` </li>
@@ -434,12 +433,12 @@ to create a database and then run:
 ####  Deploy To Heroku 
 
 <ol>
-<li> Created a requriements.txt file which contains all dependencies </li>
-<li> Created a Heroku app on Heroku with a unique name </li>
-<li> Click on Deploy tab and choose the Heroku PostgreSQL  as a add-on - store URL as an environmental variable in env.py </li>
-<li> Under Config Vars in Heroku - add your SECRET KEY , AWS Keys and Stripe KEYS an an environmental variables from env.py </li>
-<li> Ensure all migrations are migrated to PostgreSQL database </li>
-<li> Created a Procfile- ensure Heroku knows what type of app is being created </li>
+<li> Created a requriements.txt file which contains all dependencies. </li>
+<li> Created a Heroku app on Heroku with a unique name. </li>
+<li> Click on Deploy tab and choose the Heroku PostgreSQL  as a add-on - store URL as an environmental variable in env.py. </li>
+<li> Under Config Vars in Heroku - add your SECRET KEY , AWS Keys and Stripe KEYS an an environmental variables from env.py. </li>
+<li> Ensure all migrations are migrated to PostgreSQL database. </li>
+<li> Created a Procfile- ensure Heroku knows what type of app is being created. </li>
 <li> Under Deploy the Deployment method- Connected to GitHub is chosen and under Manual deploy : Deploy Branch is chosen to connect the project from GitHub and deploy.
 <li> Finally add the Heroku URL to ALLOWED_HOSTS in settings.py </li>
 </ol>
