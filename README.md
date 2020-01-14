@@ -288,7 +288,7 @@ Example Checkout Model Test:
 
  Continuous integration ensured that views and URLs matched, apps created and placed in installed apps in settings.py existed and views and templates rendered. Errors were flag up if views and URLs did not match and the build would be shown as failing. Currently build has passed all integration testing and is shown as 'Build Passing'.
 
-#### Manual Testing
+#### Manual Testing on Production (localhost) and Final Deployment on Heroku
 
 ##### Login
 
@@ -323,7 +323,16 @@ Example Checkout Model Test:
 <li> Click on Cart - SubTotal shown without discount (£99.80). </li>
 <li> Click on Checkout - Total shown with £20 discount applied (£79.80) </li>
 
-The discount was shown to successfully apply on order £80 and above thereby validating the checkout and cart.views code.</p>
+<p>The discount was shown to successfully apply on order £80 and above thereby validating the checkout and cart.views code.</p>
+
+#### Search 
+<li> Go to the Products page. </li>
+<li> Click on search - products displayed as normal and nothing searched. </li>
+<li> Enter product name in search box e.g "Men's striped t-shirt". </li>
+<li> Search results appears of products with this name. </li>
+<li> Enter something else than product name - search box returns all products. </li>
+
+<p> Search function was found to operate successfully when empty and when a field is entered.</p>
 
 
 ### Responsive Design Testing
@@ -469,6 +478,7 @@ to create a database and then run:
 <li>Women's White T-shirt</li>
 <li>Women's Black T-shirt</li>
 <li>Women's Red T-shirt</li>
+<li> Showcase Image </li>
 </ol>
 
 #### Logo 
@@ -489,6 +499,11 @@ The references which were used are :
 <li> 
 
 [Bootstrap examples to create product page](https://getbootstrap.com/docs/4.4/examples/album/) </li>
+
+<li>
+
+[Bootstrap Model](https://getbootstrap.com/docs/4.0/components/modal/) </li>
+
 <li>
 
 [Contact Form Code adapted from Django- 2.2 Part 7 Django Contact Form with SMTP Email Backend Tutorial | By Creative Web](https://www.youtube.com/watch?v=QQj561w0wt4)

@@ -24,15 +24,14 @@
   <div class="container mb-5">
     <div class="row text-center">
       <div class="col-md-12 mx-auto">
-        <form action="{% url 'search' %}">
+        <form action="{% url 'search' %}" method="GET">
           <div class="form-row">
             <div class="input-group col-md-6 mx-auto mt-3">
               <div class="input-group-text bg-transparent input-search">
                 <span class="input-group-append"></span>
                 <i class="fa fa-search"></i>
               </div>
-              <input type="text" name="keywords" class="form-control" placeholder="Search"
-                value="{{ values.keywords }}">
+              <input type="text" name="q" class="form-control" placeholder="Search">
               <span class="input-group-btn text-left"></span>
               <button class="btn btn-dark ml-1" type="submit">Search</button>
             </div>
@@ -77,7 +76,7 @@
         </div>
       </div>
     </div>
-    {% endfor %}
+      {% endfor %}
   </div>
  </div>
 </div>

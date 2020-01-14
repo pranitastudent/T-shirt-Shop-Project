@@ -10,3 +10,5 @@ class TestUrls(SimpleTestCase):
         url = reverse('products')
         print(resolve(url))
         self.assertEquals(resolve(url).func, all_products)
+    
+      

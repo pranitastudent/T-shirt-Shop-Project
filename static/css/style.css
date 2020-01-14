@@ -242,6 +242,13 @@ div.container.border.submit {
 
 /* Media Queries */
 
+@media(max-width:360px) {
+
+.g-recaptcha {
+        transform:scale(0.77);
+        transform-origin:0 0;
+    }
+}    
 
 @media (min-width: 700px) {
     .prd  {
@@ -294,4 +301,3 @@ div.container.border.submit {
         right:10px;
     }
 }
- 
