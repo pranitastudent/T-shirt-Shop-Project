@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 GOOGLE_RECAPTCHA_SECRET_KEY = os.environ.get('GOOGLE_RECAPTCHA_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'pranita-tshirt-shop.herokuapp.com']
 
@@ -148,7 +148,7 @@ AWS_S3_OBJECT_PARAMETERS = {
     'CacheControl': 'max-age=9460800',
 }
 
-AWS_STORAGE_BUCKET_NAME = "milestone-5-project"
+AWS_STORAGE_BUCKET_NAME = "milestone-5-tshirt"
 
 AWS_S3_REGION_NAME = 'eu-west-1'
 

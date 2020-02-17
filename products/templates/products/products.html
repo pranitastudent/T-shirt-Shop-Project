@@ -83,79 +83,46 @@
 <!-- Back To The Top Button -->
 <button id="topBtn"><i class="fas fa-arrow-up"></i></button>
 
-
 <!-- Pagination template taken from Bootstrap 4 and adapted from: https://stackoverflow.com/questions/43679491/bootstrap-4-center-pagination-in-column and method followed from Brad Traversy Python Dev to Development Course -->
 <div class="container mb-5">
   <div class="row">
     <div class="col-lg-6 offset-lg-3 py-5 d-flex">
-      <ul class="pagination mx-auto">   
+      {% if products.has_other_pages %}
+      <ul class="pagination mx-auto">
+        {% if products.has_previous %}
         <li class="page-item">
-          <a href="" class="page-link">&laquo;</a>
+          <a href="?page={{products.previous_page_number}}" class="page-link">&laquo;</a>
         </li>
- 
+        {% else %}
         <li class="page-item disabled">
           <a class="page-link">&laquo;</a>
         </li>
-    
+        {% endif %}
+        {% for i in products.paginator.page_range %}
+        {% if products.number == i %}
         <li class="page-item active">
-          <a class="page-link"></a>
+          <a class="page-link">{{i}}</a>
         </li>
-        
+        {% else %}
         <li class="page-item">
-          <a href="?page={{i}}" class="page-link"></a>
+          <a href="?page={{i}}" class="page-link">{{i}}</a>
         </li>
-
+        {% endif %}
+        {% endfor %}
+        {% if products.has_next %}
         <li class="page-item">
-          <a href="" class="page-link">&raquo;</a>
+          <a href="?page={{products.next_page_number}}" class="page-link">&raquo;</a>
         </li>
-    
+        {% else %}
         <li class="page-item disabled">
           <a class="page-link">&raquo;</a>
         </li>
-       
+        {% endif %}
       </ul>
-    
+      {% endif %}
     </div>
   </div>
 </div>
-
-
-<div class="container mb-5">
-  <div class="row">
-    <div class="col-lg-6 offset-lg-3 py-5 d-flex">
-      <ul class="pagination mx-auto">   
-        <li class="page-item">
-          <a href="" class="page-link">&laquo;</a>
-        </li>
-        {% for page_number in pages %} {% if page_number == current_page %}
-        {% else %} 
-
-         <li class="page-item disabled">
-          <a class="page-link">&laquo;</a>
-        </li>
-      
-        <li class="page-item active">
-          <a class="page-link">{{ page_number}}</a>
-        </li>
-        
-        <li class="page-item">
-          <a href="{{ url_for('index', current_page=page_number) }}" class="page-link">{{ page_number }}</a>
-        </li>
-        {% endif %} {% endfor %}            
-        <li class="page-item">
-          <a class="page-link">&raquo;</a>
-        </li>   
-
-         <li class="page-item disabled">
-          <a class="page-link">&raquo;</a>
-        </li>
-            
-      </ul>    
-    </div>
-  </div>
-</div>
-
-
 
 
 <!-- End of Pagination -->

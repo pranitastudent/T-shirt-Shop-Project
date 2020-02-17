@@ -16,38 +16,84 @@
 
     <!-- (Active link code only!) Code adapated from Brad Traversy - Python Django Dev to Development Course (Nov 2018) -->
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <ul class="navbar-nav ml-auto">        
-            <li class="nav-item active ">             
-            <li class="nav-item ">          
-                <a class="nav-link" href="#"><i class="fas fa-home"></i>&nbsp;Home</a>
+        <ul class="navbar-nav ml-auto">
+            {% if '/' == request.path %}
+            <li class="nav-item active ">
+                {% else %}
+            <li class="nav-item ">
+                {% endif %}
+                <a class="nav-link" href="{% url 'index' %}"><i class="fas fa-home"></i>&nbsp;HOME</a>
             </li>
-            <li class="nav-item active ">               
-            <li class="nav-item">              
-                <a class="nav-link" href="#"> <i class="fas fa-sign-out-alt"></i>&nbsp;Logout</a>
-            </li>   
-           <li class="nav-item active ">               
-            <li class="nav-item ">              
-                <a class="nav-link" href="#"><i class="fas fa-user-plus"></i>&nbsp;Register</a>
+            {% if user.is_authenticated %}
+            {% if 'logout' in request.path %}
+            <li class="nav-item active ">
+                {% else %}
+            <li class="nav-item">
+                {% endif %}
+                <a class="nav-link" href="{% url 'logout' %}"> <i class="fas fa-sign-out-alt"></i>&nbsp;LOGOUT</a>
             </li>
-        
-            <li class="nav-item active">            
-            <li class="nav-item">             
-                <a class="nav-link" href="#"><i class="fas fa-sign-in-alt"></i>&nbsp;Login</a>
-            </li>     
-          
-            <li class="nav-item active">           
-            <li class="nav-item">               
-                <a class="nav-link" href="#">About</a>
+            {% if 'logout' in request.path %}
+            <li class="nav-item active ">
+                {% else %}
+            <li class="nav-item">
+                {% endif %}
+                <a class="nav-link" href="{% url 'add_feedback' %}">&nbsp;ADD FEEDBACK</a>
+            </li>
+            {% else%}
+
+            {% if 'register' in request.path %}
+            <li class="nav-item active ">
+                {% else %}
+            <li class="nav-item ">
+                {% endif %}
+                <a class="nav-link" href="{% url 'register'%}"><i class="fas fa-user-plus"></i>&nbsp;REGISTER</a>
             </li>
 
-            <li class="nav-item active ">              
-            <li class="nav-item ">            
-                <a class="nav-link" href="#"><i class="fas fa-store"></i>&nbsp;Products</a>
-            </li>  
-            <li class="nav-item active">             
+
+            {% if 'login' in request.path %}
+            <li class="nav-item active">
+                {% else %}
+            <li class="nav-item">
+                {% endif %}
+                <a class="nav-link" href="{% url 'login'%}"><i class="fas fa-sign-in-alt"></i>&nbsp;LOGIN</a>
+            </li>
+            {% endif %}
+
+
+            {% if 'feedback' in request.path %}
+            <li class="nav-item active">
+                {% else %}
+            <li class="nav-item">
+                {% endif %}
+                <a class="nav-link" href="{% url 'get_feedback' %}">FEEDBACK</a>
+            </li>
+
+            {% if 'products' in request.path %}
+            <li class="nav-item active ">
+                {% else %}
             <li class="nav-item ">
-             
-                <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i>&nbsp;Cart</a>
+                {% endif %}
+                <a class="nav-link" href="{% url 'products' %}"><i class="fas fa-store"></i>&nbsp;PRODUCTS</a>
+            </li>
+
+
+            {% if 'contact' in request.path %}
+            <li class="nav-item active ">
+                {% else %}
+            <li class="nav-item ">
+                {% endif %}
+                <a class="nav-link" href="{% url 'contact' %}">CONTACT</a>
+            </li>
+
+            {% if 'cart' in request.path %}
+            <li class="nav-item active">
+                {% else %}
+            <li class="nav-item ">
+                {% endif %}
+                <a class="nav-link" href="{% url 'view_cart' %}"><i class="fas fa-shopping-cart"></i>&nbsp;CART
+                    {% if product_count > 0 %}
+                    <label class="badge badge-warning">{{ product_count }}</label>
+                    {% endif %}</a>
             </li>
         </ul>
     </div>
