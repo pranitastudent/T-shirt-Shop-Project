@@ -148,7 +148,7 @@ AWS_S3_OBJECT_PARAMETERS = {
     'CacheControl': 'max-age=9460800',
 }
 
-AWS_STORAGE_BUCKET_NAME = "milestone-5-tshirt"
+AWS_STORAGE_BUCKET_NAME = "milestone-5-project"
 
 AWS_S3_REGION_NAME = 'eu-west-1'
 
